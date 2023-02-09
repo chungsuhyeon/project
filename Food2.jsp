@@ -80,6 +80,18 @@ var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리
 <div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 40px; margin-top: 20px;"></div>
 <div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 60px; margin-top: 20px;"></div>
 </div>
-<div id="text2"style="border: solid; height: 800px; width: 400px; float:right; margin-right: 50px"></div>
+<div id="text2"style="border: solid; height: 800px; width: 400px; float:right; margin-right: 50px">
+<input type="text">
+<button style="border: solid; float: right;">검색</button>
+<input type="text">
+<div style="border: solid; height:610px; overflow: auto; margin-left: 5px; margin-top: 50px;">
+<table style="border: solid;, width: 390px;. height: 600px; ">
+<tr style="border: solid; height: 50px;">
+<td style="border: solid; width: 300px;">04</td>
+<td style="border: solid; width: 80px"><button>찜</button></td>
+</tr>
+</table>
+</div>
+</div>
 </body>
 </html>
