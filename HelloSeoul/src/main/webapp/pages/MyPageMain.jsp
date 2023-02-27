@@ -19,6 +19,7 @@
 	$(function(){
 		
 	});
+	
 </script> 
 
 <style type="text/css">	
@@ -261,20 +262,20 @@
 		
 		<!-- 공공데이터 페이지 UI -->
 		<nav class="pagination">
-			<a href="#" onclick="updatePage(1); return false;" class="control first">처음 페이지</a>
-			<a href="#" onclick="updatePage(1); return false;" class="control prev">이전 페이지</a>
-			<a href="#" onclick="updatePage(1); return false;">1</a>
+			<a href="#" onclick="" class="control first">처음 페이지</a>
+			<a href="#" onclick="" class="control prev">이전 페이지</a>
+			<a href="#" onclick="">1</a>
 			<strong class="active">2</strong>
-			<a href="#" onclick="updatePage(3); return false;">3</a>
-			<a href="#" onclick="updatePage(4); return false;">4</a>
-			<a href="#" onclick="updatePage(5); return false;">5</a>
-			<a href="#" onclick="updatePage(6); return false;">6</a>
-			<a href="#" onclick="updatePage(7); return false;">7</a>
-			<a href="#" onclick="updatePage(8); return false;">8</a>
-			<a href="#" onclick="updatePage(9); return false;">9</a>
-			<a href="#" onclick="updatePage(10); return false;">10</a>
-			<a href="#" onclick="updatePage(11); return false;" class="control next">다음 페이지</a>
-			<a href="#" onclick="updatePage(1841); return false;" class="control last">마지막 페이지</a>
+			<a href="#" onclick="">3</a>
+			<a href="#" onclick="">4</a>
+			<a href="#" onclick="">5</a>
+			<a href="#" onclick="">6</a>
+			<a href="#" onclick="">7</a>
+			<a href="#" onclick="">8</a>
+			<a href="#" onclick="">9</a>
+			<a href="#" onclick="">10</a>
+			<a href="#" onclick="" class="control next">다음 페이지</a>
+			<a href="#" onclick="" class="control last">마지막 페이지</a>
 		</nav>
 		
 	</div>
