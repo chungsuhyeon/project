@@ -244,6 +244,7 @@
 		</table>
  -->		
 		<!-- 페이징 -->	
+<!-- 		
 	 	<div class="container xlarge" style="margin-top: 50px; align-content: center;">
 			<ul>
 				<li><a href="#">이전</a></li>
@@ -256,7 +257,7 @@
 				<li><a href="#">다음</a></li>
 			</ul>
 		</div>
-		
+	 -->	
 		
 		
 		<nav class="pagination">
