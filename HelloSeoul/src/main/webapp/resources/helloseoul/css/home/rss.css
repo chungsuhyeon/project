@@ -1,0 +1,19 @@
+.img_sample {background:url(/snippet/image?idx=34) no-repeat}
+.txt_bar {color:#ccc;margin:0 3px}
+ 
+.cmt_comm {overflow:hidden;width:610px;padding:0 20px}
+.cmt_comm .fld_cmt {overflow:hidden;width:100%;padding-top:20px}
+.cmt_comm .fld_cmt .tf_cmt {width:505px;height:35px;padding:10px;border:1px solid #c9c9c9}
+.cmt_comm .fld_cmt .btn_cmt {overflow:hidden;width:79px;height:57px;border:0;text-indent:-9999px;cursor:pointer}
+.cmt_comm .fld_cmt .info_append {height:25px;font-size:11px;line-height:25px;color:#666;text-align:right}
+.cmt_comm .fld_cmt .txt_byte {font-weight:bold;color:#17439c}
+ 
+.cmt_comm .list_cmt {overflow:hidden;position:relative;width:100%;padding:15px 0;border-bottom:1px solid #ccc}
+.cmt_comm .list_cmt .cmt_head {position:absolute;top:18px;left:0;width:100px;height:50px;margin-right:15px;background-color:#d88}
+.cmt_comm .list_cmt .cmt_body {margin:0 150px 0 120px}
+.cmt_comm .list_cmt .info_append {display:block;height:20px}
+.cmt_comm .list_cmt .txt_name {font-weight:bold;color:#888}
+.cmt_comm .list_cmt .txt_time {color:#b1b1b1}
+.cmt_comm .list_cmt .txt_desc {font-size:12px;line-height:18px}
+.cmt_comm .list_cmt .link_reply {display:inline-block;margin-top:5px;font-weight:bold;color:#17439c}
+.cmt_comm .list_cmt .cmt_foot {overflow:hidden;position:absolute;top:15px;right:0;height:40px;font-size:11px}

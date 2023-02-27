@@ -1,0 +1,61 @@
+/* search result */
+.searchResult {margin:0 0 7px 0; font-size:0.95em; color:#525252;}
+.searchResult strong {font-family:tohoma; color:#F15C35;}
+
+/* list */
+.bbsList {width:100%; border-collapse:collapse; border-bottom:1px solid #D4D4D4; color:#666;}
+.bbsList thead th {padding:7px 0 6px; _padding:10px 0 7px; color:#000000; background-color:#f2f2f2; border-left:1px solid #ddd;}
+.bbsList thead th.fir, .bbsList tbody td.fir {border-left:none;}
+.bbsList thead th.inner {background-color:#AAADB6;}
+.bbsList thead th a, .bbsList thead th a:link, .bbsList thead th a:visited, .bbsList thead th a:hover {color:#FFF;}
+.bbsList tbody th {padding:9px 0 8px; _padding:9px 0 6px; color:#666; border-bottom:1px solid #F2F2F2; background:#F2F2F2;}
+.bbsList tbody th.sum {border-top:2px solid #D4D4D4; border-bottom:2px solid #D4D4D4;}
+.bbsList tbody td {padding:5px 0 4px; _padding:7px 0 4px; border-left:1px solid #ddd; border-bottom:1px solid #ddd; text-align:left;}
+.bbsList tbody td.tal {padding-left:10px; text-align:left;}
+.bbsList tbody td.rLine {border-right:1px solid #F2F2F2;}
+.bbsList tbody td.img {padding:0;}
+.bbsList tbody td .ico {margin-bottom:-1px;}
+.bbsList tbody tr:last-child td {border-bottom:1px solid #D4D4D4;}
+.bbsList tbody td.contView {padding:0; line-height:18px; border-bottom:none; text-align:left;}
+.bbsList tbody td.contView .detailCont {padding:15px 20px; border-bottom:1px solid #F2F2F2; line-height:1.6;}
+.bbsList tfoot th {padding:10px 0 8px; _padding:10px 0 7px; border-top:2px solid #D4D4D4; border-bottom:1px solid #D4D4D4; color:#666; background:#F2F2F2;}
+
+/* view */
+.bbsView {width:100%; border-collapse:collapse; border-top:2px solid #979BA5;}
+.bbsView thead th {padding:10px 0 8px; _padding:10px 0 7px; color:#FFF; background-color:#979BA5;}
+.bbsView tbody th, .bbsView tbody td {padding:9px 0 8px; _padding:9px 0 6px; color:#666; border-bottom:1px solid #D4D4D4; background:#F2F2F2;}
+.bbsView tbody td {padding-left:10px; background:none;}
+.bbsView tbody th.tac, .bbsView tbody td.tac {padding-left:0; text-align:center;}
+.bbsView tbody td .detail {margin:5px 0 0;}
+.bbsView tbody td.contView {padding:15px 20px; height:200px; line-height:18px; vertical-align:top; background:none;}
+.bbsView tbody td.contView .detailCont {line-height:1.6;}
+.bbsView tbody td.contView .detailCont p {margin:5px 0;}
+.bbsView tbody td .icoFile {margin-bottom:-2px;}
+
+/* write */
+.bbsWrite {width:100%; border-collapse:collapse; border-top:2px solid #979BA5;}
+.bbsWrite tbody th, .bbsWrite tbody td {padding:9px 0 8px 10px; _padding:9px 0 6px 10px; color:#666; border-bottom:1px solid #D4D4D4; text-align:left; background:#F2F2F2;}
+.bbsWrite tbody td {padding:4px 0 4px 10px; background:none;}
+.bbsWrite tbody th.tac, .bbsWrite tbody td.tac {padding-left:0; text-align:center;}
+.bbsWrite tbody td.noneDate {padding:10px 0 7px; font-weight:bold; text-align:center;}
+.bbsWrite tbody td.editer {padding:10px;}
+.bbsWrite tbody td.editer textarea {width:98%; height:400px;}
+.bbsWrite tbody td.alignM * {vertical-align:middle;}
+.bbsWrite tbody td .detail {margin:5px 0 0;}
+
+.btnSet {margin-top:-35px;}
+
+.timeTb {width:489px; border-collapse:collapse; border-top:1px solid #D4D4D4; color:#666;}
+.timeTb tbody td {height:50px; border-right:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center;}
+.timeTb tbody td.fir {border-left:1px solid #ddd;}
+.timeTb tbody td a {display:block; width:100%; height:100%; line-height:50px;}
+.timeTb tbody td.chked {background:#e7d2f0;}
+
+.timeTbS {width:468px !important; border-collapse:collapse; border-top:1px solid #D4D4D4; color:#666;}
+
+
+/* 占쎈똻�읈/占썬끉�벉 */
+.shotList {margin-top:20px; width:100%; border-collapse:collapse; border-top:1px solid #D4D4D4; border-bottom:1px solid #D4D4D4;}
+.shotList tbody th, .shotList tbody td {padding:9px 0 8px; _padding:9px 0 6px; color:#666; background:url(../img/common/bg_hline_01.gif) repeat-x left bottom;}
+.shotList tbody td {padding-left:10px;}
+.shotList tbody th.end, .shotList tbody td.end {background:none;}

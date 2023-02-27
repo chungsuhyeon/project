@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.container {
+  padding: 10px;
+  margin: 3px auto;
+  counter-reset: pagination;
+  text-align: center;
+}
+.container:after {
+  clear: both;
+  content: “”;
+  display: table;
+}
+.container ul {
+  width: 100%;
+}
+.xlarge {
+  width: 65&;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
+  padding-left: 0px;
+}
+li {
+  counter-increment: pagination;
+}
+li:hover a {
+  color: #fdfdfd;
+  background-color: #1d1f20;
+  border: solid 1px #1d1f20;
+}
+li.active a {
+  color: #fdfdfd;
+  background-color: #1d1f20;
+  border: solid 1px #1d1f20;
+}
+
+li:first-child {
+  float: left;
+}
+
+/* li:first-child a:after {
+  content: “Previous”;
+} */
+
+li:nth-child(2) {
+  counter-reset: pagination;
+}
+li:last-child {
+  float: right;
+}
+li:last-child a:after {
+  content: “Next”;
+}
+li a {
+  border: solid 1px #d7d7d7;
+  border-radius: 0.2rem;
+  color: #7d7d7d;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 0.9rem;
+}
+
+/* li a:after {
+  content: ” ” counter(pagination) ” “;
+} */

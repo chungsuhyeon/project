@@ -1,0 +1,24 @@
+@charset "EUC-KR";
+
+#text01{
+	border:solid;
+	height: 800px;
+	width: 1300px;
+	float: letf;
+	margin-left: 80px;
+}
+#text02{
+	border: solid;
+	float: left;
+	width: 700px;
+	height: 780px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+tr{
+	border: solid;
+}
+td{
+	border: solid;
+}

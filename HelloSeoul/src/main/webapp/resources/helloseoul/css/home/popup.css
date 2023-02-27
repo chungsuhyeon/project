@@ -1,0 +1,19 @@
+@import url(global.css);
+@import url(board.css);
+
+html, body {height:100%;}
+
+/* layout */
+#popWrap {width:100%; height:100%;}
+
+.popHeader {position:relative; width:100%; height:37px; background:#353B49 url(../img/common/bg_pop_header.gif) repeat-x left bottom;}
+.popHeader .popTitle {margin:0; padding:10px 0 0 15px; font-size:14px; color:#FFF;}
+
+.popContainer {margin-top:-63px; min-height:100%; _height:100%;}
+.popContainer .popContents {padding:74px 15px 15px;}
+
+.footer {padding:8px 15px 0 0; height:18px; text-align:right; background:#E1E1E1;}
+
+/* contents */
+.topBtn {margin-bottom:7px; width:100%;}
+.topBtn .txt {float:left; width:450px; line-height:16px;}

@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+.tbl-bridge{width:1200px;border-top:2px solid #333;margin:70px auto 30px auto;}
+.tbl-bridge table{width:100%;}
+.tbl-bridge td{height:78px;vertical-align:middle;border-bottom:1px solid #ddd;}
+.tbl-bridge td:nth-child(1){font-size:16px;line-height:24px;color:#333;padding-left:22px;}
+.tbl-bridge td:nth-child(2){padding-left:70px;}
+.tbl-bridge td:nth-child(3){padding:0 20px 0 50px;}
+.tbl-bridge td.relief{background:#f6f6f6;}
+.tbl-bridge td.relief:nth-child(1){font-weight:700;}
+.tbl-bridge td span{display:inline-block;vertical-align:middle;width:58px;height:20px;line-height:20px;text-align:center;border:1px solid #ed4037;color:#ed4037;font-size:12px;margin-right:13px;font-weight:normal;}
+.tbl-bridge td em{display:table-cell;padding-left:20px;height:78px;vertical-align:middle;font-size:13px;line-height:18px;color:#666;position:relative;}
+.tbl-bridge td em:after{content:"";display:block;width:1px;height:12px;background:#d7d7d7;position:absolute;top:32px;left:10px;}
+.tbl-bridge td em.bridge-date{padding-left:0;white-space:nowrap;}
+.tbl-bridge td em.bridge-date:after{display:none;}
+.tbl-bridge td a{display:block;width:128px;height:33px;line-height:33px;text-align:center;font-size:15px;font-family:'Noto Sans KR','NanumBarunGothic','맑은 고딕','Malgun Gothic',sans-serif;}
+.tbl-bridge td a.bridge-btn1{border:1px solid #f43142;background:#f43142;color:#fff;}
+.tbl-bridge td a.bridge-btn2{border:1px solid #ec7d2c;background:#fff;color:#ec7d2c;}
+.tbl-bridge td a.bridge-btn3{border:1px solid #ccc;background:#f6f6f6;color:#ccc;}
+.bridge-cont-wrap{width:1200px;margin:0 auto;font-size:0;}

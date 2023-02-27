@@ -1,0 +1,59 @@
+
+@charset "utf-8";
+
+#gnbwrap{margin-top:0 !important;}
+#warp {font-size:12px;font-family: 'µ¸¿ò',dotum,Helvetica,sans-serif;line-height:16px;padding-top:45px; color:#555;}
+#warp a {font-size:12px;font-family: 'µ¸¿ò',dotum,Helvetica,sans-serif;}
+#warp table{border-collapse: separate;}
+#warp th{font-weight:bold;vertical-align:middle;}
+#warp h2{font-weight:bold;}
+#warp h3{font-weight:bold;}
+#warp h4{font-weight:bold;}
+#warp h5{font-weight:bold;}
+#warp img{vertical-align: middle;}
+#warp strong{font-weight:bold;}
+#warp .information2 .info .event a:link, .information2 .info .event a:hover{font-size: 11px;}
+#warp .cont_t2 ul.rank li span a{font-size:11px;}
+#warp .cont_t2 ul.rank li.r01 span.tit{line-height: 14px;}
+#warp .recomm ul li span a{font-size:11px;}
+#warp .table_sm th{font-weight: normal;}
+#yesFooter{font-family: 'µ¸¿ò',dotum,Helvetica,sans-serif;}
+#yesFooter .yesUSafe strong{font-weight:bold; font-size:12px;color:#333; vertical-align:top;}
+.imgAlt{display:inline-block;vertical-align: top;text-align: left;}
+#yesFooter .yesUSafe dd a{font-size:11px;}
+#yesFooter .yFootCon .yFootAddr dd a#corpNumLnk{font-size:11px;}
+#container{padding-bottom:20px; margin:0 auto !important}
+.cont_section{margin-bottom:0;}
+#warp .alignment p.txt a{font-size:11px;}
+#warp .contain div.step ul.list a{font-size:11px;}
+#warp .main_list div.step ul.list li a{font-size:11px;}
+.coupon_list .srch_line input{letter-spacing:-1px;}
+#warp .loc_tab li a{font-size:11px;}
+#warp .sub_calrender table thead th{font-weight: normal;}
+.searchArea div.cont_det h4 a{font-size:15px !important;}
+#eventwrap{position:relative; margin:0;}
+.conwrap .listwrap .list dl dd table.tb_p td{vertical-align:middle;}
+#eventwrap2{padding-top:45px;overflow:hidden;}
+#warp .tmypage th{font-weight:normal;}
+.coupon input{letter-spacing:-1px;}
+#warp .sms_alram ul li a{font-size:11px;}
+#warp .guide_contain p.exception strong{font-weight:normal;}
+.ui-dialog .ui-dialog-title{font-size:12px;}
+#dialogDetailAlert strong span{font-size:12px; font-weight:bold;}
+#warp:after{content:"";display:block;width:100%;clear:both;}
+#warp .list_theater li a{font-size:11px;}
+.ui-datepicker td span, .ui-datepicker td a{font-size:12px;}
+.ui-datepicker .ui-datepicker-title select{vertical-align:top;}
+.ui-datepicker .ui-datepicker-prev{top:11px;left:7px;}
+.ui-widget-overlay{z-index:4000 !important;}
+.ui-dialog{z-index:5000 !important;}
+#warp .mag_wrap2 h3 a{font-size:20px; font-weight:bold; font-family:'Malgun Gothic','¸¼Àº °íµñ';}
+.list_theater li a{font-size:11px;}
+#warp .lnb .lmenu .m_sub li a{font-size:11px;font-family:'Malgun Gothic','¸¼Àº °íµñ';}
+#warp .mag_wrap3 .story ul li strong{font-weight: normal;}
+.mag_detail .otherNewsArea dd ul{overflow:hidden;}
+.history div.cont{width:100%; padding:20px 0;}
+.cont_section .tb_basic td.detail{width: 710px;}
+.information2 .info dt{display:block;}
+.information2 .info dd{display:block;clear:right;}
+

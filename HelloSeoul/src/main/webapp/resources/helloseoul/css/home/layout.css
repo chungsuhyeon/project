@@ -1,0 +1,50 @@
+html, body {width:100%; height:100%;}
+
+#wrapper {height:100%;}
+
+/* header */
+#header {position:relative; height:117px;}
+#header .topInfoWrap {position:relative; height:54px; background:url(../img/common/bg_topinfo.gif) left top repeat-x;}
+#header .topInfoArea {position:relative; width:980px; height:54px; margin:0 auto; background:url(../img/common/bg_topinfo.gif) left top repeat-x;}
+
+#header .logo {float:left; line-height:54px; font-size:14px; color:#fff; font-weight:bold;}
+#header .logo p em {color:#80bc00;}
+#header .logo * {vertical-align:middle;}
+
+#header .loginWrap {float:right; line-height:54px;}
+#header .loginWrap span {float:left; padding:0 15px; font-weight:bold; font-size:11px; background:url(../img/common/ln_gy01.gif) left center no-repeat;}
+#header .loginWrap span.fir {background:none;}
+#header .loginWrap span em {color:#fff;}
+.btnLogout {float:left; margin-top:17px;}
+
+#header .gnbWrap {position:relative; height:31px; background:url(../img/common/bg_gnb.gif) left top repeat-x;}
+#header .gnb {position:relative; width:980px; margin:0 auto;}
+
+#header .gnb .gnbNavi {position:relative; width:100%; height:30px;}
+#header .gnb .gnbNavi li {float:left;}
+#header .gnb .gnbNavi li a {float:left; height:30px; line-height:30px; padding:0 50px; font-weight:bold; color:#000; background:url(../img/common/ln_gnb.gif) right center no-repeat;}
+#header .gnb .gnbNavi li a.last {background:url(../img/common/ln_gnb11.gif) right center no-repeat;}
+#header .gnb .gnbNavi li a:hover, #header .gnb .gnbNavi li a:active, 
+#header .gnb .gnbNavi li a.current, #header .gnb .gnbNavi li a.current:link, #header .gnb .gnbNavi li a.current:visited, #header .gnb .gnbNavi li a.current:hover {color:#FFF; background:#80bc00;}
+#header .gnb .gnbNavi li a:hover span, #header .gnb .gnbNavi li a:active span, 
+#header .gnb .gnbNavi li a.current span, #header .gnb .gnbNavi li a.current:link span, #header .gnb .gnbNavi li a.current:visited span, #header .gnb .gnbNavi li a.current:hover span {color:#FFF; background:#80bc00;}
+
+#header .gnbSubWrap {height:32px; background:url(../img/common/bg_gnbsub.gif) left top repeat-x;}
+#header .gnbNavi .subNav {display:none; position:absolute; top:30px; left:0; width:940px; padding-left:40px;}
+#header .gnbNavi .subNav li {float:left;}
+#header .gnbNavi .subNav li a {float:left; height:32px; line-height:32px; padding-left:9px; margin-right:15px; color:#666; background:url(../img/common/ico_gy_arrw01.gif) left center no-repeat;}
+#header .gnbNavi .subNav li a:hover {float:left; height:32px; line-height:32px; padding-left:9px; margin-right:15px; color:#666; background:url(../img/common/ico_gy_arrw01.gif) left center no-repeat;}
+
+/* container */
+#container {width:980px; margin:30px auto 0; min-height:100%; _height:100%;}
+
+#footer {height:38px; padding-top:18px; color:#999; font:10px tahoma normal; text-align:center; background:#f7f7f7; border-top:1px solid #dadada;}
+
+/* login */
+#loginWrapper {position:absolute; z-index:10; left:50%; top:50%; margin:-88px 0 0 -256px; width:512px; height:177px; background:url(../img/common/login_wrap.jpg) no-repeat left top;}
+	.loginForm {padding:84px 0 0 238px; width:236px;}
+	.loginForm dl dt {clear:both; float:left; padding-top:4px; width:52px; height:18px;}
+	.loginForm dl dd {float:left; width:128px; height:22px;}
+	.loginForm dl dd .text {#margin:-1px 0; padding:3px 0 0 5px; width:121px; height:13px; border:1px solid #D2D2D2;}
+	.loginForm .btn {clear:both; float:right; margin-top:-44px;}
+	.loginForm .saveId {clear:both; margin-left:48px; width:100%;}

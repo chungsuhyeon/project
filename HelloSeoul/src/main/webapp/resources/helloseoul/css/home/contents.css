@@ -1,0 +1,59 @@
+@import url(./global.css);
+@import url(./layout.css);
+@import url(./board.css);
+
+/* title */
+.title {padding:0 0 0 19px; height:14px; margin-bottom:22px; background:url(../img/common/ico_gn_arrw01.gif) no-repeat left top; font-size:14px; color:#444;}
+
+/* sub title */
+.subTitle {margin:0 0 7px 5px; padding-left:12px; font-size:12px; color:#444; font-weight:bold; background:url(../img/common/ico_sub_title.gif) no-repeat left 1px;}
+
+/* location */
+.location {float:right; margin:-46px 20px 0 0; font-size:0.95em;}
+.location li {float:left; margin-right:6px; padding-right:11px; color:#99A1B3; background:url(../img/common/ico_location.gif) no-repeat right 3px;}
+.location li.current {margin:0; padding:0; background:none;}
+.location li a, .location li a:hover {color:#A9A9A9;}
+
+.tbWrapLt {float:left; width:470px; height:503px; border-bottom:1px solid #ccc; overflow:auto; overflow-x:hidden;}
+.tbWrapLtNone {float:left; width:470px;}
+.tbWrapRt {float:right; width:490px;}
+
+.tabA li {float:left; width:97px; height:35px; text-align:center; font-weight:bold; color:#c5c7cb; background:url(../img/common/ln_tab.gif) no-repeat right 0px;}
+.tabA li a {display:block; width:97px; height:35px; background:url(../img/common/bg_tab.gif) no-repeat left top;}
+.tabA li a:hover, .tabA li.over a {background-position:0 100%; color:#000;}
+.tbWrapCnt {display:none;}
+.bxHideA {overflow:auto; overflow-x:hidden; height:210px;}
+
+/* search */
+.searchWrap {float:left; position:relative; margin-top:15px; width:100%; height:59px; background:url(../img/common/bg_search_mid.gif) repeat-x left top;}
+.searchWrap span {position:absolute; width:10px; height:59px;}
+.searchWrap span.bl {left:0; background:url(../img/common/bg_search_left.gif) no-repeat left top;}
+.searchWrap span.br {top:0; right:0; background:url(../img/common/bg_search_right.gif) no-repeat left top;}
+.searchWrap .cont {padding-top:17px; text-align:center;}
+.searchWrap .cont select {padding:1px; height:22px; font:normal 12px dotum; .font:normal 11px Sans-serif; vertical-align:top;}
+.searchWrap .cont input {#margin:-1px 0; padding:3px 0 0 5px; width:30%; height:17px; border:1px solid #BCBCBC; font-size:13px; vertical-align:top;}
+.searchWrap .cont a {position:relative; cursor:pointer; margin:0; overflow:visible; color:#CDCFD4; padding:1px 6px 0; height:21px; line-height:21px; display:inline-block; border:0; white-space:nowrap; vertical-align:middle; background:url(../img/button/btn_type_01.gif) repeat-x left top;}
+.searchWrap .cont *:hover, .searchWrap .cont span *:active, .searchWrap .cont span *:focus{color:#FFF;}
+
+.tempImgList li {position:relative; float:left; width:90px; height:65px; margin:0 10px 10px 0;}
+.tempImgList li.last {margin-right:0px;}
+.tempImgList li .upState {display:none; position:absolute; left:0; top:0;}
+
+/* tab */
+.tabWrap {margin-bottom:20px; height:22px; background:url(../img/common/tab_line.gif) repeat-x left bottom;}
+.tabWrap li {float:left; margin-right:1px;}
+.tabWrap li a {float:left; height:22px; color:#909090; background:url(../img/common/tab_right.gif) no-repeat right -22px;}
+.tabWrap li a span {display:block; padding:6px 13px 2px; #padding:6px 13px 4px; _padding:6px 13px 2px; text-align:center; background:url(../img/common/tab_left.gif) no-repeat left -22px;}
+.tabWrap li a:hover, .tabWrap li a:active, 
+.tabWrap li a.current, .tabWrap li a.current:link, .tabWrap li a.current:visited, .tabWrap li a.current:hover {color:#525252; background:url(../img/common/tab_right.gif) no-repeat right top;}
+.tabWrap li a:hover span, .tabWrap li a:active span, 
+.tabWrap li a.current span, .tabWrap li a.current:link span, .tabWrap li a.current:visited span, .tabWrap li a.current:hover span {color:#525252; background:url(../img/common/tab_left.gif) no-repeat left top;}
+
+/* select */
+.topSelect {margin-bottom:10px; width:100%;}
+
+/* txt */
+.descriptionA {margin:0 0 5px 5px;}
+
+/* wrap */
+.inWrap {float:left; margin-right:20px; width:40%;}

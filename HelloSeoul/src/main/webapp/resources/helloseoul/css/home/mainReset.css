@@ -1,0 +1,81 @@
+@charset "euc-kr";
+/* START --root */
+:root {
+	--deffamily: "Malgun Gothic",sans-serif;
+    --family: "Min sans", "Malgun Gothic",sans-serif;
+    --Regular: 400;
+    --Medium: 500;
+    --Bold: 700;
+    --letter: -0.08em;
+    --fWN: 500;
+    --fWB: 400;
+    --fWSB: 600;
+    --font-12: 1.2rem;
+    --font-14: 1.4rem;
+    --font-16: 1.6rem;
+    --font-20: 2rem;
+    --cm-mg: -16px;
+    --c-mg: 16px;
+    --c-s-pg: 11px;
+    --c-pg: 19px;
+    --c-color: #ff460a;
+    --txt-d-color: #222;
+    --txt-ev-color: #121212;
+    --txt-ev-def-color: #666;
+    --txt-ev-gr-color: #999;
+    --txt-color: #333;
+    --txt-def-color: #555;
+    --txt-light-color: #747474;
+    --txt-thin-color: #aeaeae;
+    --txt-placeColor: #999;
+    --bd-color: #e1e1e1;
+    --bd-color-over: #121212;
+    --bg-gray-color: #f7f7f7;
+    --bg-white-color: #ffffff;
+    --bd-radius: 5px;
+    --scrap: url(/ui/static/image/prd/scrap.svg);
+    --heart: url(/ui/static/image/prd/wish_heart.svg);
+    --wish: url(/ui/static/image/prd/wish.svg);
+}
+/* END --root */
+
+/* START Reset */
+html {font-family: var(--deffamily); -webkit-text-size-adjust: 100%; font-size:10px; line-height: 1.5;}
+body {
+	margin: 0; 
+	font-family: var(--deffamily); 
+	font-size:1.6rem;/* °á°ú ¡æ 1rem ¡¿ 1.6 = 1.6rem */ 
+	font-weight:var(--Regular); 
+	line-height:1.4; 
+	color:var(--txt-d-color); 
+	text-align:left; 
+	background-color:var(--bg-white-color); 
+	letter-spacing:var(--letter); 
+	overflow-x:hidden; 
+	overflow-y:auto;
+}
+*, *:before, *:after {box-sizing:border-box; margin:0; padding:0;}  
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; vertical-align:baseline;}
+button {border: none 0; margin: 0; padding: 0; overflow: visible; cursor: pointer; background: none; -webkit-appearance: none;}
+button,input,optgroup,select,textarea,body,h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4{font-family: var(--deffamily);}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+ol, ul {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
+table {border-collapse:collapse; border-spacing:0;}
+a, a:hover, a:focus {color:inherit; text-decoration:none;}
+a ins {text-decoration:none;}
+a ins:hover {text-decoration:underline;}
+
+/* START Fast */
+.hidden, .hide {display:none !important;}
+.text-l {text-align:left !important;}
+.text-r {text-align:right !important;}
+.text-c {text-align:center !important;}
+/* END Fast */
+
+@media (max-width: 768px) {
+    html, body, #wrap {
+        min-width: 280px;
+    }
+}
