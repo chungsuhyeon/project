@@ -276,7 +276,6 @@
 			<a href="#" onclick="updatePage(11); return false;" class="control next">다음 페이지</a>
 			<a href="#" onclick="updatePage(1841); return false;" class="control last">마지막 페이지</a>
 		</nav>
-		mypage test
 		
 	</div>
 	
