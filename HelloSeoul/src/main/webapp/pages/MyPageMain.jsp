@@ -259,7 +259,7 @@
 		</div>
 	 -->	
 		
-		
+		<!-- 공공데이터 페이지 UI -->
 		<nav class="pagination">
 			<a href="#" onclick="updatePage(1); return false;" class="control first">처음 페이지</a>
 			<a href="#" onclick="updatePage(1); return false;" class="control prev">이전 페이지</a>
