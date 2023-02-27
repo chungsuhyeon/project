@@ -24,46 +24,51 @@ $(function(){
 });
 </script> 
 </head>
+<c:set var="id" value="test"/>
+<%-- <c:set var="id" value="test1"/> --%>
 <body>
 <header>
 <div id='mainheading'>
-<div id='logosector'><img id='logo' alt="logo" src="/web/resources/helloseoul/img/logo.jpg"></div>
-<div id='home'><a id="homea" href="#"><h2>Hello, Seoul</h2></a></div>
+<div id='logosector'><img id='logo' alt="logo" src="/web/resources/helloseoul/img/seoul_logo.png"></div>
 <div id='menubar'>
 	<div id="food">
-	<h2><a href="#">■food</a></h2>
+	<h2><a href="#">■FOOD</a></h2>
 		<div>
-		<a href="#">korea!@#$!@11$</a>
-		<a href="#">china</a>
-		<a href="#">japan</a>
+		<a href="#">KOREA&nbsp;&nbsp;</a>
+		<a href="#">CHINA&nbsp;&nbsp;</a>
+		<a href="#">JAPAN</a>
 		</div>
 	</div>
 	<div id="shop">
-	<h2><a href="#">■shop</a></h2>
+	<h2><a href="#">■SHOP</a></h2>
 		<div>
-		<a href="#">shop1</a>
-		<a href="#">shop2</a>
-		<a href="#">shop3</a>
+		<a href="#">SHOP1&nbsp;&nbsp;</a>
+		<a href="#">SHOP2&nbsp;&nbsp;</a>
+		<a href="#">SHOP3</a>
 		</div>
 	</div>
 	<div id="hotspot">
-	<h2><a href="#">■hotspot</a></h2>
+	<h2><a href="#">■HOTSPOT</a></h2>
 		<div>
-		<a href="#">0101</a>
-		<a href="#">0202</a>
-		<a href="#">0303</a>
+		<a href="#">PLAYING&nbsp;&nbsp;</a>
+		<a href="#">PLAYING&nbsp;&nbsp;</a>
+		<a href="#">PLAYING</a>
 		</div>
 	</div>
 	<div id="ticket">
-	<h2><a href="#">■ticket</a></h2>
+	<h2><a href="#">■TICKET</a></h2>
 	</div>
 </div>
 <div id='controlbutton'>
-<div><a href="#">com</a></div>
-<div><a href="#">login</a></div>
-<!-- <div><a href="#">logout</a></div> -->
-<!-- <div><a href="#">join</a></div> -->
-<div><a href="#">mypage</a></div>
+<c:if test="${id=='test'}">
+<div><a href="#">LOGIN</a></div>
+<div><a href="#">JOIN</a></div>
+</c:if>
+<c:if test="${id!='test'}">
+<div><a href="#">COM</a></div>
+<div><a href="#">LOGOUT</a></div>
+<div><a href="#">MYPAGE</a></div>
+</c:if>
 </div>
 </div>
 </header>
