@@ -33,7 +33,7 @@ $(function(){
 	<div id="food">
 	<h2><a href="#">■food</a></h2>
 		<div>
-		<a href="#">korea</a>
+		<a href="#">korea!@#$!@$</a>
 		<a href="#">china</a>
 		<a href="#">japan</a>
 		</div>
