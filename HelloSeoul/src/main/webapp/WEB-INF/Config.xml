@@ -5,10 +5,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration><!-- DB설정(Connection) -->
 <!--    <typeAliases>
 		<typeAlias type="com.bit.boarding.dao.ReportBoradMemberBean" alias="memBean"/>
-   </typeAliases>
+   </typeAliases> -->
    <mappers>
-	<mapper resource="com/bit/boarding/dao/member-mapper.xml"/>
-   </mappers> -->
+	<mapper resource="com/bit/web/dao/member-mapper.xml"/>
+   </mappers>
 </configuration>
 
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.memberdao">
+<select id="testing01" resultType="com.bit.web.dao.LocationBean">
+SELECT * FROM MAINDB WHERE LOC_PC = 1
+</select>
+<insert id="inserting">
+insert into mainDB values(
+2,'중꺾마',1,1,'강남','서울시강남구','10:00','23:00','031-0202-202','중요한건 꺾이지않는 마음','noname')
+</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
