@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;" />
 <meta http-equiv="X-UA-Compatible"  />
 <meta http-equiv="imagetoolbar" content="no" />
-<link href="/web/resources/helloseoul/css/home/contents.css" rel="stylesheet" type="text/css" />
+<!-- <link href="/web/resources/helloseoul/css/home/contents.css" rel="stylesheet" type="text/css" /> -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
@@ -19,7 +19,11 @@
 	   $("input#year").focus();
    }  
 
+<<<<<<< HEAD
+	
+=======
 	 
+>>>>>>> refs/heads/main
 	   
    $(function(){   
 	   $("select[name='email3']").change(function(){
@@ -47,8 +51,10 @@
 	       $("input[name='cp']").val($("input[name='cp1']").val()+'-'+$("input[name='cp2']").val()+'-'+$("input[name='cp3']").val());
 	       $("input[name='email']").val($("input[name='emai11']").val()+'@'+$("input[name='email2']").val());
 	       $("form").submit();
-	   
+	   //
 	   });
+
+
 	   //event
 // 	   $("input#password2").focus(function(){
 // 		  console.log('focus'); 
@@ -115,6 +121,14 @@
     });	    
    });
 </script>
+<style>
+    body{background-color:"pink;"
+         }
+	#valu{
+		line-height:"2.0;"
+		}
+
+</style>
 
 </head>
 <jsp:include page="./Header.jsp"></jsp:include>
@@ -124,7 +138,7 @@
 			<div id="contentsWrap" class="contentsWrap">
 				<div class="contents">
 					<h1 class="title">회원가입</h1>
-					<div class="tbWrapRt" style="padding-right: 250px; margin-top: 100px;">
+					<div class="tbWrapRt" style="margin-top: 100px; padding-left:450px ">
 						<table class="bbsWrite mgb10" style="background-color: white;"  >
 								<caption></caption>
 								<colgroup>
@@ -132,7 +146,7 @@
 									<col />
 								</colgroup>
 								<tbody>
-								  <tr>
+								<tr id="valu" style="margin-top: 20px; padding-left:450px;">								
 								  	<th>이메일</th>
 										<td><input  style="height: 20px;"  type="text" name="email1" class="inputText" size="10" />
 										   <input  style="height: 20px;" type="text" name="email2"  class="inputText" />
@@ -147,40 +161,38 @@
 										   <span class="buttonFuc" id="unique"><a href="#" id="unique">중복체크</a><span id="sid"></</span></span>
 										</td>
 							    	</tr>
-								<tr>
-									<th>이름</th>
+								<tr id="valu">
+									<th> 이름 </th>
 									<td><input style="height: 20px;" type="text" name="name" id="name" class="inputText" size="30" /></td>
 								</tr>
-								<tr>
+								<tr id="valu">
 									<th>닉네임</th>
 									<td><input style="height: 20px;" type="text" name="name" id="name" class="inputText" size="30" /></td>
 								</tr>
-								<tr>
+								<tr id="valu">
 									<th>비밀번호</th>
 									<td><input style="height: 20px;" type="text" name="password1" id="password1" class="inputText" size="30" /></td>
 								</tr>
-
-								<tr>
-									<th>비밀번호 확인</th>
+								<tr id="valu">
+									<th>비밀번호확인</th>
 									<td>
 									  <input style="height: 20px;" type="text" name="password2" id="password2" class="inputText" size="30" />
-									   <input style="height: 20px;"  type="hidden" name="password" id="password" class="inputText" size="30" />
+									  <input style="height: 20px;"  type="hidden" name="password" id="password" class="inputText" size="30" />
 
 									</td>
 								</tr> 
-								<tr>
+								<tr id="valu">
 									<th>국적</th>
 									<td><input style="height: 20px;" type="text" name="id" id="id" class="inputText" size="30" /> </td>
-								</tr>
-								
-								<tr>
+								</tr>								
+								<tr id="valu">
 									<th>성별</th>
 									<td>
 										<label for="male"><input type="radio" class="inputRadio" checked="checked"  name="gender" id="male" value="남" />남</label>
 										<label for="female"><input type="radio" class="inputRadio" checked="checked"  name="gender" id="female" value="여"/>여</label>
 									</td>
 								</tr>
-								<tr>
+								<tr id="valu">
 									<th>생년월일</th> <!-- 1970~2000 숫자 isNaN() parseInt(),parseFlot(),eval()-->
 									<td>
 									   <input  style="height: 20px;" type="date" min="2020-01-01" max="2022-12-31" name="birth"></input>
@@ -190,21 +202,20 @@
 <!-- 										<input type="text" name="birth" id="birth" class="inputText" size="10" /> 생일 -->
 									</td>
 								</tr>
-								<tr>
+								<tr id="valu">
 									<th>주소</th>
 									<td class="alignM">
 										<p class="mgb3">
-											<input type="text" name="post1" class="inputText" size="10" readonly="readonly" /> - <input type="text" name="post2" class="inputText" size="10" /> <span class="buttonFuc" id="spost"><a href="#">우편번호</a></span>
+											<input type="text" name="post1" class="inputText" size="7" readonly="readonly" /> - <input type="text" name="post2" class="inputText" size="7" /> <span class="buttonFuc" id="spost"><a href="#">우편번호</a></span>
 										</p>
 										<p class="mgb3">
-											<input type="text" name="address" class="inputText" size="50" readonly="readonly" />
-											<input type="text" name="infoAddr" class="inputText" size="50" />
-											<input type="text" name="postAddress" class="inputText" size="50" />
+											<input type="text" name="address" class="inputText" size="30" readonly="readonly" />
+											<input type="text" name="infoAddr" class="inputText" size="30" />
+											<input type="hidden" name="postAddress" class="inputText" size="30" />
 										</p>
 									</td>
 								</tr>
-
-								<tr>
+								<tr id="valu">
 									<th>전화번호</th>
 									<td>
 										<!-- <input type="test" name="tel1" class="inputText" size="10" />  -->
@@ -221,7 +232,7 @@
 										<input type="text" name="tel" class="inputText" size="10" />
 									</td>
 								</tr>
-								<tr>
+								<tr id="valu">
 									<th>휴대폰번호</th>
 									<td>
 										<input  style="height: 20px;" type="text" name="cp1" class="inputText" size="10" /> - 
@@ -230,7 +241,16 @@
 										<input  style="height: 20px;" type="text" name="cp" class="inputText" size="10" />
 									</td>
 								</tr>
-								<tr>
+								<tr id="valu">
+									<th>방문목적</th>
+									<td>
+										<label for="male"><input type="radio" class="inputRadio"   name="gender" id="male" value="남" />관광</label>
+										<label for="female"><input type="radio" class="inputRadio"   name="gender" id="female" value="여"/>업무</label>
+										<label for="female"><input type="radio" class="inputRadio"   name="gender" id="female" value="여"/>기타1</label>
+										
+									</td>
+								</tr>
+								 <tr id="valu">
 									<th>방문목적</th>
 									<td>
 										<label for="male"><input type="radio" class="inputRadio"   name="gender" id="male" value="남" />관광</label>
