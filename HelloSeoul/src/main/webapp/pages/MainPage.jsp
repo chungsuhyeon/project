@@ -10,7 +10,7 @@
 <link type="text/css" rel="stylesheet" href="/web/resources/helloseoul/css/home/mainReset.css">
 <link type="text/css" rel="stylesheet" href="/web/resources/helloseoul/css/home/main.css">
 </head>
-<jsp:include page='Header.jsp'></jsp:include>
+<jsp:include page='header1.jsp'></jsp:include>
 <body>
 
 <div id="wrap">		
