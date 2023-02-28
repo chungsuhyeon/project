@@ -51,7 +51,7 @@
 	       $("input[name='cp']").val($("input[name='cp1']").val()+'-'+$("input[name='cp2']").val()+'-'+$("input[name='cp3']").val());
 	       $("input[name='email']").val($("input[name='emai11']").val()+'@'+$("input[name='email2']").val());
 	       $("form").submit();
-	   
+	   //
 	   });
 
 
