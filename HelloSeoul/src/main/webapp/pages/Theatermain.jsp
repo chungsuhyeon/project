@@ -38,7 +38,7 @@
 <link rel='stylesheet' type='text/css'
 	href='/web/resources/ticketMain2/New/Css/main2-1.css?v=2020012203'>
 	
-	
+	awswsss
 <div class='m2-kv-hidden'>   <!-- 상단 돌아가는 컨텐츠 -->
 		<div class='m2-kv-wrap'>
 			<div class='m2-kv'>
