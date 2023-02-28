@@ -129,7 +129,7 @@
 		}
 
 </style>
-ㄴㅁㄹㄴㅇㄹㄴㅇㄹ
+
 </head>
 <jsp:include page="./Header.jsp"></jsp:include>
 <body style="background-image: url('/web/resources/helloseoul/img/backjoin.jpg');" >
