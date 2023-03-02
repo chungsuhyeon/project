@@ -28,7 +28,7 @@ $(function(){
 <header>
 <div id='mainheading'>
 <div id='logosector'><img id='logo' alt="logo" src="/web/resources/helloseoul/img/logo.jpg"></div>
-<div id='home'><a id="homea" href="#"><h2>Hello, Seoul</h2></a></div>
+<div id='home'><a id="homea" href="MainPage.jsp"><h2>Hello, Seoul</h2></a></div>
 <div id='menubar'>
 	<div id="food">
 	<h2><a href="#">■food</a></h2>
@@ -60,10 +60,10 @@ $(function(){
 </div>
 <div id='controlbutton'>
 <div><a href="#">com</a></div>
-<div><a href="#">login</a></div>
+<div><a href="plogin.jsp">login</a></div>
 <!-- <div><a href="#">logout</a></div> -->
 <!-- <div><a href="#">join</a></div> -->
-<div><a href="#">mypage</a></div>
+<div><a href="${pageContext.request.contextPath}/loginCheck">mypage</a></div>
 </div>
 </div>
 </header>

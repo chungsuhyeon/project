@@ -41,12 +41,6 @@
 		border: 1px solid;
 		padding: 10px;
 	}
-/* 	
-	table {
-	    margin-left:auto; 
-	    margin-right:auto;
-	}
-*/
 
 	.pagination {
 	    clear: both;
@@ -148,8 +142,8 @@
 
 		<!-- 회원정보 div -->
 		<div class='div_infomation' id="text1">
-			<div id='nickName' style="height: 75px; width: 33%; float:left;"> 닉네임 님</div>
-			<div id='nickName' style="height: 75px; width: 66%; float:right;"> 회원정보 관련 내용</div>
+			<div id='nickName' style="height: 75px; width: 33%; float:left;"> ${NickName} 님</div>
+			<div id='nickName' style="height: 75px; width: 66%; float:right;"> ${user_id} 님 정보</div>
 		</div>
 		
 		<!-- 플래너 생성 버튼 및 찜 보기 버튼 -->

@@ -2,13 +2,17 @@
 <!DOCTYPE configuration
 PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration><!-- DB설정(Connection) -->
-<!--    <typeAliases>
-		<typeAlias type="com.bit.boarding.dao.ReportBoradMemberBean" alias="memBean"/>
-   </typeAliases>
-   <mappers>
-	<mapper resource="com/bit/boarding/dao/member-mapper.xml"/>
-   </mappers> -->
+<configuration>
+<!-- DB설정(Connection) -->
+	<typeAliases>
+	<!-- 
+		<typeAlias type="com.bit.web.vo.Bean" alias="memBean"/>
+		 -->
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="com/bit/web/dao/helloSeoul-mapper.xml"/>
+	</mappers>
 </configuration>
 
 
