@@ -16,18 +16,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉"><meta property="og:type" content="website"><meta property="og:image" content="http://tkfile.yes24.com/upload2/PerfBlog/202301/20230125/20230125-44090.jpg"><meta property="og:url" content="http://ticket.yes24.com/Perf/44090"><meta property="og:site_name" content="YES24 티켓"><meta property="og:description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 "><meta property="fb:app_id" content="530899446925997">
-  <meta name="description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 ">
+<!--   <meta property="og:title" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉"><meta property="og:type" content="website"><meta property="og:image" content="http://tkfile.yes24.com/upload2/PerfBlog/202301/20230125/20230125-44090.jpg"><meta property="og:url" content="http://ticket.yes24.com/Perf/44090"><meta property="og:site_name" content="YES24 티켓"><meta property="og:description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 "><meta property="fb:app_id" content="530899446925997"> -->
+<!--   <meta name="description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 "> -->
   <!--#### Open Graph Meta ####-->
-  <meta property="og:title" content="YES24 티켓">
+<!--   <meta property="og:title" content="YES24 티켓"> -->
   <meta property="og:description" content="">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://ticket.yes24.com/New/Main.aspx">
-  <meta property="og:image" content="http://tkfile.yes24.com/imgNew/yes24ticket.gif">
-  <meta property="og:site_name" content="YES24 티켓">
+<!--   <meta property="og:url" content="http://ticket.yes24.com/New/Main.aspx"> -->
+<!--   <meta property="og:image" content="http://tkfile.yes24.com/imgNew/yes24ticket.gif"> -->
+<!--   <meta property="og:site_name" content="YES24 티켓"> -->
   <!--#### Open Graph Meta ####-->
 
-  <title>YES24 티켓 / 뮤지컬 〈루드윅 : 베토벤 더 피아노〉</title>
+<!--   <title>YES24 티켓 / 뮤지컬 〈루드윅 : 베토벤 더 피아노〉</title> -->
 
   <link rel='stylesheet' type='text/css' href='/web/resources/ticketDetail/New/Css/Dreset.css'>
   <link rel='stylesheet' type='text/css' href='/web/resources/ticketDetail/New/Css/Dcommon.css?v=17'> 
