@@ -15,44 +15,14 @@
 
 <script type="text/javascript">
 $(function(){
-	
-	$("#search").click(function(){
- 		if($('#locctg').val()=='choose'||$('#detailctg').val()=='choose'||$('#query').val().length==0){
- 		alert('?');
- 		return false;
- 		}else{
- 			//$('#폼아이디').submit();
- 		}
-	});
-	
-	$('#zzimcom').click(function(){
-		$("input[name='zzim']").each(function(){
-			if($(this).prop("checked")){
-				alert($(this).val());
-			}
-		});
-	});
-	
-	$.ajax({
-		type:'post',
-		url:'/web/testing',
-		dataType:'json',
-		success : function(r){
-			console.log(r);
-			$('#shit').text(r.loc_name);
-			 
-			
-		},
-		error : function(x){
-			console.log(x);
-		}
-	});
+
 });
-</script>
+</script> 
 </head>
 <jsp:include page="Header.jsp"></jsp:include>
 <body>
-<div id="text1" style="border: solid; height: 800px; width: 1300px; float: left; margin-left: 100px">
+<body>
+<div id="text1" style="border: solid; height: 800px; width: 1300px; float: left; margin-left: 300px">
 <div>
 <table style="border: solid; float: left; width: 700px; height: 780px; margin-top: 10px; margin-left: 10px;;">
 
@@ -86,7 +56,7 @@ $(function(){
 </tr>
 
 <tr style="border: solid;">
-<td style="border: solid;" colspan="3" id="shit">장소정보</td>
+<td style="border: solid;" colspan="3">장소정보</td>
 </tr>
 
 <tr style="border: solid;">
@@ -109,34 +79,6 @@ var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리
 <div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 40px; margin-top: 20px;">추천2</div>
 <div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 60px; margin-top: 20px;">추천3</div>
 </div>
-<div id="text2"style="border: solid; height: 800px; width: 400px; float:right; margin-right: 50px">
-<select id='locctg'>
-<option value="choose">지역</option>
-<option value='kannam0'>kang1</option>
-<option value='kannam1'>kang2</option>
-</select>
-<select id='detailctg'>
-<option value="choose">세부카테고리</option>
-<option value='koera'>korea</option>
-<option value='china'>china</option>
-</select>
-<button id='search' style="border: solid; float: right;">검색</button>
-<input id='query' type="text">
-<div style="border: solid; height:610px; overflow: auto; margin-left: 5px; margin-top: 50px;">
-<table id='list0' style="border: solid;, width: 390px;. height: 600px; ">
-<tr>
-<th>장소명</th>
-<th>찜</th>
-</tr>
-<c:forEach var='i' begin="0" end="5" varStatus="cnt">
-<tr style="border: solid; height: 50px;">
-<td id='locname' style="border: solid; width: 300px;">${i}장소이름</td>
-<td style="border: solid; width: 80px">
-<input type="checkbox" name="zzim" value="${cnt.count }">
-</td>
-</tr>
-</c:forEach>
-</table>
 <script type="text/javascript">
 
 //지도를 클릭했을때 클릭한 위치에 마커를 추가하도록 지도에 클릭이벤트를 등록합니다
@@ -183,8 +125,5 @@ function setMarkers(map) {
   }            
 }
 </script>
-</div>
-<button id='zzimcom'>저장</button>
-</div>
 </body>
 </html>
