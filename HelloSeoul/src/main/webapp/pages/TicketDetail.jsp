@@ -110,7 +110,7 @@
 		</div>
 	</div>
 </div>
-
+<c:forEach var="i" items="${mslist}" varStatus="cnt">
 <div class="renew-wrap">
 	<div class="renew-content">
 		<div class="rn-02"><!--제목-->
@@ -198,6 +198,7 @@
 <!-- 						</dd> -->
 					</dl>					
 				</div>
+				</c:forEach>
                 <!--포인트-->
 				
 <!-- 				<div class="rn-product-area3">공연시간안내, 배송정보 -->

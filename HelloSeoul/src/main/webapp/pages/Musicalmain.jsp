@@ -54,17 +54,17 @@
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<a href="#"
-								target="_self" title="뮤지컬 〈오페라의 유령〉 - 부산" id="img"><img id="imgsrc"
+								target="_self" title="뮤지컬 〈오페라의 유령〉" id="img"><img id="imgsrc"
 								src="http://tkfile.yes24.com/Upload2/Display/202301/20230117/gmain_top_44653.jpg/dims/quality/70/"
 								alt="">
 							<div class="m2-kvs-txt">
 									<p class="m2-kvs-tit"></p>
-									<p class="m2-kvs-detail">2023.03.25 ~ 2023.06.18 부산 드림씨어터</p>
+									<p class="m2-kvs-detail">2023.03.25 ~ 2023.06.18 드림씨어터</p>
 								</div></a>
 						</div>
 						<div class="swiper-slide">
 							<a href="#" target="_self"
-								title="뮤지컬 ＜호프 ： 읽히지 않은 책과 읽히지 않은 인생" id="img"><img id="imgsrc"
+								title="뮤지컬 ＜호프 ： 읽히지 않은 책과 읽히지 않은 인생>" id="img"><img id="imgsrc"
 								src="http://tkfile.yes24.com/Upload2/Display/202302/20230202/gmain_top_44798.jpg/dims/quality/70/"
 								alt="뮤지컬 <호프>">
 							<div class="m2-kvs-txt">
@@ -130,7 +130,7 @@
 						<div class="swiper-slide">
 							<a
 								href="#"
-								target="_self" title="[인천] 뮤지컬 [브로드웨이 42번가]" id="img"><img id="imgsrc"
+								target="_self" title="뮤지컬 [브로드웨이 42번가]" id="img"><img id="imgsrc"
 								src="http://tkfile.yes24.com/Upload2/Display/202210/20221007/gmain_top_43616.jpg/dims/quality/70/"
 								alt="뮤지컬 <브로드웨이 42번가>">
 							<div class="m2-kvs-txt">

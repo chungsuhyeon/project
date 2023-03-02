@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TicketController {
 
 	@RequestMapping (value = "contentImg")
-	public void ImgCheck() {
-		System.out.println("test");
-	}
+	public void ImgCheck(String imgsrc) {
+		System.out.println(imgsrc);
+	}	
 	
 }
