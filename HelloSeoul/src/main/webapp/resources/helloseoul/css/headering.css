@@ -21,7 +21,7 @@ div{
 
 /*헤더 전체*/
 #mainheading{
-	width : 100%;
+	width : 1900px;
 	height: 150px;
 	background-image: url("/web/resources/helloseoul/img/headerimg.jpg");
 }
