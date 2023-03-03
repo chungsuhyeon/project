@@ -72,8 +72,8 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="./login.jsp"><span class="icon_profile"></span></a>
+                        <a href="#"><span class="icon"></span></a>
+                        <a href="./login.jsp"><span class="icon_login"></span></a>
                     </div>
                 </div>
             </div>

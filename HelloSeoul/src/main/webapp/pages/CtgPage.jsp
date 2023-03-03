@@ -50,7 +50,7 @@ $(function(){
 });
 </script>
 </head>
-<jsp:include page="Header.jsp"></jsp:include>
+<jsp:include page="Header2.jsp"></jsp:include>
 <body>
 <div id="text1" style="border: solid; height: 800px; width: 1300px; float: left; margin-left: 100px">
 <div>
