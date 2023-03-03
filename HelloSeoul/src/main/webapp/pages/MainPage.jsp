@@ -9,37 +9,37 @@
 <link type="text/css" rel="stylesheet" href="/web/resources/helloseoul/css/home/mainReset.css">
 <link type="text/css" rel="stylesheet" href="/web/resources/helloseoul/css/home/main.css">
 </head>
-<jsp:include page='Header.jsp'></jsp:include>
 <body>
-
-<div id="wrap">		
-	<div id="container">		
-		<div class="cSection gray" style="background-image: url('/web/resources/helloseoul/img/backmain.jpg');">
-			<div class="cSub_support_wrap">
-				
-				<ul class="cSub_spp_enter">
-					<li class="spp_enter_cont">
-						<a href="/web/resources/helloseoul/img/backmain.jpg" target="_blank">
-							<img src="/web/resources/helloseoul/img/backmain.jpg" alt="" class="spp_pc">
-							<p class="enter_tit">맛집</p>
-						</a>
-					</li>
-					<li class="spp_enter_cont">
-						<a href="/web/resources/helloseoul/img/backmain.jpg" target="_blank">
-							<img src="/web/resources/helloseoul/img/backmain.jpg" alt="" class="spp_pc">
-							<p class="enter_tit">관광</p>
-						</a>
-					</li>
-					<li class="spp_enter_cont">
-						<a href="/web/resources/helloseoul/img/backmain.jpg" target="_blank">
- 							<img src="/web/resources/helloseoul/img/backmain.jpg" alt="" class="spp_pc">
-							<p class="enter_tit">볼거리</p>
-						</a>
-					</li>
-				</ul>
+	<jsp:include page='Header.jsp'></jsp:include>
+	<div id="wrap">		
+		<div id="container">		
+			<div class="cSection gray" style="background-image: url('/web/resources/helloseoul/img/backmain.jpg');">
+				<div class="cSub_support_wrap">
+					
+					<ul class="cSub_spp_enter">
+						<li class="spp_enter_cont">
+							<a href="/web/resources/helloseoul/img/backmain.jpg" target="_blank">
+								<img src="/web/resources/helloseoul/img/backmain.jpg" alt="" class="spp_pc">
+								<p class="enter_tit">맛집</p>
+							</a>
+						</li>
+						<li class="spp_enter_cont">
+							<a href="/web/resources/helloseoul/img/backmain.jpg" target="_blank">
+								<img src="/web/resources/helloseoul/img/backmain.jpg" alt="" class="spp_pc">
+								<p class="enter_tit">관광</p>
+							</a>
+						</li>
+						<li class="spp_enter_cont">
+							<a href="/web/resources/helloseoul/img/backmain.jpg" target="_blank">
+	 							<img src="/web/resources/helloseoul/img/backmain.jpg" alt="" class="spp_pc">
+								<p class="enter_tit">볼거리</p>
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</body>
 </html>
 

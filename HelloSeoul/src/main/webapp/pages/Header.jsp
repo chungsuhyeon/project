@@ -58,12 +58,12 @@ $(function(){
 	<h2><a href="#">■ticket</a></h2>
 	</div>
 </div>
-<div id='controlbutton'>
+<div id='controlbutton'>*
 <div><a href="#">com</a></div>
 <div><a href="plogin.jsp">login</a></div>
 <!-- <div><a href="#">logout</a></div> -->
 <!-- <div><a href="#">join</a></div> -->
-<div><a href="${pageContext.request.contextPath}/loginCheck">mypage</a></div>
+<div><a href="/web/myPageLoad">mypage</a></div>
 </div>
 </div>
 </header>

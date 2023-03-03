@@ -1,5 +1,7 @@
 package com.bit.web.dao;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,12 +15,12 @@ public class HelloSeoulDao extends SqlSessionDaoSupport{
 		super.setSqlSessionFactory(sqlSessionRactory);
 	}
 	
-	public String getDbPass(String id) {
-		return this.getSqlSession().selectOne("getDbPass", id);
+	public HashMap<String, String> getDbUser(String id) {
+		return this.getSqlSession().selectOne("getDbUser", id);
 	}
 	
-	public String getNickname(String id) {
-		return this.getSqlSession().selectOne("getNickname", id);
+	public HashMap<String, Object> getUserInfo(Object id){
+		return this.getSqlSession().selectOne("getUserInfo", id);		
 	}
 	
 	
