@@ -134,10 +134,8 @@ public class HelloSeoulController {
 	@PostMapping(value = "ajaxMypageJjim")
 	@ResponseBody
 	public List<Object> mypageJjimListLoad(@RequestParam(value = "user_id")String user_id){
-		System.out.println("HelloSeoulController mypageJjimListLoad user_id " + user_id);
 		List<Object> userJjimList = helloDao.getUserJjimList(user_id);
 		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
-		
 		return userJjimList;
 	}
 
