@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.projectdao">
+	
+	
+	<insert id="boardInsert" parameterType="com.bit.web.vo.ComBoard">
+	insert into communityboard values
+	(#{com_no},#{com_ctg},#{com_title},#{com_cont},#{com_filename},0,sysdate,#{user_id},#{user_nick})
+	</insert>
+	<select id="selectBoradNo" resultType="Integer">
+	select communityboard_seq.nextval from dual
+	</select>
+	<select id="selectBoard" resultType="com.bit.web.vo.ComBoard" >
+	select * from communityboard
+	</select>
+	<select id="selectInfoBoard" resultType="com.bit.web.vo.ComBoard" parameterType="Integer">
+	select * from communityboard where com_no=#{value}
+	</select>
+	<update id="hitAction" >
+	update communityboard set com_hit=com_hit+1 where com_no=#{value}
+	</update>
+	<insert id="replyInsert">
+	insert into replyboard values(#{rep_no),#{com_no),#{user_id),#{rep_cont),#{rep_regdate),#{user_nick))
+	</insert>
+	<select id="replyBoardNo" resultType="Integer">
+	select replyboard_seq.nextval from dual
+	</select>
+	<delete id="deleteBoard" parameterType="Integer">
+	delete communityboard where com_no=#{value}
+	</delete>
+	<update id="updateBoard" parameterType="com.bit.web.vo.ComBoard" >
+	update communityboard set com_no=#{com_no},com_ctg=#{com_ctg},com_title=#{com_title},com_cont=#{com_cont},com_filename=#{com_filename}
+	,com_hit=#{com_hit},com_regdate=sysdate,user_id=#{user_id},user_nick=#{user_nick}
+	 where com_no=#{com_no}
+
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

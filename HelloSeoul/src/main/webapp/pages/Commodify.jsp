@@ -310,7 +310,7 @@ p {
 	height: 25px;
 }
 
-#write-field .bottombox .btnblue {	
+#write-field .bottombox .btnblue {
 	font-weight: bold;
 	width: 80px;
 	height: 25px;
@@ -318,31 +318,36 @@ p {
 </style>
 </head>
 <body>
-	
 
 	<jsp:include page="Header.jsp"></jsp:include>
 
 
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
-	
-	<form action="/web/boardInsert" method="post" style="margin-top: 50px">
+	<c:forEach items="${info }" var="i">
+	<form action="/web/boardUpdate?no=${i.com_no }" method="post" style="margin-top: 50px">
 	<div id="write-field">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
 			<table>
 				<tr>
+				
 					<td class="td1">카테고리</td>
 					<td class="td2"><select name="com_ctg" class="form-control"
 						style="display: inline-block;">
-							<option value="">&nbsp;+ 선택해주세요</option>
+							<option value="${i.com_ctg }">&nbsp;+ 선택해주세요</option>
 							<option value="">----------------------</option>
 							<option value="1">정보공유</option>
 							<option value="2">후기</option>	
 							<option value="3">동행모집</option>
 							
 					</select>
-					<td> <input type="hidden" value="123" name="user_id">  </td>
+					<td>
+					<input type="hidden" value="${i.com_hit }" name="com_hit">  
+					<input type="hidden" value="123" name="user_id"> 
+					<input type="hidden" value="${i.com_regdate }" name="com_regdate">
+					 </td>
+					
 				</tr>
 
 				<tr>
@@ -351,7 +356,7 @@ p {
 							<div class="col-md-6 col-sm-6 col-xs-bskr">
 								<div class="input-title">작성자명</div>
 								<div class="input-forms">
-									<input size="20" type="text" name="user_nick" value=""
+									<input size="20" type="text" name="user_nick" value="${i.user_nick }"
 										class="form-control input-sm input-name bskr-font user" />
 								</div>
 							</div>
@@ -364,7 +369,7 @@ p {
 				<tr>
 					<td class="td1">제목</td>
 					<td class="td2" valign="middle"><input type="text"
-						name="com_title" value=""
+						name="com_title" value="${i.com_title }"
 						class="form-control input-sm bskr-font subject" /></td>
 				</tr>
 
@@ -375,15 +380,15 @@ p {
 					<tr>
 						<td class="td1"></td>
 						<td class="td2" ><textarea class="form-control col-sm-5" 
-								rows="20" id="com_cont" name="com_cont" value=""></textarea></td>
+								rows="20" id="com_cont" name="com_cont" value="${i.com_cont }">${i.com_cont }</textarea></td>
 					</tr>
 					<tr>
 					<td class="td1"></td>
-						<td class="td2"><input type="file" id="filename" name="com_filename" value=""></td>
+						<td class="td2"><input type="file" id="filename" name="com_filename" value="">${i.com_filename }</td>
 					</tr>
 				</table>
 			</div>
-
+		</c:forEach>
 			<div class="bottombox">
 				<input id="canclePost" type="button" value="" class="btn btn-default btn-sm"
 					><a href="/web/boardSelect">취소</a></input>&nbsp;
@@ -393,6 +398,7 @@ p {
 			</div>
 		</div>
 	</div>
+	
 	</form>
 	<!-- Footer -->
 	<footer>

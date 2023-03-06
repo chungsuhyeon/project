@@ -9,6 +9,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    <mappers>
 	<mapper resource="com/bit/boarding/dao/member-mapper.xml"/>
    </mappers> -->
+   <mappers>
+   <mapper resource="com/bit/web/dao/project-mapper.xml"/>
+  
+   </mappers>
 </configuration>
 
 

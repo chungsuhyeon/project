@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC >
 <html>
 
@@ -48,6 +49,22 @@ $(function(){
 	$("textarea#reply_contents").keyup(function(){
 		$("span#replybyte").text($("textarea#reply_contents").val().length);
 	});
+	$("input#reply_Submit").click(function(){
+		$.ajax({
+			type:'post',
+			url:'/web/replyInsert',
+			datatype:'json',
+			data:{reply:$("textarea").val(),no:$("input#com_no").val()},
+			success:function(result){
+				console.log(result);
+			},
+			error:function(){
+				console.log("error")
+			}
+			
+		});
+		
+	});
 });
 </script> 
 <jsp:include page="Header.jsp"></jsp:include>
@@ -59,20 +76,30 @@ $(function(){
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	
+
 	<div class="board-field" style="margin-top: 100px">
 		<div class="list-group"  >		
 			<div class="list-group-item-board-title">
 				<div class="board-title" style="border:1px ridge ;" >
-					<span class="board-category">[JAVASCRIPT]</span><a href="#">
-						스크립트 태그를 마지막에 쓰는 이유 </a> 
+				
+				<c:forEach items="${info }" var="i">
+				<input type="hidden" id="com_no"name="com_no" value="${i.com_no }">
+					<span class="board-category">[<c:choose>
+					
+						<c:when test="${i.com_ctg eq 1}">정보공유</c:when>
+						<c:when test="${i.com_ctg eq 2}">후기</c:when>
+						<c:otherwise>동행모집</c:otherwise>
+						
+						</c:choose>]</span><a href="#">
+						${i.com_title } </a> 
 				
 				<div class="board-meta"
 					style="font-weight: 400; font-size: 1.2rem; color: #404040" >
 					<p>
-						<i class="glyphicon glyphicon-user"></i> 미립 님 
+						<i class="glyphicon glyphicon-user"></i> ${i.user_nick } 님 
 						<i class="glyphicon glyphicon-comment"></i> 0
-						<i class="glyphicon glyphicon-ok"></i> 20 
-						<i class="glyphicon glyphicon-time"></i> 2016.03.31 21:55
+						<i class="glyphicon glyphicon-ok"></i>${i.com_hit } 
+						<i class="glyphicon glyphicon-time"></i> ${i.com_regdate }
 					    <i class="glyphicon glyphicon-thumbs-up"></i> 0
 						<i class="glyphicon glyphicon-thumbs-down"></i> 0
 					</p>
@@ -81,7 +108,7 @@ $(function(){
 				<div class="clear"></div>
 			</div>
 			<div class="list-group-item" style="height: 400px;">
-				<span class="board-contents" style="width:100%; height:1000px;" > 글의 정보가 나오는 곳. </span>
+				<span class="board-contents" style="width:100%; height:1000px;" > ${i.com_cont } </span>
 				
 			</div>
 			<div class="bottom" style="margin: 10px;margin-top: 20px; text-align: right; border:2px ridge ;">
@@ -92,23 +119,25 @@ $(function(){
 					<button class="btn btn-warning">
 						<i class="glyphicon glyphicon-thumbs-down"></i>비공감
 					</button>
+					
 				</p>
 				<a href="#" class="btn btn-default btn-xs pull-left">목록으로</a> 
-				<a href="#" class="btn btn-default btn-xs">수정</a> 
-				<a href="#" target="_action_frame_bbs" class="btn btn-default btn-xs" onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a> 
+				<a href="/web/modifyAction?no=${i.com_no }" class="btn btn-default btn-xs">수정</a> 
+				<a href="/web/deleteCom?no=${i.com_no }&user_id=userid" target="_action_frame_bbs" class="btn btn-default btn-xs" onclick="return confirm('정말로 삭제하시겠습니까?');">삭제</a> 
 				<a href="#" class="btn btn-default btn-xs">답변</a>
 				<a href="#" class="btn btn-default btn-xs">스크랩</a> 
+				</c:forEach>
 			</div>
 			<div class="clear"></div>
 		</div>
 	</div>
 	<div class="cmt_comm" >
-	<form action="#">
+	<form action="#" >
 		<fieldset class="fld_cmt">
 			<legend class="screen_out">댓글 작성</legend>
 			<textarea class="tf_cmt" cols="90" rows="5" title="한줄 토크를 달아주세요" id="reply_contents"name="reply_contents" >한줄 토크를 달아주세요! (300자)</textarea>
 			<!-- <button type="submit" class="img_sample btn_cmt">등록</button> -->
-			<input type="button" value="등록" style="position: ;top: 50px; width: 100px; height: 54px;">
+			<input type="button" value="등록" name="reply_Submit" id="reply_Submit" style="position: ;top: 50px; width: 100px; height: 54px;">
 			<p class="info_append">
 				<span class="screen_out">입력된 바이트 수 : </span>
 				<span class="txt_byte" id="replybyte" name="replybyte" >0</span> / 300자
@@ -229,14 +258,14 @@ $(function(){
 			</div>
 		</div>
 	</footer>
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+<!-- 	<!-- jQuery --> 
+<!-- 	<script src="js/jquery.js"></script> -->
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+<!-- 	<!-- Bootstrap Core JavaScript --> 
+<!-- 	<script src="js/bootstrap.min.js"></script> -->
 
-	<!-- Custom Theme JavaScript -->
-	<script src="js/clean-blog.min.js"></script>
+<!-- 	<!-- Custom Theme JavaScript --> 
+<!-- 	<script src="js/clean-blog.min.js"></script> -->
 </body>
 
 </html>

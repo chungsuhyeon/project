@@ -22,7 +22,7 @@
 			value="oracle.jdbc.OracleDriver" />
 		<beans:property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:orcl" />
-		<beans:property name="username" value="c##report"></beans:property>
+		<beans:property name="username" value="project"></beans:property>
 		<beans:property name="password" value="1234"></beans:property>
 	</beans:bean>
 
@@ -32,8 +32,8 @@
 			value="oracle.jdbc.OracleDriver" />
 		<beans:property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:orcl" />
-		<beans:property name="username" value="orange"></beans:property>
-		<beans:property name="password" value="orange"></beans:property>
+		<beans:property name="username" value="project"></beans:property>
+		<beans:property name="password" value="1234"></beans:property>
 	</beans:bean>
 
 	<!-- log4jdbc -->
