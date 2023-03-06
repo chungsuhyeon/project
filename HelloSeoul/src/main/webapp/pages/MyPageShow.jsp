@@ -32,7 +32,7 @@
 <body class='body'>
 	<!--Header Begin -->
 <%-- 	<jsp:include page="Header2.jsp" ></jsp:include> --%>
- 	<%@ include file="../Final_Pro/Header.jsp" %>
+ 	<%@ include file="../Final_Pro/header.jsp" %>
 	
 	<!-- 뒤로가기 & 플래너 수정 버튼 -->
 	<div class="div_buttons" align="right">

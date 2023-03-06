@@ -1,58 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
+<!-- Icon Error Begin-->
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=68fb4c87ba8765d71119fecd40096446"></script>
+<!-- Icon Error End-->
+
+<title>Hello, Seoul</title>
+
+<!--JS Section Begin -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
-<!-- <link rel="stylesheet" type="text/css" href="/boarding/resources/travel/css/common.css"> -->
-
-
 <script type="text/javascript">
 $(function(){
-	
-	$("#search").click(function(){
- 		if($('#locctg').val()=='choose'||$('#detailctg').val()=='choose'||$('#query').val().length==0){
- 		alert('?');
- 		return false;
- 		}else{
- 			//$('#폼아이디').submit();
- 		}
-	});
-	
-	$('#zzimcom').click(function(){
-		$("input[name='zzim']").each(function(){
-			if($(this).prop("checked")){
-				alert($(this).val());
-			}
-		});
-	});
-	
-	$.ajax({
-		type:'post',
-		url:'/web/testing',
-		dataType:'json',
-		success : function(r){
-			console.log(r);
-			$('#shit').text(r.loc_name);
-			 
-			
-		},
-		error : function(x){
-			console.log(x);
-		}
-	});
-});
+
 </script>
+<!--JS Section End -->
+
+<!-- Style Section Begin -->
+<link type="text/css" rel="stylesheet" href="/web/resources/final_style/css/bootstrap.css">
+<style type="text/css">
+
+</style>
+<!-- Style Section End -->
+
+
 </head>
-<jsp:include page="Header.jsp"></jsp:include>
 <body>
-<div id="text1" style="border: solid; height: 800px; width: 1300px; float: left; margin-left: 100px">
+	<header>
+	<jsp:include page="header.jsp"></jsp:include>
+	</header>
+	<section>
+	
+	<div id="text1" style="border: solid; height: 800px; width: 1300px; float: left; margin-left: 100px">
 <div>
 <table style="border: solid; float: left; width: 700px; height: 780px; margin-top: 10px; margin-left: 10px;;">
 
@@ -186,5 +171,7 @@ function setMarkers(map) {
 </div>
 <button id='zzimcom'>저장</button>
 </div>
+	
+	</section>
 </body>
 </html>
