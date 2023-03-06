@@ -140,7 +140,6 @@ public class HelloSeoulController {
 		
 		return userJjimList;
 	}
-	
-	// 찜 관련
+
 	
 }
