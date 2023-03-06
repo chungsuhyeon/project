@@ -17,13 +17,7 @@
 	   $("input#month").val('');
 	   $("input#day").val('');
 	   $("input#year").focus();
-   }  
-
-<<<<<<< HEAD
-	
-=======
-	 
->>>>>>> refs/heads/main
+   } 
 	   
    $(function(){   
 	   $("select[name='email3']").change(function(){
