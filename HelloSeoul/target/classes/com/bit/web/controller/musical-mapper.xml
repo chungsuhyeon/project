@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.boardMemberDao">
+
+	<select id="selectMusicalList" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST
+	</select>
+	
+<!-- 	<select id="selectSeqNumber" resultType="Integer"> -->
+<!-- 		SELECT MUSICALLIST_DWQ.NEXT -->
+<!-- 	</select> -->
+
+</mapper>

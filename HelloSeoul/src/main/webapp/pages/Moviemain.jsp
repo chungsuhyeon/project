@@ -23,6 +23,13 @@
 <script type="text/javascript" src="/web/resources/ticketMain2/New/Js/jquery.lazy.min-1.js"></script>
 <script type="text/javascript" src="/web/resources/ticketMain2/New/Js/Main.js?v=391"></script>
 
+<script type="text/javascript">
+$(function(){
+	$("div a#img").click(function(){
+		$("form").submit();
+	});
+});
+</script>
 
 <link rel="stylesheet" type="text/css"
 	href="/web/resources/ticketMain2/New/Css/reset.css">
@@ -34,7 +41,9 @@
 	href="/web/resources/ticketMain2/New/Css/common-1.css?v=17">
 <link rel="stylesheet" type="text/css"
 	href="/web/resources/ticketMain2/New/Css/main2-1.css?v=2020012203">
-
+	
+	
+<form role="form" action="/web/MusicalList">
 <div class="m2-kv-hidden">   <!-- 상단 돌아가는 컨텐츠 -->
 		<div class="m2-kv-wrap">
 			<div class="m2-kv">
@@ -42,7 +51,7 @@
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<a href="#"
-								target="_self" title="스즈메의 문단속"><img
+								target="_self" title="스즈메의 문단속" id="img"><img
 								src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86815/86815_320.jpg"
 								alt="">
 							<div class="m2-kvs-txt">
@@ -446,7 +455,7 @@
 			</div>   <!-- /지역별 추천 3개 -->
 		</div>
 	</section>
-
+	</form>
 <script type="text/javascript">
 		$(function() {
 			$(".lazyload").Lazy(

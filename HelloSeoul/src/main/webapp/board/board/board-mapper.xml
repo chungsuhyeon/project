@@ -38,7 +38,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	  SELECT PASSWORD FROM BOARDMEMBER
 	  WHERE ID=#{id}
 	</select>
-	
+	 
 	<select id="getPostSequence" resultType="Integer">
 		select
 		BOARDMEMBER_SEQ.nextval from dual
