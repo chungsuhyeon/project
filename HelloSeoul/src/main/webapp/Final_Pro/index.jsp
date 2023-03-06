@@ -58,7 +58,7 @@ img{
 </head>
 <body class='bg-success'>
 	<header>
-	 	<jsp:include page="header.jsp"></jsp:include>
+<%-- 	 	<jsp:include page="header.jsp"></jsp:include> --%>
 	</header>
 	<section class='section'>
 		<div class='container-fluid'>
