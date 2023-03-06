@@ -160,7 +160,7 @@
 		
 		<!-- 플래너 생성 버튼 및 찜 보기 버튼 -->
 		<div align="right" style="hight:10px; width: 100%; margin-top:50px; margin-left:auto; margin-right:auto;">
-			<a href="MypageJjim.jsp">찜 보기</a>
+			<a href="/web/pages/MypageJjim.jsp">찜 보기</a>
 			&nbsp;&nbsp;&nbsp;
 			<a href="MyPagedreate.jsp">일정 생성</a>
 		</div>

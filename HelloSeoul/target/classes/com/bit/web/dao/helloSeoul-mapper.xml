@@ -15,6 +15,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from userboard 
 		where user_id = #{value}
 	</select>
+	
+	<select id="getUserJjimList" parameterType="String" resultType="mypageJjim">
+		select * 
+		from jjim 
+		where user_id = #{value}
+	</select>
 
 </mapper>
 

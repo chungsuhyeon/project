@@ -3,6 +3,7 @@ package com.bit.web.controller;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bit.web.dao.HelloSeoulDao;
@@ -38,6 +42,14 @@ public class HelloSeoulController {
 		} else {
 			return "redirect:/pages/plogin.jsp";
 		}
+	}
+	
+	// 로그아웃
+	@RequestMapping("HelloSeoulLogout")
+	public ModelAndView BoardLogout(HttpServletRequest request) {
+		request.getSession().setAttribute("user_id", null);
+		request.getSession().setMaxInactiveInterval(0);		
+		return new ModelAndView("pages/MainPage");
 	}
 	
 	// 마이페이지 메인화면으로
@@ -119,6 +131,14 @@ public class HelloSeoulController {
 	}
 	
 	// 찜 보기 화면
-
+	@PostMapping(value = "ajaxMypageJjim")
+	@ResponseBody
+	public List<Object> mypageJjimListLoad(@RequestParam(value = "user_id")String user_id){
+		System.out.println("HelloSeoulController mypageJjimListLoad user_id " + user_id);
+		List<Object> userJjimList = helloDao.getUserJjimList(user_id);
+		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
+		
+		return userJjimList;
+	}
 	
 }

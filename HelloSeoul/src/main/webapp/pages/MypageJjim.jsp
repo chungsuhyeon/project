@@ -42,13 +42,30 @@
 		
 	});
 	
+	
+	$('document').ready(function(){
+		$.ajax({
+			url: '/web/ajaxMypageJjim',
+			type: 'post',
+			data: {user_id:'${user_id}'},
+			dataType: 'json',
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			success: function(result){
+				console.log(result);
+			},
+			error: function(){
+				alert("error : " + error);
+			}
+		}); // ajax
+	});
+	
+	
 </script>
 
 </head>
 
 <body>
 	<jsp:include page="Header.jsp"></jsp:include>
-	
 	<!-- 뒤로가기 & 플래너 수정 버튼 -->
 	<div class="div_buttons" align="right">
 		<button onclick="location.href='MyPageMain.jsp';">뒤로가기</button>

@@ -5,9 +5,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 <!-- DB설정(Connection) -->
 	<typeAliases>
-	<!-- 
-		<typeAlias type="com.bit.web.vo.Bean" alias="memBean"/>
-		 -->
+		<typeAlias type="com.bit.web.vo.MypageJjimBean" alias="mypageJjim"/>
 	</typeAliases>
 	
 	<mappers>

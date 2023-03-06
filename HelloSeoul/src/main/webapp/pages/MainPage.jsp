@@ -4,14 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="euc-kr">
+<meta charset="UTF-8">
 <title>Hello~ Seoul</title> <!-- 15자 내외로 입력 -->
 <link type="text/css" rel="stylesheet" href="/web/resources/helloseoul/css/home/mainReset.css">
 <link type="text/css" rel="stylesheet" href="/web/resources/helloseoul/css/home/main.css">
 </head>
 <body>
 	<jsp:include page='Header.jsp'></jsp:include>
-	<div id="wrap">		
+	<div id="wrap">
 		<div id="container">		
 			<div class="cSection gray" style="background-image: url('/web/resources/helloseoul/img/backmain.jpg');">
 				<div class="cSub_support_wrap">

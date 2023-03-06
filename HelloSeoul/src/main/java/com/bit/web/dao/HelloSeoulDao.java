@@ -1,6 +1,7 @@
 package com.bit.web.dao;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -23,5 +24,7 @@ public class HelloSeoulDao extends SqlSessionDaoSupport{
 		return this.getSqlSession().selectOne("getUserInfo", id);		
 	}
 	
-	
+	public List<Object> getUserJjimList(String id){
+		return this.getSqlSession().selectList("getUserJjimList", id);
+	}
 }
