@@ -19,7 +19,37 @@
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function(){
+	$("#search").click(function(){
+ 		if($('#locctg').val()=='choose'||$('#detailctg').val()=='choose'||$('#query').val().length==0){
+ 		alert('?');
+ 		return false;
+ 		}else{
+ 			//$('#폼아이디').submit();
+ 		}
+	});
 	
+	$('#zzimcom').click(function(){
+		$("input[name='zzim']").each(function(){
+			if($(this).prop("checked")){
+				alert($(this).val());
+			}
+		});
+	});
+	
+	$.ajax({
+		type:'post',
+		url:'/web/testing',
+		dataType:'json',
+		success : function(r){
+			console.log(r);
+			$('#shit').text(r.loc_name);
+			 
+			
+		},
+		error : function(x){
+			console.log(x);
+		}
+	});
 });
 </script>
 <!--JS Section End -->

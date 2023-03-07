@@ -72,8 +72,8 @@ th,td{
 			<!-- Nav Bar -->
 			<div>
 				<ol class="breadcrumb">
-  					<li class="breadcrumb-item"><a href="#">Home</a></li>
-  					<li class="breadcrumb-item"><a href="#">Library</a></li>
+  					<li class="breadcrumb-item"><a href="./index.jsp">Home</a></li>
+  					<li class="breadcrumb-item"><a href="./myPageCreate.jsp">Create</a></li>
 				</ol>
 			</div>
 			<!-- Contents Div Box -->

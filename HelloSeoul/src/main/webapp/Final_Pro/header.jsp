@@ -24,16 +24,16 @@ $(function(){
 			 document.location.href ="join.jsp";
 		}
 		else if(($(this).attr('id'))=='login'){
-			document.location.href ="join.jsp";
+			document.location.href ="login.jsp";
 		}
 		else if(($(this).attr('id'))=='logout'){
-			document.location.href ="join.jsp";
+			document.location.href ="login.jsp";
 		}
 		else if(($(this).attr('id'))=='comm'){
-			document.location.href ="join.jsp";
+			document.location.href ="commList.jsp";
 		}
 		else if(($(this).attr('id'))=='mypage'){
-			document.location.href ="join.jsp";
+			document.location.href ="myPageMain.jsp";
 		}
 	});
 });
@@ -59,7 +59,7 @@ $(function(){
 <header>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   	<div class='container-fluid'>
-    <a class="logo navbar-brand" href="#"><img alt="" src="/web/resources/final_style/img/seoul_logo.png"></a>
+    <a class="logo navbar-brand" href="./index.jsp"><img alt="" src="/web/resources/final_style/img/seoul_logo.png"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -73,7 +73,7 @@ $(function(){
        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">FOOD</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="./ctgPage.jsp">Action</a>
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something else here</a>
             <div class="dropdown-divider"></div>
@@ -105,11 +105,11 @@ $(function(){
         </li>
       </ul>
       <div class="setbar d-flex">
-       	<button type="button" class="btn btn-dark">Community</button>
+       	<button type="button" class="btn btn-dark" id="comm">Community</button>
        	<button type="button" class="btn btn-dark">Logout</button>
-       	<button type="button" class="btn btn-dark">Login</button>
-       	<button type="button" class="btn btn-dark">Join</button>
-       	<button type="button" class="btn btn-dark">MyPage</button>
+       	<button type="button" class="btn btn-dark" id="login">Login</button>
+       	<button type="button" class="btn btn-dark" id="join">Join</button>
+       	<button type="button" class="btn btn-dark" id='mypage'>MyPage</button>
       </div>
 	</div>
   </div>
