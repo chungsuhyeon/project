@@ -31,7 +31,9 @@
 </style>
 
 <script>
+	
 	$(function(){
+		// tab bar
 		$('.tabcontent > table').hide();
 		$('.tabnav a').click(function () {
 			$('.tabcontent > table').hide().filter(this.hash).fadeIn();
@@ -40,7 +42,82 @@
 			return false;
 		}).filter(':eq(0)').click();
 		
-	});
+		
+	}); // function
+	
+	$('document').ready(function(){
+		$.ajax({
+			url: '/web/ajaxMypageJjim',
+			type: 'post',
+			data: {user_id:'${user_id}'},
+			dataType: 'json',
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			success: function(result){				
+				var finalStr = "";
+				var tab1 = "";
+				var tab2 = "";
+				var tab3 = "";
+				var tab4 = "";
+				var tab5 = "";
+				
+				$(result).each(function(index, list){
+					if (list['loc_ctg1'] == "음식점"){
+						tab1 += '<tr><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab1 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab1 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab1 += '</span></td></tr>';			
+					}
+					else if (list['loc_ctg1'] == "관광지"){
+						tab2 += '<tr><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab2 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab2 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab2 += '</span></td></tr>';
+					}
+					else if (list['loc_ctg1'] == "쇼핑"){
+						tab3 += '<tr><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab3 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab3 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab3 += '</span></td></tr>';
+					}					
+					else if (list['loc_ctg1'] == "볼거리"){
+						tab4 += '<tr><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab4 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab4 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab4 += '</span></td></tr>';
+					}					
+					else { // 티켓인 경우
+						tab5 += '<tr><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab5 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab5 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab5 += '</span></td></tr>';	
+					}					
+				});
+				
+				finalStr += '<div class="tabcontent" id="JjimlocalData">';
+				finalStr += '<table id="tab01" class="contents_table"><tbody>' + tab1 + '</tbody></table>';
+				finalStr += '<table id="tab02" class="contents_table"><tbody>' + tab2 + '</tbody></table>';
+				finalStr += '<table id="tab03" class="contents_table"><tbody>' + tab3 + '</tbody></table>';
+				finalStr += '<table id="tab04" class="contents_table"><tbody>' + tab4 + '</tbody></table>';
+				finalStr += '<table id="tab05" class="contents_table"><tbody>' + tab5 + '</tbody></table>';
+				finalStr += '</div>';
+							
+				$("#table_set").append(finalStr);
+				
+				// 첫번째 tab 내용 보이기
+				$('.tabcontent > table').hide();
+				$('.tabnav a').filter(':eq(0)').click();
+			},
+			error: function(){
+				alert("error : " + error);
+			}
+		}); // ajax
+	}); // $('document').ready
+	
+	function load_jjim_info(){		
+		alert($("input[name='select_location']").parent().children(":eq(0)"));
+		console.log($("input[name='select_location']").parent().children(":eq(0)"));
+	}
+	
 	
 </script>
 
@@ -48,16 +125,14 @@
 
 <body>
 	<jsp:include page="Header.jsp"></jsp:include>
-	
 	<!-- 뒤로가기 & 플래너 수정 버튼 -->
 	<div class="div_buttons" align="right">
 		<button onclick="location.href='MyPageMain.jsp';">뒤로가기</button>
 	</div>
 	
-	<!-- 메인 플래너 내용 -->	
+	<!-- 메인 플래너 내용 -->
 	<div class="main_div">
-		
-		
+			
 		<!--tab-->
 		<div class="tab">
 			<ul class="tabnav">
@@ -67,65 +142,15 @@
 				<li><a href="#tab04">볼거리</a></li>
 				<li><a href="#tab05">티켓팅</a></li>
 			</ul>
-			<div class="table_set">
-				<!-- table div -->
-				<div class="tabcontent">
-					<!-- 일정 table -->
-					<table id='tab01' class="contents_table">
-						<tbody>
-							<tr>
-								<td><input type="checkbox" name="select_location" value="장소코드1"></td>
-								<td>
-									<a href="#">음식점 찜 장소 명</a>
-									<br>
-									<span style="font-size: 5px">지역 구 > 장소 카테고리 > 세부 카테고리 > </span>
-								</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="select_location" value="장소코드2"></td>
-								<td>
-									<a href="#">음식점 찜 장소 명</a>
-									<br>
-									<span style="font-size: 5px">지역 구 > 장소 카테고리 > 세부 카테고리 > </span>
-								</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" name="select_location" value="장소코드3"></td>
-								<td>
-									<a href="#">음식점 찜 장소 명</a>
-									<br>
-									<span style="font-size: 5px">지역 구 > 장소 카테고리 > 세부 카테고리 > </span>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table id='tab02' class="contents_table">
-						<tbody>
-							<tr>
-								<td> 1번째 행 </td>
-								<td><a>두번째날 장소명</a></td>
-								<td> 세번째 열 </td>
-							</tr>
-						</tbody>
-					</table>
-					<table id='tab03' class="contents_table">
-						<tbody>
-							<tr>
-								<td> 1번째 행 </td>
-								<td><a>세번째날 장소명</a></td>
-								<td> 세번째 열 </td>
-							</tr>
-						</tbody>
-					</table>
-				
-				</div>
-			</div>
+			<div class="table_set" id="table_set"></div>
+			
 			
 			<div align="right" style="margin: 20px; width:95%; border: 1px solid #ddd">
 				<button class="create_planner_button" onclick="">찜 삭제</button>
 			</div>
 		</div>
-		
+	
+	
 		<!-- 상세정보 -->
 		<div class="detail_info">
 			<table style="margin: 20px; width:95%; border: 1px solid #ddd; align-content: center;">

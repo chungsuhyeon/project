@@ -15,19 +15,13 @@
 <link rel="stylesheet" type="text/css" href="/boarding/resources/travel/css/art.css">
 <link rel="stylesheet" type="text/css" href="/web/resources/hellomypage/css/PagingStyle.css">
 
-<script type="text/javascript">
-	$(function(){
-		
-	});
-</script> 
-
 <style type="text/css">	
  	div {
 		border: 1px solid;
 	}
 	
 	.div_infomation {
-		height: 100px;
+		height: 120px;
 		padding:10px;
 		margin-top: 10px;
 	}
@@ -40,12 +34,6 @@
 		border: 1px solid;
 		padding: 10px;
 	}
-/* 	
-	table {
-	    margin-left:auto; 
-	    margin-right:auto;
-	}
-*/
 
 	.pagination {
 	    clear: both;
@@ -138,6 +126,13 @@
 
 </style>
 
+<script type="text/javascript">
+	$(function(){
+		
+	});
+	
+</script> 
+
 </head>
 
 <body>
@@ -147,15 +142,27 @@
 
 		<!-- 회원정보 div -->
 		<div class='div_infomation' id="text1">
-			<div id='nickName' style="height: 75px; width: 33%; float:left;"> 닉네임 님</div>
-			<div id='nickName' style="height: 75px; width: 66%; float:right;"> 회원정보 관련 내용</div>
+			<div id='nickName' style="height: 50px;">
+				<font style="font-size: 30px;">${user_nickName} 님</font>
+			</div>
+			<div id='nickName' style="height: 50px; margin-top: 10px;">
+				Name : ${userInfo.USER_NAME}
+				&nbsp;&nbsp;&nbsp;
+				Nationality : ${userInfo.USER_NATION}
+				&nbsp;&nbsp;&nbsp;
+				Age : ${userInfo.USER_AGE}
+				&nbsp;&nbsp;&nbsp;
+				Purpose of visit : ${userInfo.USER_PP}
+				&nbsp;&nbsp;&nbsp;
+				1st place in tourism : ${userInfo.USER_FIRST}
+			</div>
 		</div>
 		
 		<!-- 플래너 생성 버튼 및 찜 보기 버튼 -->
 		<div align="right" style="hight:10px; width: 100%; margin-top:50px; margin-left:auto; margin-right:auto;">
-			<a href="MypageJjim.jsp">찜 보기</a>
+			<a href="/web/pages/MypageJjim.jsp">찜 보기</a>
 			&nbsp;&nbsp;&nbsp;
-			<a href="MyPagedreate.jsp?userId=#">일정 생성</a>
+			<a href="MyPagedreate.jsp">일정 생성</a>
 		</div>
 		
 		
@@ -194,89 +201,25 @@
 				</i>
 			</button>
 		</div>
-<!-- 		
-		<table>
-			<tbody>
-				<tr>
-					<td>
-						<button class="planner_list" onclick="">
-							<i>
-								플래너 title 1 <br/>
-								여행 지역 <br/>
-								여행 시작날짜 ~ 끝날짜 <br/>
-								디데이 계산
-							</i>
-						</button>
-					</td>
-					<td>
-						<button class="planner_list" onclick="">
-							<i>
-								플래너 title 1 <br/>
-								여행 지역 <br/>
-								여행 시작날짜 ~ 끝날짜 <br/>
-								디데이 계산
-							</i>
-						</button>
-					</td>
-					<td>
-						<button class="planner_list" onclick="">
-							<i>
-								플래너 title 1 <br/>
-								여행 지역 <br/>
-								여행 시작날짜 ~ 끝날짜 <br/>
-								디데이 계산
-							</i>
-						</button>
-					</td>
-					<td>
-						<button class="planner_list" onclick="">
-							<i>
-								플래너 title 1 <br/>
-								여행 지역 <br/>
-								여행 시작날짜 ~ 끝날짜 <br/>
-								디데이 계산
-							</i>
-						</button>
-					</td>
-				</tr>
-			</tbody>
+
 		
-		</table>
- -->		
-		<!-- 페이징 -->	
-<!-- 		
-	 	<div class="container xlarge" style="margin-top: 50px; align-content: center;">
-			<ul>
-				<li><a href="#">이전</a></li>
-				<li><a href="#">1</a></li>
-				<li class="active"><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
-				<li><a href="#">4</a></li>
-				<li><a href="#">...</a></li>
-				<li><a href="#">10</a></li>
-				<li><a href="#">다음</a></li>
-			</ul>
-		</div>
-	 -->	
-		
-		
+		<!-- 공공데이터 페이지 UI -->
 		<nav class="pagination">
-			<a href="#" onclick="updatePage(1); return false;" class="control first">처음 페이지</a>
-			<a href="#" onclick="updatePage(1); return false;" class="control prev">이전 페이지</a>
-			<a href="#" onclick="updatePage(1); return false;">1</a>
+			<a href="#" onclick="" class="control first">처음 페이지</a>
+			<a href="#" onclick="" class="control prev">이전 페이지</a>
+			<a href="#" onclick="">1</a>
 			<strong class="active">2</strong>
-			<a href="#" onclick="updatePage(3); return false;">3</a>
-			<a href="#" onclick="updatePage(4); return false;">4</a>
-			<a href="#" onclick="updatePage(5); return false;">5</a>
-			<a href="#" onclick="updatePage(6); return false;">6</a>
-			<a href="#" onclick="updatePage(7); return false;">7</a>
-			<a href="#" onclick="updatePage(8); return false;">8</a>
-			<a href="#" onclick="updatePage(9); return false;">9</a>
-			<a href="#" onclick="updatePage(10); return false;">10</a>
-			<a href="#" onclick="updatePage(11); return false;" class="control next">다음 페이지</a>
-			<a href="#" onclick="updatePage(1841); return false;" class="control last">마지막 페이지</a>
+			<a href="#" onclick="">3</a>
+			<a href="#" onclick="">4</a>
+			<a href="#" onclick="">5</a>
+			<a href="#" onclick="">6</a>
+			<a href="#" onclick="">7</a>
+			<a href="#" onclick="">8</a>
+			<a href="#" onclick="">9</a>
+			<a href="#" onclick="">10</a>
+			<a href="#" onclick="" class="control next">다음 페이지</a>
+			<a href="#" onclick="" class="control last">마지막 페이지</a>
 		</nav>
-		
 		
 	</div>
 	
