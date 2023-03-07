@@ -16,18 +16,9 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!--db login -->
-<<<<<<< HEAD
-	<beans:bean id="dsr"
-		class="org.apache.commons.dbcp.BasicDataSource">
-		<beans:property name="driverClassName"
-			value="oracle.jdbc.OracleDriver" />
-		<beans:property name="url"
-			value="jdbc:oracle:thin:@localhost:1521:orcl" />
-=======
 	<beans:bean id="dsr" class="org.apache.commons.dbcp.BasicDataSource">
 		<beans:property name="driverClassName" value="oracle.jdbc.OracleDriver" />
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 		<beans:property name="username" value="blue"></beans:property>
 		<beans:property name="password" value="1234"></beans:property>
 	</beans:bean>
