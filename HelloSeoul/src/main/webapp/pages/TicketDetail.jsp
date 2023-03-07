@@ -16,18 +16,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--   <meta property="og:title" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉"><meta property="og:type" content="website"><meta property="og:image" content="http://tkfile.yes24.com/upload2/PerfBlog/202301/20230125/20230125-44090.jpg"><meta property="og:url" content="http://ticket.yes24.com/Perf/44090"><meta property="og:site_name" content="YES24 티켓"><meta property="og:description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 "><meta property="fb:app_id" content="530899446925997"> -->
-<!--   <meta name="description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 "> -->
+  <meta property="og:title" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉"><meta property="og:type" content="website"><meta property="og:image" content="http://tkfile.yes24.com/upload2/PerfBlog/202301/20230125/20230125-44090.jpg"><meta property="og:url" content="http://ticket.yes24.com/Perf/44090"><meta property="og:site_name" content="YES24 티켓"><meta property="og:description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 "><meta property="fb:app_id" content="530899446925997">
+  <meta name="description" content="뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 ">
   <!--#### Open Graph Meta ####-->
-<!--   <meta property="og:title" content="YES24 티켓"> -->
+  <meta property="og:title" content="YES24 티켓">
   <meta property="og:description" content="">
   <meta property="og:type" content="website">
-<!--   <meta property="og:url" content="http://ticket.yes24.com/New/Main.aspx"> -->
-<!--   <meta property="og:image" content="http://tkfile.yes24.com/imgNew/yes24ticket.gif"> -->
-<!--   <meta property="og:site_name" content="YES24 티켓"> -->
+  <meta property="og:url" content="http://ticket.yes24.com/New/Main.aspx">
+  <meta property="og:image" content="http://tkfile.yes24.com/imgNew/yes24ticket.gif">
+  <meta property="og:site_name" content="YES24 티켓">
   <!--#### Open Graph Meta ####-->
 
-<!--   <title>YES24 티켓 / 뮤지컬 〈루드윅 : 베토벤 더 피아노〉</title> -->
+  <title>YES24 티켓 / 뮤지컬 〈루드윅 : 베토벤 더 피아노〉</title>
 
   <link rel='stylesheet' type='text/css' href='/web/resources/ticketDetail/New/Css/Dreset.css'>
   <link rel='stylesheet' type='text/css' href='/web/resources/ticketDetail/New/Css/Dcommon.css?v=17'> 
@@ -58,8 +58,8 @@
 
   
 <body>
-
-<jsp:include page="Header.jsp"></jsp:include> 
+<!--  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"뮤지컬 〈루드윅 : 베토벤 더 피아노〉","startDate":"2022-12-20","endDate":"2023-03-12","location":{"@type":"Place","name":"예스24스테이지 1관","address":{"@type":"PostalAddress","streetAddress":"1관 예스24스테이지 (동숭동) 21 대학로12길","addressLocality":"종로구","postalCode":"03086","addressRegion":"서울","addressCountry":"KR"}},"image":"http://tkfile.yes24.com/upload2/PerfBlog/202301/20230125/20230125-44090.jpg","description":"뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 ","offers":{"@type":"Offer","url":"http://ticket.yes24.com/Perf/44090","price":"44000","priceCurrency":"KRW","availability":"https://schema.org/InStock","validFrom":"2023-01-10T16:00"},"performer":{"@type":"Person","name":["김주호","박민성","테이","백인태","김준영","정재환","조훈","임세준","이은율","이지연","유소리","김시훈","박이든","양찬영","조재철","크리스 영"]}}</script>
+   이건 뭔지 잘 모르겠음 --> 
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -110,19 +110,15 @@
 		</div>
 	</div>
 </div>
-<c:forEach var="i" items="${mslist}" varStatus="cnt">
+
 <div class="renew-wrap">
 	<div class="renew-content">
 		<div class="rn-02"><!--제목-->
 			<p class="rn-big-title">뮤지컬 〈루드윅 : 베토벤 더 피아노〉</p>   <!-- 뮤지컬 + 컨텐츠제목 포스터 위 메인 제목 -->
 			<div class="rn-product-short-data">
-				<p><span class="ps-date">2022.12.20 ~ 2023.03.12</span>
-<!-- 				<a href="#" id="ps-location"> -->
-				<span class="ps-location">예스24스테이지 1관</span>
-<!-- 				</a> -->
-				</p>  <!-- 상영기간 / 상영장소 + 상영관 -->
+				<p><span class="ps-date">2022.12.20 ~ 2023.03.12</span><a href="#" id="ps-location"><span class="ps-location">예스24스테이지 1관</span></a></p>  <!-- 상영기간 / 상영장소 + 상영관 -->
 	</div>	
-<!-- 	<img src="http://tkfile.yes24.com/upload2/PerfBlog/202302/20230220/20230220-44090.jpg" alt="" class="copy-url"> -->
+	<img src="http://tkfile.yes24.com/upload2/PerfBlog/202302/20230220/20230220-44090.jpg" alt="" class="copy-url">
 </div>
 
 <div class="movie-pop-wrap">
@@ -177,7 +173,7 @@
 						<dt>관람시간</dt>
 						<dd>&nbsp;110분</dd>   <!-- 관람시간 -->
 						<dt>출연</dt><!-- 출연자는 a태그 달지않고 출연진만 입력해도 무관 -->
-						<dd>&nbsp;김주호,박민성,테이,백인태,김준영,정재환,조훈,임세준,이은율,이지연,유소리,김시훈,박이든,양찬영,조재철,크리스 영</dd>
+						<dd>&nbsp;<a href='https://www.google.com/search?q=김주호' target='_blank' class='rn-product-peole'>김주호</a><a href='https://www.google.com/search?q=박민성' target='_blank' class='rn-product-peole'>박민성</a><a href='https://www.google.com/search?q=테이' target='_blank' class='rn-product-peole'>테이</a><a href='https://www.google.com/search?q=백인태' target='_blank' class='rn-product-peole'>백인태</a><a href='https://www.google.com/search?q=김준영' target='_blank' class='rn-product-peole'>김준영</a><a href='https://www.google.com/search?q=정재환' target='_blank' class='rn-product-peole'>정재환</a><a href='https://www.google.com/search?q=조훈' target='_blank' class='rn-product-peole'>조훈</a><a href='https://www.google.com/search?q=임세준' target='_blank' class='rn-product-peole'>임세준</a><a href='https://www.google.com/search?q=이은율' target='_blank' class='rn-product-peole'>이은율</a><a href='https://www.google.com/search?q=이지연' target='_blank' class='rn-product-peole'>이지연</a><a href='https://www.google.com/search?q=유소리' target='_blank' class='rn-product-peole'>유소리</a><a href='https://www.google.com/search?q=김시훈' target='_blank' class='rn-product-peole'>김시훈</a><a href='https://www.google.com/search?q=박이든' target='_blank' class='rn-product-peole'>박이든</a><a href='https://www.google.com/search?q=양찬영' target='_blank' class='rn-product-peole'>양찬영</a><a href='https://www.google.com/search?q=조재철' target='_blank' class='rn-product-peole'>조재철</a><a href='https://www.google.com/search?q=크리스 영' target='_blank' class='rn-product-peole'>크리스 영</a></dd>
 						<dt id="dtPrice">가격</dt>
 						<dd id="divPrice" class="rn-product-price">
 							<ul class="rn-product-price1 scroll-color">
@@ -198,7 +194,6 @@
 <!-- 						</dd> -->
 					</dl>					
 				</div>
-				</c:forEach>
                 <!--포인트-->
 				
 <!-- 				<div class="rn-product-area3">공연시간안내, 배송정보 -->

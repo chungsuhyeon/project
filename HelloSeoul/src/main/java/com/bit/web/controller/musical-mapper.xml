@@ -8,6 +8,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST
 	</select>
 	
+	<select id="selectMusicalList2" resultType="MusicalBean">
+		SELECT TITLE,IMGSRC,PTITLE FROM MUSICALLIST2
+	</select>
+	
+	<select id="selectMusicalList3" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST3
+	</select>
+	
+	<select id="selectMusicalList4" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE,RANKING FROM MUSICALLIST4
+	</select>
+	
+	<select id="selectMusicalList5" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST5
+	</select>
+	
+	
+	
 <!-- 	<select id="selectSeqNumber" resultType="Integer"> -->
 <!-- 		SELECT MUSICALLIST_DWQ.NEXT -->
 <!-- 	</select> -->
