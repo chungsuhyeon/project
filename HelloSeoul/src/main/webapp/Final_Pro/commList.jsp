@@ -33,7 +33,7 @@ $(function(){
 </head>
 <body>
 	<header>
-<%-- 	<jsp:include page="header.jsp"></jsp:include> --%>
+	<jsp:include page="header.jsp"></jsp:include>
 	</header>
 	<section>
 	<div class="board-field"  style="margin-top: 50px">

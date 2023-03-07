@@ -17,9 +17,26 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
-$(function(){
-	
-});
+	$(function(){
+		$("button").click(function(){
+			if(($(this).attr('id'))=='login'){
+				if($("input#inputID").val().length==0 || $("input#inputPassword").val().length==0){
+	    	        alert('id or password check');
+	    	    	$("input#inputID").val('');
+	    	    	$("input#inputPassword").val('');
+	    	    	$("input#inputID").focus();
+	    	    	return false;
+	    	    }
+	    		$("form").submit();
+			}
+			else if(($(this).attr('id'))=='join'){
+				document.location.href ="/web/Final_Pro/join.jsp";
+			}
+			else if(($(this).attr('id'))=='findID'){
+				document.location.href ="";
+			}
+		});
+	});
 </script>
 <!--JS Section End -->
 
@@ -43,16 +60,16 @@ $(function(){
 	</header>
 	<section>
 		<div>
-			<form>
+			<form method="post" action="${pageContext.request.contextPath}/siteCheck">
 				<div class="form-group">
-  				<label class="col-form-label col-form-label-lg mt-4" for="inputLarge">ID</label>
-  				<input class="form-control form-control-lg" type="text" placeholder="ID" id="inputLarge">
-  				<label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Password</label>
-  				<input class="form-control form-control-lg" type="text" placeholder="Password" id="inputLarge">
+	  				<label class="col-form-label col-form-label-lg mt-4" for="inputLarge">ID</label>
+	  				<input class="form-control form-control-lg" type="text" placeholder="ID" id="inputID" name="user_id">
+	  				<label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Password</label>
+	  				<input class="form-control form-control-lg" type="password" placeholder="Password" id="inputPassword" name="password">
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
-				<button type="button" class="btn btn-success">Success</button>
-				<button type="button" class="btn btn-danger">Danger</button>
+				<button type="submit" class="btn btn-primary" id="login">Submit</button>
+				<button type="button" class="btn btn-success" id="join">Success</button>
+				<button type="button" class="btn btn-danger" id="findID">Danger</button>
 			</form>
 		</div>
 	</section>
