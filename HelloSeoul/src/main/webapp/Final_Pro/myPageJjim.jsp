@@ -122,7 +122,7 @@ $(function(){
 			</div>
 			<!-- 지도 -->
 			<div class='mapbar col-4'>
-				<div class='div_map' id="map"></div>
+				<div class='div_map' id="map" style="width: 100%; height: 100%;"></div>
 				<script>
 					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			    	mapOption = { 

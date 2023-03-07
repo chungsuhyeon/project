@@ -86,17 +86,16 @@ $(function(){
 				</div>
 				<div class='mapbar col-6'>
 					<!-- map -->
-					<div class='div_map' id="map"></div>
-					<script>
-						var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-			    		mapOption = { 
-				        center: new kakao.maps.LatLng(37.4946287, 127.0276197), // 지도의 중심좌표
-				        level: 3 // 지도의 확대 레벨
-				    	};
-					
-						// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-						var map = new kakao.maps.Map(mapContainer, mapOption); 
-					</script>
+			<div id="map" style="border: solid; margin-top: 10px; float: right; margin-right: 20px"></div>
+<script>
+var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+	level: 3 //지도의 레벨(확대, 축소 정도)
+};
+
+var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+		</script>
 				</div>
 			</div>
 		</div>		
