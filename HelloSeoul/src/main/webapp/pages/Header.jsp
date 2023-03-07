@@ -91,46 +91,8 @@ $(function(){
 					</c:otherwise>
 				</c:choose>
 			</div>
-			
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 		</div>
-<<<<<<< HEAD
-	</div>
-	<div id="shop">
-	<h2><a href="#">■SHOP</a></h2>
-		<div>
-		<a href="#">SHOP1&nbsp;&nbsp;</a>
-		<a href="#">SHOP2&nbsp;&nbsp;</a>
-		<a href="#">SHOP3</a>
-		</div>
-	</div>
-	<div id="hotspot">
-	<h2><a href="#">■HOTSPOT</a></h2>
-		<div>
-		<a href="#">PLAYING&nbsp;&nbsp;</a>
-		<a href="#">PLAYING&nbsp;&nbsp;</a>
-		<a href="#">PLAYING</a>
-		</div>
-	</div>
-	<div id="ticket">
-	<h2><a href="#">■TICKET</a></h2>
-	</div>
-</div>
-<div id='controlbutton'>
-<c:if test="${id=='test'}">
-<div><a href="#">LOGIN</a></div>
-<div><a href="#">JOIN</a></div>
-</c:if>
-<c:if test="${id!='test'}">
-<div><a href="#">COM</a></div>
-<div><a href="#">LOGOUT</a></div>
-<div><a href="#">MYPAGE</a></div>
-</c:if>
-</div>
-</div>
-</header>
-=======
+
 	</header>
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 </body>
 </html>
