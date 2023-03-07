@@ -18,9 +18,78 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
-$(function(){
+	$(function(){
+		
+	});
 	
-});
+	$('document').ready(function(){
+		$.ajax({
+			url: '/web/ajaxMypageJjim',
+			type: 'post',
+			data: {user_id:'${user_id}'},
+			dataType: 'json',
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			success: function(result){				
+				var finalStr = "";
+				var tab1 = "";
+				var tab2 = "";
+				var tab3 = "";
+				var tab4 = "";
+				var tab5 = "";
+				
+				$(result).each(function(index, list){
+					if (list['loc_ctg1'] == "음식점"){
+						tab1 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab1 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab1 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab1 += '</span></td></tr>';			
+					}
+					else if (list['loc_ctg1'] == "관광지"){
+						tab2 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab2 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab2 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab2 += '</span></td></tr>';
+					}
+					else if (list['loc_ctg1'] == "쇼핑"){
+						tab3 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab3 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab3 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab3 += '</span></td></tr>';
+					}					
+					else if (list['loc_ctg1'] == "볼거리"){
+						tab4 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab4 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab4 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab4 += '</span></td></tr>';
+					}					
+					else { // 티켓인 경우
+						tab5 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value="' + list['loc_pc'] + '"></td>';
+						tab5 += '<td><a href="#" onclick=load_jjim_info()>' + list['loc_name'] + '</a>';
+						tab5 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+						tab5 += '</span></td></tr>';	
+					}					
+				});
+				
+				finalStr += '<div class="tab-pane fade active show" id="food" role="tabpanel"><table class="table table-hover"><tbody>' + tab1 + '</tbody></table></div>';
+				finalStr += `<div class="tab-pane fade" id="shopping" role="tabpanel"><table class="table table-hover"><tbody>`;
+				finalStr += tab2;
+				finalStr += `</tbody></table></div>`;
+				finalStr += '<div class="tab-pane fade" id="hotspot" role="tabpanel"><table class="table table-hover"><tbody>' + tab3 + '</tbody></table></div>';
+				finalStr += '<div class="tab-pane fade" id="ticket" role="tabpanel"><table class="table table-hover"><tbody>' + tab4 + '</tbody></table></div>';
+				finalStr += '<div class="tab-pane fade" id="test" role="tabpanel"><table class="table table-hover"><tbody>' + tab5 + '</tbody></table></div>';
+							
+				$("#myTabContent border border-info-1").append(finalStr);
+				console.log(finalStr);
+				
+// 				// 첫번째 tab 내용 보이기
+// 				$('.tabcontent > table').hide();
+// 				$('.tabnav a').filter(':eq(0)').click();
+			},
+			error: function(){
+				alert("error : " + error);
+			}
+		}); // ajax
+	}); // $('document').ready
 </script>
 <!--JS Section End -->
 
@@ -30,7 +99,6 @@ $(function(){
 
 </style>
 <!-- Style Section End -->
-
 
 </head>
 <body class='bg-light'>
@@ -68,7 +136,7 @@ $(function(){
 				</ul>
 				<!-- tab contents -->
 					<div id='myTabContent border border-info-1' class='tab-content'>
-						<div class='tab-pane fade active show' id='Day1' role='tabpanel'>
+<!-- 						<div class='tab-pane fade active show' id='food' role='tabpanel'>
 							<table class='table table-hover'>
 								<tbody>
 									<tr class='table-light'>
@@ -89,10 +157,7 @@ $(function(){
 									</tr>
 								</tbody>
 							</table>
-						</div>
-						<div class="tab-pane fade" id="Day2" role="tabpanel">
-							<p>contents</p>
-						</div>
+						</div> -->
 					</div>
 					<div class='setbt'>
 						<button class="create_planner_button" onclick="">찜 삭제</button>
@@ -122,12 +187,12 @@ $(function(){
 			</div>
 			<!-- 지도 -->
 			<div class='mapbar col-4'>
-				<div class='div_map' id="map"></div>
+				<div class='div_map' style="width: 100%; height: 100%;" id="map"></div>
 				<script>
 					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			    	mapOption = { 
-			        center: new kakao.maps.LatLng(37.4946287, 127.0276197), // 지도의 중심좌표
-			        level: 3 // 지도의 확대 레벨
+				        center: new kakao.maps.LatLng(37.4946287, 127.0276197), // 지도의 중심좌표
+				        level: 3 // 지도의 확대 레벨
 			    	};
 			
 					// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
