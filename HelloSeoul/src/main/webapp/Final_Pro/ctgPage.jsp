@@ -14,16 +14,18 @@
 <title>Hello, Seoul</title>
 
 <!--JS Section Begin -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=68fb4c87ba8765d71119fecd40096446"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
 $(function(){
-
+	
+});
 </script>
 <!--JS Section End -->
 
 <!-- Style Section Begin -->
-<link type="text/css" rel="stylesheet" href="/web/resources/final_style/css/bootstrap.css">
+<link type="text/css" rel="stylesheet" href="/web/resources/final_style/css/flatly_bootstrap.css">
 <style type="text/css">
 
 </style>
@@ -36,51 +38,48 @@ $(function(){
 	<jsp:include page="header.jsp"></jsp:include>
 	</header>
 	<section>
-	
-	<div id="text1" style="border: solid; height: 800px; width: 1300px; float: left; margin-left: 100px">
-<div>
-<table style="border: solid; float: left; width: 700px; height: 780px; margin-top: 10px; margin-left: 10px;;">
-
-<tr style="border: solid;">
-<td rowspan="6" style="border: solid; width: 300px;">장소사진</td>
-<td style="border: solid; width: 20%;">장소명</td>
-<td style="border: solid;">비트아카데미</td>
-</tr>
-
-<tr style="border: solid;">
-<td style="border: solid;">세부 카테고리</td>
-<td style="border: solid;">한식</td>
-</tr>
-<tr style="border: solid;">
-<td style="border: solid;">장소주소</td>
-<td style="border: solid;">강남</td>
-</tr>
-<tr style="border: solid;">
-<td style="border: solid;">영업시간</td>
-<td style="border: solid;">00:00~23:00</td>
-</tr>
-
-<tr style="border: solid;">
-<td style="border: solid;">전화번호</td>
-<td style="border: solid;">010-1234-1232</td>
-</tr>
-
-<tr style="border: solid;">
-<td style="border: solid;">기타</td>
-<td style="border: solid;">기타</td>
-</tr>
-
-<tr style="border: solid;">
-<td style="border: solid;" colspan="3" id="shit">장소정보</td>
-</tr>
-
-<tr style="border: solid;">
-<td colspan="3" style="border: solid; height: 350px">세부정보 및 세부 사진</td>
-</tr>
-
-</table>
-</div>
-<div id="map" style="width:550px;height:500px; border: solid; margin-top: 10px; float: right; margin-right: 20px"></div>
+	<div class='container-fluid' style="margin-top: 10px; display: inline-flex;">
+		<div class="text1" style="border: solid; width: 80%; display:inline-flex;">
+			<div class='tbtab' style="width:60%; margin-top: 10px; margin-left: 10px;">
+				<table class='table table-hover'>
+					<tbody>
+						<tr style="border: solid;">
+							<td rowspan="6" style="border: solid; width: 300px;">장소사진</td>
+							<td style="border: solid; width: 20%;">장소명</td>
+							<td style="border: solid;">비트아카데미</td>
+						</tr>
+						<tr style="border: solid;">
+							<td style="border: solid;">세부 카테고리</td>
+							<td style="border: solid;">한식</td>
+						</tr>
+						<tr style="border: solid;">
+							<td style="border: solid;">장소주소</td>
+							<td style="border: solid;">강남</td>
+						</tr>
+						<tr style="border: solid;">
+							<td style="border: solid;">영업시간</td>
+							<td style="border: solid;">00:00~23:00</td>
+						</tr>
+						<tr style="border: solid;">
+							<td style="border: solid;">전화번호</td>
+							<td style="border: solid;">010-1234-1232</td>
+						</tr>
+						<tr style="border: solid;">
+							<td style="border: solid;">기타</td>
+							<td style="border: solid;">기타</td>
+						</tr>
+						<tr class="table-primary" style="border: solid;">
+							<td style="border: solid;" colspan="3" id="shit">장소정보</td>
+						</tr>
+						<tr style="border: solid;">
+							<td colspan="3" style="border: solid; height: 350px">세부정보 및 세부 사진</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class='textdetail' style="display: block; width: 40%;">
+			<div class='mapping'>
+			<div id="map" style="width:550px;height:500px; border: solid; margin-top: 10px; float: right; margin-right: 20px"></div>
 <script>
 var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
 var options = { //지도를 생성할 때 필요한 기본 옵션
@@ -89,12 +88,18 @@ var options = { //지도를 생성할 때 필요한 기본 옵션
 };
 
 var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-</script>
-<div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 20px; margin-top: 20px;">추천1</div>
-<div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 40px; margin-top: 20px;">추천2</div>
-<div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 60px; margin-top: 20px;">추천3</div>
-</div>
-<div id="text2"style="border: solid; height: 800px; width: 400px; float:right; margin-right: 50px">
+		</script>
+			</div>
+			<div class='hotlist'>
+			<div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 20px; margin-top: 20px;">추천1</div>
+			<div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 40px; margin-top: 20px;">추천2</div>
+			<div id="112334" style="border: solid; height:250px; width: 150px; float: right; margin-right: 60px; margin-top: 20px;">추천3</div>
+			</div>
+			
+			</div>
+		</div>
+		
+<div class="text2"style="border: solid; height: 800px; width: 20%; float:right;">
 <select id='locctg'>
 <option value="choose">지역</option>
 <option value='kannam0'>kang1</option>
@@ -172,6 +177,7 @@ function setMarkers(map) {
 <button id='zzimcom'>저장</button>
 </div>
 	
+	</div>
 	</section>
 </body>
 </html>

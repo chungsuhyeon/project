@@ -24,14 +24,11 @@ $(function(){
 <!--JS Section End -->
 
 <!-- Style Section Begin -->
-<link type="text/css" rel="stylesheet" href="/web/resources/final_style/css/bootstrap.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<link type="text/css" rel="stylesheet" href="/web/resources/final_style/css/flatly_bootstrap.css">
 <style type="text/css">
-
+.form-control {
+	width: 40%;
+}
 </style>
 <!-- Style Section End -->
 
@@ -41,8 +38,9 @@ $(function(){
 	<header>
 	<jsp:include page="header.jsp"></jsp:include>
 	</header>
-	<section>
-		<div class='container'>
+	<section class=bg-light>
+		<div class='container bg-dark' style="width: 800px; margin-top: 20px; border-radius: 30px;">
+			<h2>JOIN PAGE</h2>
 			<form action="">
 				<div class="form-group">
   					<label class="col-form-label mt-4" for="inputDefault">ID</label>
@@ -52,12 +50,17 @@ $(function(){
   					<label class="col-form-label mt-4" for="inputDefault">Confirm password</label>
   					<input type="password" class="form-control" id="inputDefault">
   					<label class="col-form-label mt-4" for="inputDefault">Name</label>
+  					<div>
+  					<div class="form-group" style="display: inline-flex;">
   					<input type="text" class="form-control" placeholder="First Name" id="inputDefault">
+  					&nbsp;&nbsp;&nbsp;&nbsp;
   					<input type="text" class="form-control" placeholder="Last Name" id="inputDefault">
+  					</div>
+  					</div>
   					<label class="col-form-label mt-4" for="inputDefault">Nation</label>
   					<input type="text" class="form-control" placeholder="ex) Korea" id="inputDefault">
-  					<div class="form-group">
-      					<label for="exampleSelect1" class="form-label mt-4">TelePhone</label>
+      				<label for="exampleSelect1" class="form-label mt-4">TelePhone</label><br>
+  					<div class="form-group" style="display: inline-flex;">
       					<select class="form-select" id="exampleSelect1">
         					<option>1</option>
         					<option>2</option>
@@ -65,28 +68,57 @@ $(function(){
         					<option>4</option>
         					<option>5</option>
       					</select>
+      					<h4>&nbsp;&nbsp;-&nbsp;&nbsp;</h4>
+  						<input type="text" class="form-control" placeholder="Middle Number" id="inputDefault">
+  						<h4>&nbsp;&nbsp;-&nbsp;&nbsp;</h4>
+  						<input type="text" class="form-control" placeholder="Back Number" id="inputDefault">
     				</div>
-  					<input type="text" class="form-control" placeholder="Middle Number" id="inputDefault">
-  					<input type="text" class="form-control" placeholder="Back Number" id="inputDefault">
+    				<br>
   					<label class="col-form-label mt-4" for="inputDefault">Birth</label>
   					<input type="date" class="form-control">
   					<fieldset class="form-group">
       					<legend class="mt-4">Gender</legend>
+      					<div style="display:inline-flex;">
       					<div class="form-check">
         					<input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-        					<label class="form-check-label" for="optionsRadios1">Male</label>
+        					<label class="form-check-label" for="optionsRadios1">Male</label>&nbsp;     					
       					</div>
       					<div class="form-check">
         					<input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
         					<label class="form-check-label" for="optionsRadios2">Female</label>
       					</div>
+      					</div>
     				</fieldset>
-  					<label class="col-form-label mt-4" for="inputDefault">Purpose</label>
-  					<input type="text" class="form-control" placeholder="ex) Job" id="inputDefault">
-  					<label class="col-form-label mt-4" for="inputDefault">First</label>
-  					<input type="text" class="form-control" placeholder="ex) Eating Korean Food" id="inputDefault">
+    				<fieldset class="form-group">
+      					<legend class="mt-4">Purpose</legend>
+      					<div style="display:inline-flex;">
+      					<div class="form-check">
+        					<input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        					<label class="form-check-label" for="optionsRadios1">Male</label>&nbsp;     					
+      					</div>
+      					<div class="form-check">
+        					<input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        					<label class="form-check-label" for="optionsRadios2">Female</label>
+      					</div>
+      					</div>
+    				</fieldset>
+					<fieldset class="form-group">
+      					<legend class="mt-4">First</legend>
+      					<div style="display:inline-flex;">
+      					<div class="form-check">
+        					<input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        					<label class="form-check-label" for="optionsRadios1">Male</label>&nbsp;     					
+      					</div>
+      					<div class="form-check">
+        					<input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+        					<label class="form-check-label" for="optionsRadios2">Female</label>
+      					</div>
+      					</div>
+    				</fieldset>
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<div class="d-grid gap-2">
+  					<button class="btn btn-lg btn-primary mt-2" type="button">Block button</button>
+  				</div>
 			</form>
 		</div>
 	</section>

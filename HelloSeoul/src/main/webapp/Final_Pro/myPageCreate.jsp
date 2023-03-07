@@ -39,23 +39,25 @@ $(function(){
 	<jsp:include page="header.jsp"></jsp:include>
 	</header>
 	<section>
-		<div class='container-fluid'>
-			<div class='container'>
+		<div class='container mt-4' style="text-align: center;">
+			<div class='col-4 bg-light' style="display: inline-block;">
+				<form>
 				<div class="form-group">
-  					<label class="col-form-label mt-4" for="inputDefault">Default input</label>
-  					<input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+  					<label class="col-form-label mt-4" for="title">Title</label>
+  					<input type="text" class="form-control" placeholder="Input Title" id="title">
 				</div>
-				<div>
-					<input type="date" class="form-control">
-					<input type="date" class="form-control">
+				<div class='form-group'>
+					Start Date<input type="date" class="form-control" style="width: 50%; margin-left: 25%;">
+					End Date<input type="date" class="form-control"  style="width: 50%; margin-left: 25%;">
 				</div>
-				<div>
+				<div class='form-group'>
 					<p>memo_line</p>
-					<textarea></textarea>
+					<textarea style="width: 80%; height: 200px; resize: none;"></textarea>
 				</div>
 				<div>
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</div>
+				</form>
 			</div>
 		</div>
 	</section>
