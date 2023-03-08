@@ -13,4 +13,7 @@ public class ComBoard {
 	private String com_regdate;
 	private String user_id;
 	private String user_nick;
+	private int good;
+	private int bad;
+	private int reply;
 }

@@ -342,7 +342,7 @@ p {
 							<option value="3">동행모집</option>
 							
 					</select>
-					<td> <input type="hidden" value="123" name="user_id">  </td>
+					<td> <input type="hidden" value="${user_id }" name="user_id">  </td>
 				</tr>
 
 				<tr>
@@ -351,7 +351,7 @@ p {
 							<div class="col-md-6 col-sm-6 col-xs-bskr">
 								<div class="input-title">작성자명</div>
 								<div class="input-forms">
-									<input size="20" type="text" name="user_nick" value=""
+									<input size="20" readonly="readonly" type="text" name="user_nick" value="${user_nickName}"
 										class="form-control input-sm input-name bskr-font user" />
 								</div>
 							</div>

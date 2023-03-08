@@ -344,7 +344,7 @@ p {
 					</select>
 					<td>
 					<input type="hidden" value="${i.com_hit }" name="com_hit">  
-					<input type="hidden" value="123" name="user_id"> 
+					<input type="hidden" value="${user_id }" name="user_id"> 
 					<input type="hidden" value="${i.com_regdate }" name="com_regdate">
 					 </td>
 					
@@ -356,7 +356,7 @@ p {
 							<div class="col-md-6 col-sm-6 col-xs-bskr">
 								<div class="input-title">작성자명</div>
 								<div class="input-forms">
-									<input size="20" type="text" name="user_nick" value="${i.user_nick }"
+									<input size="20" readonly="readonly" type="text" name="user_nick" value="${i.user_nick }"
 										class="form-control input-sm input-name bskr-font user" />
 								</div>
 							</div>

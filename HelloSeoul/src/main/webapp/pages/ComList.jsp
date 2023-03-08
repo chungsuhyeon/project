@@ -84,8 +84,9 @@
 					<div class="board-meta"
 						style="font-weight: 400; font-size: 1.2rem; color: #404040">
 						<p>
+						<input type="hidden" value="${user_id }" name="user_id">
 							<i class="glyphicon glyphicon-user"></i> ${i.user_nick } 님 <i
-								class="glyphicon glyphicon-comment"></i> 0 <i
+								class="glyphicon glyphicon-comment"></i> ${i.reply } <i
 								class="glyphicon glyphicon-ok"></i> ${i.com_hit } <i
 								class="glyphicon glyphicon-time"></i> ${i.com_regdate }
 						</p>

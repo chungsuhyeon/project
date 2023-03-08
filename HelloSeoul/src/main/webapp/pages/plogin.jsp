@@ -12,24 +12,6 @@
 <link href="/web/resources/css/contents.css" rel="stylesheet" type="text/css" />
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-<script>
-    $(function(){
-    	$("a#siteSubmit").click(function(){
-    		
-    	    if($("input#input_id").val().length==0 || $("input#input_Password").val().length==0){
-    	        alert('id or password check');
-    	    	$("input#input_id").val('');
-    	    	$("input#input_Password").val('');
-    	    	$("input#input_id").focus();
-    	    	return false;
-    	    }
-    		$("form").submit(); 		
-    		
-    	});
-    });
-</script>    
-
-<title>Start Simple Web</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="/web/resources/helloseoul/css/home/bootstrap.min.css" rel="stylesheet">
@@ -39,57 +21,74 @@
 <!-- <link href="/web/resources/boardFront/css/clean-blog.css" rel="stylesheet"> -->
 
 <!-- Custom Fonts -->
-<link
-	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
-<link
-	href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic'
-	rel='stylesheet' type='text/css'>
-<link
-	href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-	rel='stylesheet' type='text/css'>
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+<script>
+    $(function(){
+    	$("a#siteSubmit").click(function(){
+    		
+    	    if($("input#user_id").val().length==0 || $("input#password").val().length==0){
+    	        alert('id or password check');
+    	    	$("input#user_id").val('');
+    	    	$("input#password").val('');
+    	    	$("input#user_id").focus();
+    	    	return false;
+    	    }
+    		$("form").submit(); 		
+    		
+    	});
+    });
+</script>    
+
+<title>Login</title>
 
 </head>
-<jsp:include page="./Header.jsp"></jsp:include>
+
+
 <body style="background-image: url('/web/resources/helloseoul/img/backlogin.jpg');">
+	<jsp:include page="./Header.jsp"></jsp:include>
+	
 	<div class="container" style="margin-top: 120px">
 		<div class="row">
 			<div class="main">
 				<h3>
-					SIGN IN</a>
+					SIGN IN
 				</h3>
 
 				<form name="form"  method="post" action="${pageContext.request.contextPath}/siteCheck" style="background-color: black; width: '500px;'">
 					<div class="form-group">
-						<input type="text" placeholder="ID " class="form-control"
-							id="input_id" name="input_id"/>
-
+						<input type="text" placeholder="ID" class="form-control" id="user_id" name="user_id"/>
 					</div>
+					
 					<div class="form-group">
 						<!--<a class="pull-right" href="#">Esqueci a senha</a>-->
-						<input type="password" placeholder="PASSWORD " class="form-control"
-							id="input_Password" name="input_Password"/>
+						<input type="password" placeholder="PASSWORD" class="form-control" id="password" name="password"/>
 					</div>
+					
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<a href="../project/mainPage.jsp" class="btn btn-sm btn-danger btn-block" id="siteSubmit">SIGN IN</a>
+							<a href="#" class="btn btn-sm btn-danger btn-block" id="siteSubmit">SIGN IN</a>
 						</div>
 					</div>
+					
 					<div class="login-or">
 						<hr class="hr-or">
 						<span class="span-or">or</span>
 					</div>
+					
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<a href="../project/join.jsp" class="btn btn-sm btn-info btn-block">SIGN UP</a>
+							<a href="/web/pages/join.jsp" class="btn btn-sm btn-info btn-block">SIGN UP</a>
 						</div>
 					</div>
+					
 					<div>
-					<h6 style="font-weight: 400;font-size: 0.85714rem; color: gray " align="center">
-						비밀번호가 기억나지 않으세요? <u><a href="#">비밀번호재설정</a></u>
-					</h6>
-				</div>
+						<h6 style="font-weight: 400;font-size: 0.85714rem; color: gray " align="center">
+							비밀번호가 기억나지 않으세요? <u><a href="#">비밀번호재설정</a></u>
+						</h6>
+					</div>
 				</form>
 			</div>
 		</div>
