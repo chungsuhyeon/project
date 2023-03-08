@@ -25,89 +25,95 @@
 				$("table input[type='checkbox']").prop('checked',false);
 			}
 		}); // $(".nav >li").click
-		
-		
-		$("td > a").click(function(){
-			$(this).addClass('acting');
-			$("a[id='local_name']").each(function(){
-				if($(this).attr("class") == 'acting'){
-					var tr = $(this).parent().parent();
-					var td = tr.children();
-					console.log(td.eq(0).children().val());	
-					$(this).removeAttr('class', 'acting');//onclick=load_jjim_info()
-				}
-			});
-		});
-		
-		
-	});
+
+	
+	}); // function
+	
+	
 	
 	$('document').ready(function(){
 		$.ajax({
 			url: '/web/ajaxMypageJjim',
 			type: 'post',
-			data: {user_id:'${user_id}'},
-			dataType: 'json',
+// 			data: {user_id:'${user_id}'},
+			dataType: 'text',
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			success: function(result){
-				$("input[name='select_location']").removeAttr("checked");
-				var finalStr = "";
-				var tab1 = "";
-				var tab2 = "";
-				var tab3 = "";
-				var tab4 = "";
-				var tab5 = "";
+// 				var finalStr = "";
+// 				var tab1 = "";
+// 				var tab2 = "";
+// 				var tab3 = "";
+// 				var tab4 = "";
+// 				var tab5 = "";
 				
-				$(result).each(function(index, list){
-					if (list['loc_ctg1'] == "음식점"){
-						tab1 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
-						tab1 += '<td><a href="#" id="local_name">' + list['loc_name'] + '</a>';
-						tab1 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
-						tab1 += '</span></td></tr>';			
-					}
-					else if (list['loc_ctg1'] == "관광지"){
-						tab2 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
-						tab2 += '<td><a href="#">' + list['loc_name'] + '</a>';
-						tab2 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
-						tab2 += '</span></td></tr>';
-					}
-					else if (list['loc_ctg1'] == "쇼핑"){
-						tab3 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
-						tab3 += '<td><a href="#" >' + list['loc_name'] + '</a>';
-						tab3 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
-						tab3 += '</span></td></tr>';
-					}					
-					else if (list['loc_ctg1'] == "볼거리"){
-						tab4 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
-						tab4 += '<td><a href="#">' + list['loc_name'] + '</a>';
-						tab4 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
-						tab4 += '</span></td></tr>';
-					}					
-					else { // 티켓인 경우
-						tab5 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
-						tab5 += '<td><a href="#">' + list['loc_name'] + '</a>';
-						tab5 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
-						tab5 += '</span></td></tr>';	
-					}					
-				});
+// 				$(result).each(function(index, list){
+// 					if (list['loc_ctg1'] == "음식점"){
+// 						tab1 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
+// 						tab1 += '<td><a href="#" id="local_name">' + list['loc_name'] + '</a>';
+// 						tab1 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+// 						tab1 += '</span></td></tr>';			
+// 					}
+// 					else if (list['loc_ctg1'] == "관광지"){
+// 						tab2 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
+// 						tab2 += '<td><a href="#">' + list['loc_name'] + '</a>';
+// 						tab2 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+// 						tab2 += '</span></td></tr>';
+// 					}
+// 					else if (list['loc_ctg1'] == "쇼핑"){
+// 						tab3 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
+// 						tab3 += '<td><a href="#" >' + list['loc_name'] + '</a>';
+// 						tab3 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+// 						tab3 += '</span></td></tr>';
+// 					}					
+// 					else if (list['loc_ctg1'] == "볼거리"){
+// 						tab4 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
+// 						tab4 += '<td><a href="#">' + list['loc_name'] + '</a>';
+// 						tab4 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+// 						tab4 += '</span></td></tr>';
+// 					}					
+// 					else { // 티켓인 경우
+// 						tab5 += '<tr class="table-light"><td><input type="checkbox" name="select_location" value=' + list['loc_pc'] + '></td>';
+// 						tab5 += '<td><a href="#">' + list['loc_name'] + '</a>';
+// 						tab5 += '<br><span style="font-size: 5px"> ' + list['loc_sg'] + ' > ' + list['loc_sg']  + ' > ' + list['loc_ctg1']  + ' > ' + list['loc_ctg2'];
+// 						tab5 += '</span></td></tr>';	
+// 					}					
+// 				});
 				
-				finalStr += '<div class="tab-pane fade active show" id="food" role="tabpanel"><table class="table table-hover"><tbody>' + tab1 + '</tbody></table></div>';
-				finalStr += `<div class="tab-pane fade" id="shopping" role="tabpanel"><table class="table table-hover"><tbody>`;
-				finalStr += tab2;
-				finalStr += `</tbody></table></div>`;
-				finalStr += '<div class="tab-pane fade" id="hotspot" role="tabpanel"><table class="table table-hover"><tbody>' + tab3 + '</tbody></table></div>';
-				finalStr += '<div class="tab-pane fade" id="ticket" role="tabpanel"><table class="table table-hover"><tbody>' + tab4 + '</tbody></table></div>';
-				finalStr += '<div class="tab-pane fade" id="test" role="tabpanel"><table class="table table-hover"><tbody>' + tab5 + '</tbody></table></div>';
+// 				finalStr += '<div class="tab-pane fade active show" id="food" role="tabpanel"><table class="table table-hover"><tbody>' + tab1 + '</tbody></table></div>';
+// 				finalStr += `<div class="tab-pane fade" id="shopping" role="tabpanel"><table class="table table-hover"><tbody>`;
+// 				finalStr += tab2;
+// 				finalStr += `</tbody></table></div>`;
+// 				finalStr += '<div class="tab-pane fade" id="hotspot" role="tabpanel"><table class="table table-hover"><tbody>' + tab3 + '</tbody></table></div>';
+// 				finalStr += '<div class="tab-pane fade" id="ticket" role="tabpanel"><table class="table table-hover"><tbody>' + tab4 + '</tbody></table></div>';
+// 				finalStr += '<div class="tab-pane fade" id="test" role="tabpanel"><table class="table table-hover"><tbody>' + tab5 + '</tbody></table></div>';
 							
-				$("div.tab-content").html(finalStr);
-						
+				$("div.tab-content").append(result);
 				
+				$("td > a").click(function(){
+			 		var tr = $(this).parent().parent();
+			 		var td = tr.children();
+			 		console.log(td.eq(0).children().val());	
+					
+// 					$(this).addClass('acting');
+// 					$("a[id='local_name']").each(function(){
+// 						if($(this).attr("class") == 'acting'){
+// 							var tr = $(this).parent().parent();
+// 							var td = tr.children();
+// 							console.log(td.eq(0).children().val());	
+// 							$(this).removeAttr('class', 'acting'); //onclick=load_jjim_info()
+// 						}
+// 					});
+				});
+
 			},
 			error: function(){
 				alert("error : " + error);
 			}
 		}); // ajax
 	}); // $('document').ready
+	
+
+
 	
 
 // 	function load_jjim_info(){		
@@ -120,32 +126,39 @@
 	
 	function delete_jjim_list(){
 		
-		var locDataArr = new Array();
+		var locDataList = [];
 		var checkBox = $("input[name='select_location']:checked");
-		
-		
+				
 		checkBox.each(function(i){
 			var checkTr = checkBox.parent().parent().eq(i);
 			var checkTd = checkTr.children(); // 장소코드있는 td	
-			
-			locDataArr.push(checkTd.eq(0).children().val());
+			locDataList.push(checkTd.eq(0).children().val());
 		}); // checkBox.each
-// 		console.log(locDataArr);
 		
-// 		$.ajax({
-// 			url: '/web/',
-// 			type: 'post',
-// 			data: {deleteJjimList:locDataArr},
-// 			dataType: 'text',
-// 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-// 			success: function(result){			
-// //				console.log("result : " + result);
-// 				$("#replyListView").append(result);
-// 			},
-// 			error: function(){
-// 				alert("error : " + error);
-// 			}
-// 		});
+		console.log(locDataList);
+		
+		$.ajax({
+			url: '/web/ajaxDeleteJjimList',
+			type: 'post',
+			data: {deleteJjimList:locDataList},
+			dataType: 'text',
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			success: function(result){
+				$("div.tab-content").remove();
+				console.log(result);
+				$("div.tab-content").append(result);
+								
+// 				$("td > a").click(function(){
+// 					alert("dfsdfsdf");
+// 			 		var tr = $(this).parent().parent();
+// 			 		var td = tr.children();
+// // 			 		console.log(td.eq(0).children().val());	
+// 				});
+			},
+			error: function(){
+				alert("error : " + error);
+			}
+		});
 	}
 	
 </script>
@@ -168,7 +181,7 @@
 		<div class='menu col-12'>
 			<!-- 뒤로가기 & 플래너 수정 버튼 -->
 			<ol class='breadcrumb'>
-				<li class='breadcrumb-item'><a href='./maPageMain.jsp'>BACK</a></li>
+				<li class='breadcrumb-item'><a href='/web/myPageLoad'>BACK</a></li>
 				<li class='breadcrumb-item'><a href='./myPagePlannerCreate.jsp'>PLANNER CREATE</a></li>
 			</ol>
 		</div>
