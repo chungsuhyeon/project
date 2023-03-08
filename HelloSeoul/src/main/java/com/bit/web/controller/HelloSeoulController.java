@@ -135,9 +135,13 @@ public class HelloSeoulController {
 	@ResponseBody
 	public List<Object> mypageJjimListLoad(@RequestParam(value = "user_id")String user_id){
 		List<Object> userJjimList = helloDao.getUserJjimList(user_id);
-		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
+//		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
 		return userJjimList;
 	}
+	
+	// 찜 삭제
+//	@PostMapping(value="ajaxJjimDelete")
+	
 
 	
 }
