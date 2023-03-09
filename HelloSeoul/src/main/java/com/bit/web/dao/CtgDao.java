@@ -1,5 +1,6 @@
 package com.bit.web.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,4 +23,7 @@ public class CtgDao extends SqlSessionDaoSupport{
 		return this.getSqlSession().selectList("showDb");
 	}
 	
+	public List<MainDbBean> searchFood(HashMap<Object, String> map){
+		return this.getSqlSession().selectList("searchFood",map);
+	}
 }

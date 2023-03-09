@@ -1,5 +1,6 @@
 package com.bit.web.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -22,5 +23,15 @@ public class sunrestcontroller {
 		return dao.showDb();
 	}
 	
+	@PostMapping(value = "searchFood")
+	public List<MainDbBean> searchFood(String loc_sg, String loc_ctg2, String query) {
+		HashMap<Object, String> map = new HashMap<Object, String>();
+		map.put("loc_sg", loc_sg);
+		map.put("loc_ctg2", loc_ctg2);
+		map.put("query", query);		
+		System.out.println(map);
+		System.out.println(dao.searchFood(map));
+		return dao.searchFood(map);
+	}
 
 }
