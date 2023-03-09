@@ -80,7 +80,7 @@
 					
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<a href="../project/join.jsp" class="btn btn-sm btn-info btn-block">SIGN UP</a>
+							<a href="/web/pages/join.jsp" class="btn btn-sm btn-info btn-block">SIGN UP</a>
 						</div>
 					</div>
 					

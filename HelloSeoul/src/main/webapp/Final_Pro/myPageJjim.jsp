@@ -18,6 +18,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
+<<<<<<< HEAD
 	$(function(){
 		// tab 변경시 checked 해제
 		$(".nav >li").click(function(){
@@ -161,6 +162,26 @@
 		});
 	}
 	
+=======
+$(function(){
+	$(".nav >li").click(function(){
+		if($("table input[type='checkbox']").is(":checked")){
+			$("table input[type='checkbox']").prop('checked',false);
+		}
+	});
+
+	$("td>a").click(function(){
+		$(this).addClass('acting');
+		$("a[id='local_name']").each(function(){
+			if($(this).attr("class")=='acting'){
+				alert("test!");
+				$(this).removeAttr('class','acting');
+				//ajax
+			}
+		});
+	});
+});
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 </script>
 <!--JS Section End -->
 
@@ -207,6 +228,56 @@
 				</ul>
 				<!-- tab contents -->
 					<div id='myTabContent border border-info-1' class='tab-content'>
+<<<<<<< HEAD
+=======
+						<div class='tab-pane fade active show' id='food' role='tabpanel'>
+							<table class='table table-hover'>
+								<tbody>
+									<tr class='table-light'>
+										<td><input type="checkbox" name="select_location" value="10203032"></td>
+										<td>
+											<a id='local_name' href="#">음식점 찜 장소 명1</a>
+											<br>
+											<span style="font-size: 5px">지역 구 > 장소 카테고리 > 세부 카테고리 > </span>
+										</td>
+									</tr>
+									<tr class='table-light'>
+										<td><input type="checkbox" name="select_location" value="장소코드1"></td>
+										<td>
+											<a id='local_name' href="#" >음식점 찜 장소 명2</a>
+											<br>
+											<span style="font-size: 5px">지역 구 > 장소 카테고리 > 세부 카테고리 > </span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tab-pane fade" id="shopping" role="tabpanel">
+							<p>contents</p>
+						</div>
+						<div class='tab-pane fade' id='hotspot' role='tabpanel'>
+							<table class='table table-hover'>
+								<tbody>
+									<tr class='table-light'>
+										<td><input type="checkbox" name="select_location" value="장소코드1"></td>
+										<td>
+											<a href="#">음식점 찜 장소 명</a>
+											<br>
+											<span style="font-size: 5px">지역 구 > 장소 카테고리 > 세부 카테고리 > </span>
+										</td>
+									</tr>
+									<tr class='table-light'>
+										<td><input type="checkbox" name="select_location" value="장소코드1"></td>
+										<td>
+											<a href="#">음식점 찜 장소 명</a>
+											<br>
+											<span style="font-size: 5px">지역 구 > 장소 카테고리 > 세부 카테고리 > </span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 					</div>
 					
 					<div class='setbt'>
@@ -237,7 +308,11 @@
 			</div>
 			<!-- 지도 -->
 			<div class='mapbar col-4'>
+<<<<<<< HEAD
 				<div class='div_map' style="width: 100%; height: 100%;" id="map"></div>
+=======
+				<div class='div_map' id="map" style="width: 100%; height: 100%;"></div>
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 				<script>
 					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			    	mapOption = { 

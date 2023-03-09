@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.memberdao">
+<select id="showDb" resultType="mainDB">
+SELECT LOC_PC, LOC_NAME, LOC_CTG1, LOC_CTG2, LOC_SG, LOC_ADDR, LOC_OP, LOC_CL, LOC_TEL, LOC_INFO, LOC_IMG
+FROM MAINDB
+</select>
+<select id="searchFood" parameterType="java.util.HashMap" resultType="mainDB">
+SELECT LOC_PC, LOC_NAME, LOC_CTG1, LOC_CTG2, LOC_SG, LOC_ADDR, LOC_OP, LOC_CL, LOC_TEL, LOC_INFO, LOC_IMG
+FROM MAINDB
+WHERE LOC_SG = #{loc_sg} AND LOC_CTG2 = #{loc_ctg2} AND LOC_NAME LIKE '%'||#{query}||'%'
+</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
