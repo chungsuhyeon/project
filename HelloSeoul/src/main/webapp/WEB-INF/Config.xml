@@ -1,44 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration
-PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
-<<<<<<< HEAD
 <!-- DB설정(Connection) -->
 <configuration>
 	<typeAliases>
-=======
-
-
-
-<configuration><!-- DB설정(Connection) -->
-   <typeAliases>
-<!-- 		<typeAlias type="com.bit.boarding.dao.ReportBoradMemberBean" alias="memBean"/> -->
-		<typeAlias type="com.bit.web.vo.MusicalBean" alias="MusicalBean"/>
-
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 		<typeAlias type="com.bit.web.vo.MypageJjimBean" alias="mypageJjim"/>
 		<typeAlias type="com.bit.web.vo.MainDbBean" alias="mainDb"/>
+		<typeAlias type="com.bit.web.vo.MusicalBean" alias="MusicalBean"/>
 	</typeAliases>
-<<<<<<< HEAD
 	
 	<mappers>
 		<mapper resource="com/bit/web/dao/project-mapper.xml"/>
 		<mapper resource="com/bit/web/dao/Join-mapper.xml"/>
 		<mapper resource="com/bit/web/dao/helloSeoul-mapper.xml"/>
 		<mapper resource="com/bit/web/dao/ctg-mapper.xml"/>
-=======
-	 <mappers>
-   <mapper resource="com/bit/web/dao/project-mapper.xml"/>
-  <mapper resource="com/bit/web/dao/helloSeoul-mapper.xml"/>
-  <mapper resource="com/bit/web/dao/ctg-mapper.xml"/>
-	<mapper resource="com/bit/web/dao/musical-mapper.xml"/>
- <mapper resource="com/bit/web/dao/Join-mapper.xml"/> 
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
+		<mapper resource="com/bit/web/dao/musical-mapper.xml"/>
 	</mappers>
 
-<<<<<<< HEAD
 </configuration>
-=======
-</configuration>
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
