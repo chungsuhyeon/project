@@ -7,17 +7,19 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import org.joda.time.format.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bit.web.dao.HelloSeoulDao;
+import com.bit.web.vo.MypageJjimBean;
 
 @Controller
 public class HelloSeoulController {
@@ -28,7 +30,6 @@ public class HelloSeoulController {
 	@RequestMapping("siteCheck")
 	public String loginProcess(HttpServletRequest request, String user_id, String password) {
 		HashMap<String, String> userInfo = helloDao.getDbUser(user_id);
-//		System.out.println("HelloSeoulController getDbUser ; " + userInfo);
 		
 		String dbPass = userInfo.get("USER_PW");
 		String nickName = userInfo.get("USER_NICK");
@@ -55,89 +56,164 @@ public class HelloSeoulController {
 	// 留덉씠�럹�씠吏� 硫붿씤�솕硫댁쑝濡�
 	@RequestMapping("myPageLoad")
 	public ModelAndView userInfoAll(HttpServletRequest request, Model model) {
-		// 媛쒖씤�젙蹂� �꽆湲곌린		
-		HashMap<String, Object> userDBInfo = helloDao.getUserInfo(request.getSession().getAttribute("user_id"));
-//		System.out.println("HelloSeoulController userInfoAll ; " + userDBInfo);
+
+		// 개인정보 넘기기		
+		HashMap<String, Object> userDBInfo = helloDao.getUserInfo((String)request.getSession().getAttribute("user_id"));
 		
-		// DB�쓽 �깮�뀈�썡�씪 �궇吏쒗삎�쑝濡� ���엯蹂�寃�
-		LocalDate birth = LocalDate.parse((String)userDBInfo.get("USER_BIRTH"), DateTimeFormatter.ofPattern("yy/MM/dd"));
+		// DB 생일
+		LocalDate birth = LocalDate.parse((String)userDBInfo.get("USER_BIRTH"), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 		
-		// �삤�뒛 �궇吏� 諛쏆븘�삤湲�
+		// 오늘 날짜
 		LocalDate today = LocalDate.now();
 		
 		
 		int user_pp = Integer.parseInt(String.valueOf(userDBInfo.get("USER_PP")));
 		int user_first = Integer.parseInt(String.valueOf(userDBInfo.get("USER_FIRST")));
 		
-		// page�뿉 �꽆湲� map
+		// 정보 넘길거
 		HashMap<String, Object> userInfo = new HashMap<String, Object>();	
-		userInfo.put("USER_NAME", userDBInfo.get("USER_NAME")); // �씠由�
-		userInfo.put("USER_NATION", userDBInfo.get("USER_NATION")); // 援��쟻
+		userInfo.put("USER_NAME", userDBInfo.get("USER_NAME")); // 이름
+		userInfo.put("USER_NATION", userDBInfo.get("USER_NATION")); // 국적
 		
-		// 留� �굹�씠 怨꾩궛
-		if( (today.getMonthValue() - birth.getMonthValue()) > 0) { // �깮�씪�씠 吏��궓
+		// 나이계산
+		if( (today.getMonthValue() - birth.getMonthValue()) > 0) { // 생일 지난 사람
 			userInfo.put("USER_AGE", today.getYear() - birth.getYear());	
 		} else { // �깮�씪 �븞吏��궓
-			if(birth.getDayOfMonth() > today.getDayOfMonth()) { // �깮�씪 �븞吏��궓
+			if(birth.getDayOfMonth() > today.getDayOfMonth()) { // 생일 안지난 사람
 				userInfo.put("USER_AGE", today.getYear() - birth.getYear() - 1);						
-			} else { // �깮�씪 吏��궓
-				userInfo.put("USER_AGE", today.getYear() - birth.getYear());				
-			}
+			} else { // 생일 지남
+				userInfo.put("USER_AGE", today.getYear() - birth.getYear());
+			} 
 		}
 						
-		// 愿�愿묐ぉ�쟻
+		// 관광목적
 		switch (user_pp) {
 		case 1:
-			userInfo.put("USER_PP", "travel"); // �뿬�뻾
+			userInfo.put("USER_PP", "travel"); // 여행
 			break;
 		case 2:
-			userInfo.put("USER_PP", "business trip"); // 異쒖옣
+			userInfo.put("USER_PP", "business trip"); // 출장
 			break;
 		case 3:
-			userInfo.put("USER_PP", "study"); // �븰�뾽
+			userInfo.put("USER_PP", "study"); // 유학
 			break;
 		case 4:
-			userInfo.put("USER_PP", "experience"); // 泥댄뿕
+			userInfo.put("USER_PP", "experience"); // 경험
 			break;
 		default : 
 			userInfo.put("USER_PP", "Not selected");
 			break;
 		}
 		
-		// 愿�愿� �슦�꽑�닚�쐞
+		// 관광 1순위
 		switch (user_first) {
 		case 1:
-			userInfo.put("USER_FIRST", "food"); // �쓬�떇
+			userInfo.put("USER_FIRST", "food"); // 음식점
 			break;
 		case 2:
-			userInfo.put("USER_FIRST", "cultural experience"); // 臾명솕泥댄뿕
+			userInfo.put("USER_FIRST", "cultural experience");
 			break;
 		case 3:
-			userInfo.put("USER_FIRST", "shopping"); // �눥�븨
+			userInfo.put("USER_FIRST", "shopping");
 			break;
 		case 4:
-			userInfo.put("USER_FIRST", "history tour"); // �뿭�궗�깘諛�
+			userInfo.put("USER_FIRST", "history tour");
 			break;
 		default : 
 			userInfo.put("USER_PP", "Not selected");
 			break;
 		}
 		
-		model.addAttribute("userInfo", userInfo);
-		
-//		System.out.println("HelloSeoulController userInfoAll userInfo ; " + userInfo);
-		
+		model.addAttribute("userInfo", userInfo);		
 		return new ModelAndView("Final_Pro/myPageMain");
 	}
 	
-	// 李� 蹂닿린 �솕硫�
-	@PostMapping(value = "ajaxMypageJjim")
+	// 찜 보기 화면
+	@RequestMapping(value = "ajaxMypageJjim",method = {RequestMethod.GET, RequestMethod.POST} , produces = "application/text; charset=utf8")
 	@ResponseBody
-	public List<Object> mypageJjimListLoad(@RequestParam(value = "user_id")String user_id){
+	public String mypageJjimListLoad(HttpServletRequest request, HttpServletResponse response){
+		String user_id = (String) request.getSession().getAttribute("user_id");
 		List<Object> userJjimList = helloDao.getUserJjimList(user_id);
 		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
-		return userJjimList;
+		
+		String finalStr = "";
+		String tab1 = "";
+		String tab2 = "";
+		String tab3 = "";
+		String tab4 = "";
+		String tab5 = "";
+		
+		for(Object i : userJjimList) {
+			MypageJjimBean bean = (MypageJjimBean) i;	
+			
+			if(bean.getLoc_ctg1().equals("음식점")) {
+				tab1 += "<tr class='table-light'><td><input type='checkbox' name='select_location' value=" + bean.getLoc_pc() + "></td>";
+				tab1 += "<td><a href='#' id='local_name'>" + bean.getLoc_name() + "</a>";
+				tab1 += "<br><span style='font-size: 5px'> " + bean.getLoc_sg() + " > " + bean.getLoc_ctg1()  + " > " + bean.getLoc_ctg2();
+				tab1 += "</span></td></tr>";
+			}
+			else if (bean.getLoc_ctg1().equals("관광지")){				
+				tab2 += "<tr class='table-light'><td><input type='checkbox' name='select_location' value=" + bean.getLoc_pc() + "></td>";
+				tab2 += "<td><a href='#' id='local_name'>" + bean.getLoc_name() + "</a>";
+				tab2 += "<br><span style='font-size: 5px'> " + bean.getLoc_sg() + " > " + bean.getLoc_ctg1()  + " > " + bean.getLoc_ctg2();
+				tab2 += "</span></td></tr>";
+			}
+			else if (bean.getLoc_ctg1().equals("쇼핑")){				
+				tab3 += "<tr class='table-light'><td><input type='checkbox' name='select_location' value=" + bean.getLoc_pc() + "></td>";
+				tab3 += "<td><a href='#' id='local_name'>" + bean.getLoc_name() + "</a>";
+				tab3 += "<br><span style='font-size: 5px'> " + bean.getLoc_sg() + " > " + bean.getLoc_ctg1()  + " > " + bean.getLoc_ctg2();
+				tab3 += "</span></td></tr>";
+			}
+			else if (bean.getLoc_ctg1().equals("볼거리")){				
+				tab4 += "<tr class='table-light'><td><input type='checkbox' name='select_location' value=" + bean.getLoc_pc() + "></td>";
+				tab4 += "<td><a href='#' id='local_name'>" + bean.getLoc_name() + "</a>";
+				tab4 += "<br><span style='font-size: 5px'> " + bean.getLoc_sg() + " > " + bean.getLoc_ctg1()  + " > " + bean.getLoc_ctg2();
+				tab4 += "</span></td></tr>";
+			}
+			else { // 티켓인 경우	
+				tab5 += "<tr class='table-light'><td><input type='checkbox' name='select_location' value=" + bean.getLoc_pc() + "></td>";
+				tab5 += "<td><a href='#' id='local_name'>" + bean.getLoc_name() + "</a>";
+				tab5 += "<br><span style='font-size: 5px'> " + bean.getLoc_sg() + " > " + bean.getLoc_ctg1()  + " > " + bean.getLoc_ctg2();
+				tab5 += "</span></td></tr>";
+			}
+		}		
+
+		finalStr += "<div class='tab-pane fade active show' id='food' role='tabpanel'><table class='table table-hover'><tbody>" + tab1 + "</tbody></table></div>";
+		finalStr += "<div class='tab-pane fade' id='shopping' role='tabpanel'><table class='table table-hover'><tbody>" + tab2 + "</tbody></table></div>";
+		finalStr += "<div class='tab-pane fade' id='hotspot' role='tabpanel'><table class='table table-hover'><tbody>" + tab3 + "</tbody></table></div>";
+		finalStr += "<div class='tab-pane fade' id='ticket' role='tabpanel'><table class='table table-hover'><tbody>" + tab4 + "</tbody></table></div>";
+		finalStr += "<div class='tab-pane fade' id='test' role='tabpanel'><table class='table table-hover'><tbody>" + tab5 + "</tbody></table></div>";
+		
+		return finalStr;
 	}
+	
+	// 찜 삭제
+	@PostMapping(value="ajaxDeleteJjimList")
+//	@ResponseBody
+	public String mypageJjimListDelete(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "deleteJjimList[]")String[] locDataList) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		
+		String user_id = (String) request.getSession().getAttribute("user_id");
+		map.put("user_id", user_id);
+		
+		String str = "(";
+
+		for(int i=0; i<locDataList.length; i++) {
+			System.out.println(locDataList[i]);
+			str += locDataList[i] + ",";			
+		}
+		
+		str = str.replaceAll(",$", "");
+		str += ")";
+		
+		map.put("str", str);
+		helloDao.userJjimListDelete(map);
+		
+		
+		
+		return "redirect:/ajaxMypageJjim";
+	}
+	
 
 	
 }
