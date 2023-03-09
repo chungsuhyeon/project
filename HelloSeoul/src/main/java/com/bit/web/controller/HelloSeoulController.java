@@ -1,6 +1,5 @@
 package com.bit.web.controller;
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -10,7 +9,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.joda.time.format.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -83,7 +81,7 @@ public class HelloSeoulController {
 			if(birth.getDayOfMonth() > today.getDayOfMonth()) { // 생일 안지남
 				userInfo.put("USER_AGE", today.getYear() - birth.getYear() - 1);						
 			} else { // 생일 지남
-				userInfo.put("USER_AGE", today.getYear() - birth.getYear());				
+				userInfo.put("USER_AGE", today.getYear() - birth.getYear());
 			}
 		}
 						

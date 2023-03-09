@@ -144,7 +144,7 @@
 			dataType: 'text',
 			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			success: function(result){
-				$("div.tab-content").remove();
+				$("div.tab-content").empty();
 				console.log(result);
 				$("div.tab-content").append(result);
 								
