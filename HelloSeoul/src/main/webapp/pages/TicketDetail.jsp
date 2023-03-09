@@ -49,7 +49,12 @@
   
 <body>
 <!--  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"뮤지컬 〈루드윅 : 베토벤 더 피아노〉","startDate":"2022-12-20","endDate":"2023-03-12","location":{"@type":"Place","name":"예스24스테이지 1관","address":{"@type":"PostalAddress","streetAddress":"1관 예스24스테이지 (동숭동) 21 대학로12길","addressLocality":"종로구","postalCode":"03086","addressRegion":"서울","addressCountry":"KR"}},"image":"http://tkfile.yes24.com/upload2/PerfBlog/202301/20230125/20230125-44090.jpg","description":"뮤지컬 〈루드윅 : 베토벤 더 피아노〉 상세정보 장르: 뮤지컬 일시: 2022.12.20 ~ 2023.03.12 등급: 만 10세이상 관람가  관람시간: 110분 장소: 예스24스테이지 1관 ","offers":{"@type":"Offer","url":"http://ticket.yes24.com/Perf/44090","price":"44000","priceCurrency":"KRW","availability":"https://schema.org/InStock","validFrom":"2023-01-10T16:00"},"performer":{"@type":"Person","name":["김주호","박민성","테이","백인태","김준영","정재환","조훈","임세준","이은율","이지연","유소리","김시훈","박이든","양찬영","조재철","크리스 영"]}}</script>
+<<<<<<< HEAD
    이건 뭔지 잘 모르겠음 --> 
+=======
+   이건 뭔지 잘 모르겠음 -->
+<jsp:include page="../Final_Pro/header.jsp"></jsp:include> 
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 
 <script type="text/javascript">
     $(document).ready(function () {

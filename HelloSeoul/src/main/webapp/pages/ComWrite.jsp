@@ -11,7 +11,7 @@
 <script type="text/javascript">
 $(function(){
 	$("button#submitPost").click(function(){
-		console.log($("form"));
+		$("form").submit();
 	});
 
 });
@@ -310,7 +310,7 @@ p {
 	height: 25px;
 }
 
-#write-field .bottombox .btnblue {
+#write-field .bottombox .btnblue {	
 	font-weight: bold;
 	width: 80px;
 	height: 25px;
@@ -318,7 +318,7 @@ p {
 </style>
 </head>
 <body>
-
+	
 
 	<jsp:include page="Header.jsp"></jsp:include>
 
@@ -326,23 +326,23 @@ p {
 	<!-- Page Header -->
 	<!-- Set your background image for this header on the line below. -->
 	
-	<form action="" style="margin-top: 50px">
+	<form action="/web/boardInsert" method="post" style="margin-top: 50px">
 	<div id="write-field">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
 			<table>
 				<tr>
 					<td class="td1">카테고리</td>
-					<td class="td2"><select name="comm_category" class="form-control"
+					<td class="td2"><select name="com_ctg" class="form-control"
 						style="display: inline-block;">
 							<option value="">&nbsp;+ 선택해주세요</option>
 							<option value="">----------------------</option>
-							<option value="1">ㆍ정보공유</option>
-							<option value="2">ㆍ후기</option>
-							<option value="3">ㆍ동행모집</option>
+							<option value="1">정보공유</option>
+							<option value="2">후기</option>	
+							<option value="3">동행모집</option>
 							
 					</select>
-					<td> <input type="hidden" value="email" name="user_id">  </td>
+					<td> <input type="hidden" value="${user_id }" name="user_id">  </td>
 				</tr>
 
 				<tr>
@@ -351,17 +351,11 @@ p {
 							<div class="col-md-6 col-sm-6 col-xs-bskr">
 								<div class="input-title">작성자명</div>
 								<div class="input-forms">
-									<input size="20" type="text" name="nickname" value=""
+									<input size="20" readonly="readonly" type="text" name="user_nick" value="${user_nickName}"
 										class="form-control input-sm input-name bskr-font user" />
 								</div>
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-bskr">
-								<div class="input-title">비밀번호</div>
-								<div class="input-forms">
-									<input size="20" type="password" name="password" value=""
-										class="form-control input-sm input-pwd bskr-font user" />
-								</div>
-							</div>
+						
 						</div>
 					</td>
 				</tr>
@@ -370,7 +364,7 @@ p {
 				<tr>
 					<td class="td1">제목</td>
 					<td class="td2" valign="middle"><input type="text"
-						name="comm_title" value=""
+						name="com_title" value=""
 						class="form-control input-sm bskr-font subject" /></td>
 				</tr>
 
@@ -381,18 +375,18 @@ p {
 					<tr>
 						<td class="td1"></td>
 						<td class="td2" ><textarea class="form-control col-sm-5" 
-								rows="20" id="comm_contents" name="comm_contents" value=""></textarea></td>
+								rows="20" id="com_cont" name="com_cont" value=""></textarea></td>
 					</tr>
 					<tr>
 					<td class="td1"></td>
-						<td class="td2"><input type="file" id="filename" name="filename" value=""></td>
+						<td class="td2"><input type="file" id="filename" name="com_filename" value=""></td>
 					</tr>
 				</table>
 			</div>
 
 			<div class="bottombox">
 				<input id="canclePost" type="button" value="" class="btn btn-default btn-sm"
-					><a href="/web/proTravel/ComList.jsp">취소</a></input>&nbsp;
+					><a href="/web/boardSelect">취소</a></input>&nbsp;
 				<button  id="submitPost"  class="btn btn-primary btn-sm">
 					<i class="glyphicon glyphicon-ok"></i> 확인
 				</button>

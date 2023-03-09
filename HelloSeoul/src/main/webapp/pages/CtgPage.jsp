@@ -32,10 +32,25 @@ $(function(){
 			}
 		});
 	});
+	
+	$.ajax({
+		type:'post',
+		url:'/web/testing',
+		dataType:'json',
+		success : function(r){
+			console.log(r);
+			$('#shit').text(r.loc_name);
+			 
+			
+		},
+		error : function(x){
+			console.log(x);
+		}
+	});
 });
-</script> 
+</script>
 </head>
-<jsp:include page="Header.jsp"></jsp:include>
+<%-- <jsp:include page="Header2.jsp"></jsp:include> --%>
 <body>
 <div id="text1" style="border: solid; height: 800px; width: 1300px; float: left; margin-left: 100px">
 <div>
@@ -71,7 +86,7 @@ $(function(){
 </tr>
 
 <tr style="border: solid;">
-<td style="border: solid;" colspan="3">장소정보</td>
+<td style="border: solid;" colspan="3" id="shit">장소정보</td>
 </tr>
 
 <tr style="border: solid;">

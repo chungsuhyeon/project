@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.helloSeoul">
+
+	<select id="getDbUser" parameterType="String" resultType="java.util.HashMap">
+		select user_pw, user_nick
+		from userboard 
+		where user_id = #{value}
+	</select>
+	
+	<select id="getUserInfo" parameterType="String" resultType="java.util.HashMap">
+		select *
+		from userboard 
+		where user_id = #{value}
+	</select>
+	
+	<select id="getUserJjimList" parameterType="String" resultType="mypageJjim">
+		select * 
+		from jjim 
+		where user_id = #{value}
+	</select>
+	
+	<delete id="userJjimListDelete" parameterType="java.util.HashMap">
+		delete from jjim
+		where user_id = #{user_id} and loc_pc in ${str}
+	</delete>
+
+</mapper>
+
+

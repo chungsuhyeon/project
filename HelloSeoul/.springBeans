@@ -9,7 +9,10 @@
 	<configs>
 	</configs>
 	<autoconfigs>
+<<<<<<< HEAD
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+=======
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
 	</autoconfigs>
 	<configSets>

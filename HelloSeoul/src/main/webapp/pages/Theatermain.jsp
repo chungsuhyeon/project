@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<jsp:include page="Header.jsp"></jsp:include>
+<jsp:include page="../Final_Pro/header.jsp"></jsp:include>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +26,7 @@
 <script type="text/javascript"
 	src="/web/resources/ticketMain2/New/Js/Main.js?v=391"></script>
 
+<<<<<<< HEAD
 
 <link rel="stylesheet" type="text/css"
 	href="/web/resources/ticketMain2/New/Css/reset.css">
@@ -37,6 +38,19 @@
 	href="/web/resources/ticketMain2/New/Css/common-1.css?v=17">
 <link rel="stylesheet" type="text/css"
 	href="/web/resources/ticketMain2/New/Css/main2-1.css?v=2020012203">
+=======
+<link type="text/css" rel="stylesheet" href="/web/resources/final_style/css/bootstrap.css">
+<link rel='stylesheet' type='text/css'
+	href='/web/resources/ticketMain2/New/Css/reset.css'>
+<link rel='stylesheet' type='text/css'
+	href='/web/resources/ticketMain2/New/Css/swiper-1.css'>
+<link rel='stylesheet' type='text/css'
+	href='/web/resources/ticketMain2/New/Css/jquery.mCustomScrollbar-1.css'>
+<link rel='stylesheet' type='text/css'
+	href='/web/resources/ticketMain2/New/Css/common-1.css?v=17'>
+<link rel='stylesheet' type='text/css'
+	href='/web/resources/ticketMain2/New/Css/main2-1.css?v=2020012203'>
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 	
 <div class="m2-kv-hidden">   <!-- 상단 돌아가는 컨텐츠 -->
 		<div class="m2-kv-wrap">
