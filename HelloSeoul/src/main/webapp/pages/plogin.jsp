@@ -57,7 +57,7 @@
 					SIGN IN
 				</h3>
 
-				<form name="form"  method="post" action="${pageContext.request.contextPath}/siteCheck" style="background-color: black; width: '500px;'">
+				<form name="form" method="post" action="${pageContext.request.contextPath}/siteCheck" style="background-color: black; width: '500px;'">
 					<div class="form-group">
 						<input type="text" placeholder="ID" class="form-control" id="user_id" name="user_id"/>
 					</div>
@@ -80,7 +80,7 @@
 					
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12">
-							<a href="../project/join.jsp" class="btn btn-sm btn-info btn-block">SIGN UP</a>
+							<a href="/web/pages/join.jsp" class="btn btn-sm btn-info btn-block">SIGN UP</a>
 						</div>
 					</div>
 					

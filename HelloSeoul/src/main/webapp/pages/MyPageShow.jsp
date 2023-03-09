@@ -7,16 +7,16 @@
 <title>플래너 보기</title>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <link rel="stylesheet" type="text/css" href="/web/resources/hellomypage/css/mypageCreate.css">
-
+<link rel="stylesheet" href="/web/resources/helloseoul/css/headerstyle.css">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=68fb4c87ba8765d71119fecd40096446"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <script>
 	$(function(){
 		$('.tabcontent > table').hide();
 		$('.tabnav a').click(function () {
-			$('.tabcontent > table').hide().filter(this.hash).fadeIn();
+			$('.tabcontent > table').hide().filter(this.hash).fadeIn();;
 			$('.tabnav a').removeClass('active');
 			$(this).addClass('active');
 			return false;
@@ -29,8 +29,10 @@
 
 </head>
 
-<body>
-	<jsp:include page="Header.jsp"></jsp:include>
+<body class='body'>
+	<!--Header Begin -->
+<%-- 	<jsp:include page="Header2.jsp" ></jsp:include> --%>
+ 	<%@ include file="../Final_Pro/header.jsp" %>
 	
 	<!-- 뒤로가기 & 플래너 수정 버튼 -->
 	<div class="div_buttons" align="right">
@@ -64,7 +66,7 @@
 				<li><a href="#tab02">day 2</a></li>
 				<li><a href="#tab03">day 3</a></li>
 			</ul>
-			<div class="tabcontent">
+			<div id='tabcontent' class="tabcontent">
 				<!-- 일정 table -->
 				<table id='tab01' class="contents_table">
 					<tbody>

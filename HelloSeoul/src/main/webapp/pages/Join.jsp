@@ -17,10 +17,14 @@
 	   $("input#month").val('');
 	   $("input#day").val('');
 	   $("input#year").focus();
+<<<<<<< HEAD
    }  
 
 
 
+=======
+   } 
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 	   
    $(function(){  
 	   // 국적입력하면 전화번호에 국가번호 입력, 포커스 다음칸으로 
@@ -152,7 +156,7 @@
 </style>
 
 </head>
-<jsp:include page="./Header.jsp"></jsp:include>
+<%-- <jsp:include page="./Header2.jsp"></jsp:include> --%>
 <body style="background-image: url('/web/resources/helloseoul/img/backjoin.jpg');" >
 		<form action="/web/joinMemberInsert" name="joinFrm" method="post">
 		<div id="container">
