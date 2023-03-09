@@ -21,19 +21,19 @@
 $(function(){
 	$("button").click(function(){
 		if(($(this).attr('id'))=='join'){
-			 document.location.href ="join.jsp";
+			 document.location.href ="/web/Final_Pro/join.jsp";
 		}
 		else if(($(this).attr('id'))=='login'){
-			document.location.href ="login.jsp";
+			document.location.href ="/web/Final_Pro/login.jsp";
 		}
 		else if(($(this).attr('id'))=='logout'){
-			document.location.href ="login.jsp";
+			document.location.href ="/web/HelloSeoulLogout";
 		}
 		else if(($(this).attr('id'))=='comm'){
-			document.location.href ="commList.jsp";
+			document.location.href ="/web/Final_Pro/commList.jsp";
 		}
 		else if(($(this).attr('id'))=='mypage'){
-			document.location.href ="myPageMain.jsp";
+			document.location.href ="/web/myPageLoad";
 		}
 	});
 });
@@ -106,10 +106,18 @@ $(function(){
       </ul>
       <div class="setbar d-flex">
        	<button type="button" class="btn btn-dark" id="comm">Community</button>
-       	<button type="button" class="btn btn-dark">Logout</button>
-       	<button type="button" class="btn btn-dark" id="login">Login</button>
-       	<button type="button" class="btn btn-dark" id="join">Join</button>
-       	<button type="button" class="btn btn-dark" id='mypage'>MyPage</button>
+       	
+       	<c:choose>
+	       	<c:when test="${user_id eq null}">
+		       	<button type="button" class="btn btn-dark" id="login">Login</button>
+		       	<button type="button" class="btn btn-dark" id="join">Join</button>	       	
+	       	</c:when>
+	       	<c:otherwise>
+		       	<button type="button" class="btn btn-dark" id="logout">Logout</button>
+		       	<button type="button" class="btn btn-dark" id='mypage'>MyPage</button>
+	       	</c:otherwise>
+       	</c:choose>
+       	
       </div>
 	</div>
   </div>

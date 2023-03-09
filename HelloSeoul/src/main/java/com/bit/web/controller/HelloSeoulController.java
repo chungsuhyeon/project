@@ -38,9 +38,9 @@ public class HelloSeoulController {
 			request.getSession().setAttribute("user_id", user_id);
 			request.getSession().setAttribute("user_nickName", nickName);
 			request.getSession().setMaxInactiveInterval(60*60);
-			return "redirect:/pages/MainPage.jsp";
+			return "redirect:/Final_Pro/index.jsp";
 		} else {
-			return "redirect:/pages/plogin.jsp";
+			return "redirect:/Final_Pro/login.jsp";
 		}
 	}
 	
@@ -49,7 +49,7 @@ public class HelloSeoulController {
 	public ModelAndView BoardLogout(HttpServletRequest request) {
 		request.getSession().setAttribute("user_id", null);
 		request.getSession().setMaxInactiveInterval(0);		
-		return new ModelAndView("pages/MainPage");
+		return new ModelAndView("Final_Pro/index");
 	}
 	
 	// 마이페이지 메인화면으로
@@ -127,7 +127,7 @@ public class HelloSeoulController {
 		
 //		System.out.println("HelloSeoulController userInfoAll userInfo ; " + userInfo);
 		
-		return new ModelAndView("pages/MyPageMain");
+		return new ModelAndView("Final_Pro/myPageMain");
 	}
 	
 	// 찜 보기 화면
