@@ -19,8 +19,11 @@ public class TicketController {
 	private MusicalBean bean;
 
 	@RequestMapping (value = "contentImg")
-	public String ImgCheck() {
-		System.out.println("contentImg");
+	public String ImgCheck(String imgsrc,Model model) {
+//		System.out.println("contentImg");
+//		System.out.println(imgsrc);
+		model.addAttribute("musicalinfo", dao.selectMusicalInfo(imgsrc));
+		System.out.println(model);
 		return "pages/TicketDetail";
 	}
 	

@@ -43,14 +43,11 @@
 			$("form").submit();
 		});
 	});
-	
-	$(function(){
-		
-	})
 </script>
 
 
-<form role="form" action="/web/contentImg">
+<!-- <form role="form" action="/web/contentImg"> -->
+<form>
 
 <div class="m2-kv-hidden">   <!-- 상단 돌아가는 컨텐츠 -->
 		<div class="m2-kv-wrap">
@@ -59,7 +56,7 @@
 				<div class="swiper-wrapper">
 				<c:forEach var="i" items="${musicallist}" varStatus="cnt">
 						<div class="swiper-slide">
-							<a href="#"
+							<a href="/web/contentImg?imgsrc=${i.imgsrc}"
 								target="_self" title="${i.title}" id="img"><img id="imgsrc"
 								src="${i.imgsrc}"
 								alt="">
@@ -175,7 +172,7 @@
 		</p>   <!-- /WHAT"S HOT 이미지 -->
 		<div class="ms-list-imgs">   <!-- 첫줄 5개의 컨텐츠 DIV 5개씩 묶고 끊기 -->
 		<c:forEach var="i" items="${musicallist2}" varStatus="cnt">
-		<a href="#" target="_self"
+		<a href="/web/contentImg?imgsrc=${i.imgsrc}" target="_self"
 				title="${i.title}" id="img"><div class="list-bigger-wrap">
 					<img class="lazyload" id="imgsrc"
 						data-src="${i.imgsrc}"
@@ -259,7 +256,7 @@
 		</div>   <!-- /첫줄 5개의 컨텐츠 DIV 5개씩 묶고 끊기 -->
 		<div class="ms-list-imgs">  <!-- 둘째줄 5개의 컨텐츠 DIV 5개씩 묶고 끊기 -->
 		<c:forEach var="i" items="${musicallist3}" varStatus="cnt">
-		<a href="#" target="_self"
+		<a href="/web/contentImg?imgsrc=${i.imgsrc}" target="_self"
 				title="${i.title}" id="img"><div class="list-bigger-wrap">
 					<img class="lazyload" id="imgsrc"
 						data-src="${i.imgsrc}"
@@ -357,7 +354,7 @@
 				<ul>
 				<c:forEach var="i" items="${musicallist4}">
 				<li><a
-						href="#"
+						href="/web/contentImg?imgsrc=${i.imgsrc}"
 						title="${i.title}" id="img"><dl>
 								<dt>
 									${i.ranking}<span class="dash">-</span>
@@ -478,7 +475,7 @@
 						
 						<c:forEach var="i" items="${musicallist5}">
 							<div class="swiper-slide">
-								<a href="#" target="_self"
+								<a href="/web/contentImg?imgsrc=${i.imgsrc}" target="_self"
 									title="${i.title}" id="img"><span><img id="imgsrc"
 										src="${i.imgsrc}"
 										alt=""></span>

@@ -10,5 +10,12 @@ public class MusicalBean {
 	private String detail;
 	private String ptitle;
 	private String ranking;
+	private String rundate;
+	private String theater;
+	private int reviews;
+	private String runtime;
+	private String grade;
+	private String performer;
+	private String price;
 
 }

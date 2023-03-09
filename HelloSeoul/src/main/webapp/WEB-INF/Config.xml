@@ -6,9 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    <typeAliases>
 <!-- 		<typeAlias type="com.bit.boarding.dao.ReportBoradMemberBean" alias="memBean"/> -->
 		<typeAlias type="com.bit.web.controller.MusicalBean" alias="MusicalBean"/>
-		<typeAlias type="com.bit.web.controller.MusicalBean2" alias="MusicalBean2"/>
-		<typeAlias type="com.bit.web.controller.MusicalBean3" alias="MusicalBean3"/>
-		<typeAlias type="com.bit.web.controller.MusicalBean4" alias="MusicalBean4"/>
    </typeAliases>
    <mappers>
 <!-- 	<mapper resource="com/bit/boarding/dao/member-mapper.xml"/> -->

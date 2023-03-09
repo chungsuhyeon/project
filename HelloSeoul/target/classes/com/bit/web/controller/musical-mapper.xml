@@ -24,6 +24,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST5
 	</select>
 	
+	<select id="selectMusicalInfo" parameterType="String" resultType="MusicalBean">
+		SELECT NO, TITLE, RUNDATE, THEATER, IMGSRC, REVIEWS, GRADE, RUNTIME, PERFORMER, PRICE FROM MUSICALINFO
+		WHERE IMGSRC=#{VALUE}
+	</select>
 	
 	
 <!-- 	<select id="selectSeqNumber" resultType="Integer"> -->
