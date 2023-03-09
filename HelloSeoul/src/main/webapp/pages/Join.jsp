@@ -125,7 +125,7 @@
 </style>
 
 </head>
-<jsp:include page="./Header.jsp"></jsp:include>
+<%-- <jsp:include page="./Header2.jsp"></jsp:include> --%>
 <body style="background-image: url('/web/resources/helloseoul/img/backjoin.jpg');" >
 		<form action="/web/joinMemberInsert" name="joinFrm" method="post">
 		<div id="container">

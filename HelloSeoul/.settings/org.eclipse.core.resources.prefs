@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/java/com/bit/web/controller/HelloSeoulController.java=UTF-8
+=======
+encoding//src/main/webapp/BootTech/category.jsp=UTF-8
+encoding//src/main/webapp/BootTech/login.jsp=UTF-8
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git

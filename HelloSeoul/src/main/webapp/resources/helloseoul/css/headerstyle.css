@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* header line */
+
+.header{
+	background : #ffffff;
+	border-bottom : 2px solid #000000;
+	border-bottom-color: #000000;
+	height: 50px;
+}
+.headerBox{
+	display: flex;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.header__menubar>div{
+	display:inline-block;
+}
+
+/* body line */
+
+.body{
+	background: #ffffff;
+}

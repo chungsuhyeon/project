@@ -24,7 +24,21 @@ $(function(){
 });
 </script> 
 </head>
+<c:set var="id" value="test"/>
+<%-- <c:set var="id" value="test1"/> --%>
 <body>
+<<<<<<< HEAD
+<header>
+<div id='mainheading'>
+<div id='logosector'><img id='logo' alt="logo" src="/web/resources/helloseoul/img/seoul_logo.png"></div>
+<div id='menubar'>
+	<div id="food">
+	<h2><a href="#">■FOOD</a></h2>
+		<div>
+		<a href="#">KOREA&nbsp;&nbsp;</a>
+		<a href="#">CHINA&nbsp;&nbsp;</a>
+		<a href="#">JAPAN</a>
+=======
 	<header>
 		<div id='mainheading'>
 			<div id='logosector'><img id='logo' alt="logo" src="/web/resources/helloseoul/img/logo.jpg"></div>
@@ -77,8 +91,8 @@ $(function(){
 					</c:otherwise>
 				</c:choose>
 			</div>
-			
 		</div>
+
 	</header>
 </body>
 </html>

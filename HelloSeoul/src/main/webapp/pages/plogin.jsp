@@ -57,7 +57,7 @@
 					SIGN IN
 				</h3>
 
-				<form name="form"  method="post" action="${pageContext.request.contextPath}/siteCheck" style="background-color: black; width: '500px;'">
+				<form name="form" method="post" action="${pageContext.request.contextPath}/siteCheck" style="background-color: black; width: '500px;'">
 					<div class="form-group">
 						<input type="text" placeholder="ID" class="form-control" id="user_id" name="user_id"/>
 					</div>

@@ -38,9 +38,9 @@ public class HelloSeoulController {
 			request.getSession().setAttribute("user_id", user_id);
 			request.getSession().setAttribute("user_nickName", nickName);
 			request.getSession().setMaxInactiveInterval(60*60);
-			return "redirect:/pages/MainPage.jsp";
+			return "redirect:/Final_Pro/index.jsp";
 		} else {
-			return "redirect:/pages/plogin.jsp";
+			return "redirect:/Final_Pro/login.jsp";
 		}
 	}
 	
@@ -49,7 +49,7 @@ public class HelloSeoulController {
 	public ModelAndView BoardLogout(HttpServletRequest request) {
 		request.getSession().setAttribute("user_id", null);
 		request.getSession().setMaxInactiveInterval(0);		
-		return new ModelAndView("pages/MainPage");
+		return new ModelAndView("Final_Pro/index");
 	}
 	
 	// 留덉씠�럹�씠吏� 硫붿씤�솕硫댁쑝濡�
@@ -127,18 +127,17 @@ public class HelloSeoulController {
 		
 //		System.out.println("HelloSeoulController userInfoAll userInfo ; " + userInfo);
 		
-		return new ModelAndView("pages/MyPageMain");
+		return new ModelAndView("Final_Pro/myPageMain");
 	}
 	
 	// 李� 蹂닿린 �솕硫�
 	@PostMapping(value = "ajaxMypageJjim")
 	@ResponseBody
 	public List<Object> mypageJjimListLoad(@RequestParam(value = "user_id")String user_id){
-		System.out.println("HelloSeoulController mypageJjimListLoad user_id " + user_id);
 		List<Object> userJjimList = helloDao.getUserJjimList(user_id);
 		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
-		
 		return userJjimList;
 	}
+
 	
 }

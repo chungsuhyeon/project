@@ -6,8 +6,10 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration><!-- DB설정(Connection) -->
 <typeAliases>
 		<typeAlias type="com.bit.web.vo.MypageJjimBean" alias="mypageJjim"/>
+		<typeAlias type="com.bit.web.vo.MainDbBean" alias="mainDb"/>
 	</typeAliases>
 	
+<<<<<<< HEAD
    <mappers>
    <mapper resource="com/bit/web/dao/project-mapper.xml"/>
   <mapper resource="com/bit/web/dao/helloSeoul-mapper.xml"/>
@@ -17,10 +19,19 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!-- DB설정(Connection) -->
 	
 
+=======
+	<mappers>
+<<<<<<< HEAD
+<!-- 		<mapper resource="com/bit/web/dao/helloSeoul-mapper.xml"/> -->
+		<mapper resource="com/bit/web/dao/ctg-mapper.xml"/>
+=======
+		<mapper resource="com/bit/web/dao/member-mapper.xml"/>
+		<mapper resource="com/bit/web/dao/helloSeoul-mapper.xml"/>
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
+	</mappers>
+<<<<<<< HEAD
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 </configuration>
-
-
-
-
-
-
+=======
+</configuration>
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
