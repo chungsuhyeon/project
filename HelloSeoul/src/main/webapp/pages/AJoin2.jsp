@@ -17,14 +17,10 @@
 	   $("input#month").val('');
 	   $("input#day").val('');
 	   $("input#year").focus();
-<<<<<<< HEAD
    }  
 
 
 
-=======
-   } 
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 	   
    $(function(){  
 	   // 국적입력하면 전화번호에 국가번호 입력, 포커스 다음칸으로 
@@ -55,74 +51,41 @@
 		        }
 			   });
 
-  
 	   
-		   
- 		   
-		   $("span#unique a").click(function(){
-			   $("input[name='email']").val($("input[name='email1']").val()+'@'+$("input[name='email2']").val());
-			   let user_email = $("input[name='email']").val();
-               alert(user_email);
-			   $.ajax({
-				   url:'/web/FindEmail',
-				   type:'POST',	
-				   data:{id:user_email},
-				   contentType:'application/x-www-form-urlencoded; charset=UTF-8',
-				   dataType:'text',
-				   success:function(result){
-					  // console.log(result);
-					  if(result=='true'){
-						  $("span#sid").html("<font color='red'> email 중복입니다</font>");
-						  $("input[name='email1']").val('');
-						  $("input[name='email1']").focus();
-					 }else{
-						 $("span#sid").html("<font color='red'>ID 가능합니다</font>")
-					 }
-				   },
-				   error:function(){
-					   alert('error');
-				   }	 	   
-			   });
-		   });
-		   
-		   
-		   
-		   
-		   
-		   $("select[name='email3']").change(function(){
-			   if($(this).val()=='direct'){
-				   //$("input[name='email2']").attr("disabled",false);
-				   //$("input[name='email2']").attr("readonly",false);
-				   $("input[name='email2']").removeAttr("readonly");
-				   $("input[name='email2']").val('');
-				   $("input[name='email2']").focus();
-			   }else{
-				   //$("input[name='email2']").attr("disabled",true);
-				   $("input[name='email2']").attr("readonly",true);
-				   $("input[name='email2']").val( $("select[name='email3']").val());
-			   }			   
-		   });		   
-		   
-		   
-		   
-/*==============================================================================================================================  */	
+/*===============================================================================================================================  */	   
 	   
-   
 	   
+	   
+	   $("select[name='email3']").change(function(){
+		   if($(this).val()=='direct'){
+			   //$("input[name='email2']").attr("disabled",false);
+			   //$("input[name='email2']").attr("readonly",false);
+			   $("input[name='email2']").removeAttr("readonly");
+			   $("input[name='email2']").val('');
+			   $("input[name='email2']").focus();
+		   }else{
+			   //$("input[name='email2']").attr("disabled",true);
+			   $("input[name='email2']").attr("readonly",true);
+			   $("input[name='email2']").val( $("select[name='email3']").val());
+		   }
+		   
+	   });
+
+ 
 	
 	   
-	   $("#save").click(function(){ //값 유무 확인		   
-		   $("input[name='email']").val($("input[name='email1']").val()+'@'+$("input[name='email2']").val());
-		   $("input[name='tel']").val($("input[name='tel1']").val()+'-'+$("input[name='tel2']").val()+'-'+$("input[name='tel3']").val()+'-'+$("input[name='tel4']").val());          
-		        
-	       $("input[name='user_name']").val($("input[name='name1']").val()+' '+$("input[name='name2']").val());	       	       
-	       alert($("input#name").val().length);
-	       $("form").submit(); 
+	   $("span#save a").click(function(){ //값 유무 확인
+		   //alert($("input#name").val().length);
+	       $("input[name='postAddress']").val( $("input[name='post1']").val()+"-"+$("input[name='post2']").val()+" "+$("input[name='address']").val()+' '+$("input[name='infoAddr']").val());
+	       $("input[name='tel']").val($("input[name='tel1']").val()+'-'+$("input[name='tel2']").val()+'-'+$("input[name='tel3']").val());
+	       $("input[name='cp']").val($("input[name='cp1']").val()+'-'+$("input[name='cp2']").val()+'-'+$("input[name='cp3']").val());
+	       $("input[name='email']").val($("input[name='emai11']").val()+'@'+$("input[name='email2']").val());
+	       $("form").submit();
 	   
 	   });
 
 
- /*===============================================================================================================================  */		   
+	   
 	   
 	   $("input#day").blur(function(){
 		  //숫자인경우  
@@ -142,8 +105,36 @@
 		 }  		
 	   }); 
 	   
-
-   
+	   
+	   $("span#spost a").click(function(){
+		  window.open("address.jsp","id","left=100,top=200,width=400, height=400");
+	   });
+	   
+	   
+	    $("span#unique a").click(function(){
+	    	//alert($("input[name='id']").val());
+	       let user_id =$("input[name='id']").val();
+		   $.ajax({
+			   url:'/web/ajaxFindID',
+			   type:'POST',	
+			   data:{id:user_id},
+			   contentType:'application/x-www-form-urlencoded; charset=UTF-8',
+			   dataType:'text',
+			   success:function(result){
+				  // console.log(result);
+				  if(result=='true'){
+					  $("span#sid").html("<font color='red'>ID 중복</font>");
+					  $("input[name='id']").val('');
+					  $("input[name='id']").focus();
+				 }else{
+					 $("span#sid").html("<font color='red'>ID 가능합니다</font>")
+				 }
+			   },
+			   error:function(){
+				   alert('error');
+			   }			   
+		   });
+    });	    
    }); // 전체함수 끝!!!
 </script>
 <style>
@@ -156,7 +147,7 @@
 </style>
 
 </head>
-<%-- <jsp:include page="./Header2.jsp"></jsp:include> --%>
+<jsp:include page="./Header.jsp"></jsp:include>
 <body style="background-image: url('/web/resources/helloseoul/img/backjoin.jpg');" >
 		<form action="/web/joinMemberInsert" name="joinFrm" method="post">
 		<div id="container">
@@ -176,7 +167,8 @@
 										<td><input  style="height: 20px;"  type="text" name="email1" class="inputText" size="10" />@
 										   <input  style="height: 20px;" type="text" name="email2"  class="inputText" />
 										   <select   style="height: 20px;" name="email3" >
-										     <option selected="selected" value="direct">직접입력</option>
+										     <option selected="selected">선택하세요</option>
+										     <option value="direct">직접입력</option>
 										     <option value="naver.com">naver.com</option>
 										     <option value="daum.net">daum.net</option>
 										     <option value="bit.com">bit.com</option>
@@ -188,13 +180,11 @@
 							    	</tr>
 								<tr id="valu">
 									<th> 이름 </th>
-									<td><input style="height: 20px;" type="text" name="name1" id="name1" class="inputText" size="20" />이름</td>
-									<td><input style="height: 20px;" type="text" name="name2" id="name2" class="inputText" size="20" />성</td>
-									<td><input style="height: 20px;" type="hidden" name="user_name" id="name" class="inputText" size="20" /></td>
+									<td><input style="height: 20px;" type="text" name="name" id="name" class="inputText" size="30" /></td>
 								</tr>
 								<tr id="valu">
 									<th>닉네임</th>
-									<td><input style="height: 20px;" type="text" name="nick" id="nick" class="inputText" size="30" /></td>
+									<td><input style="height: 20px;" type="text" name="name" id="name" class="inputText" size="30" /></td>
 								</tr>
 								<tr id="valu">
 									<th>비밀번호</th>
@@ -224,6 +214,19 @@
 <!-- 										<input type="text" name="month" id="month" class="inputText" size="10" /> 월 -->
 <!-- 										<input type="text" name="day" id="day" class="inputText" size="10" /> 일 -->
 <!-- 										<input type="text" name="birth" id="birth" class="inputText" size="10" /> 생일 -->
+									</td>
+								</tr>
+								<tr id="valu">
+									<th>주소</th>
+									<td class="alignM">
+										<p class="mgb3">
+											<input type="text" name="post1" class="inputText" size="7" readonly="readonly" /> - <input type="text" name="post2" class="inputText" size="7" /> <span class="buttonFuc" id="spost"><a href="#">우편번호</a></span>
+										</p>
+										<p class="mgb3">
+											<input type="text" name="address" class="inputText" size="30" readonly="readonly" />
+											<input type="text" name="infoAddr" class="inputText" size="30" />
+											<input type="hidden" name="postAddress" class="inputText" size="30" />
+										</p>
 									</td>
 								</tr>
 									<tr id="valu">
@@ -264,27 +267,29 @@
 										<input style="height: 20px;" type="hidden" name="tel" class="inputText" size="10" />
 									</td>
 								</tr>
+
 								<tr id="valu">
 									<th>방문목적</th>
 									<td>
-										<input type="radio" class="inputRadio"   name="visit" id="visit1" value="관광" /><label for="visit1">관광</label>
-										<input type="radio" class="inputRadio"   name="visit" id="visit2" value="업무"/><label for="visit2">업무</label>
-										<input type="radio" class="inputRadio"   name="visit" id="visit3" value="기타"/><label for="visit3">기타1</label>										
+										<input type="radio" class="inputRadio"   name="visit" id="visit" value="관광" /><label for="visit">관광</label>
+										<label for="visit"><input type="radio" class="inputRadio"   name="visit" id="visit" value="업무"/>업무</label>
+										<label for="visit"><input type="radio" class="inputRadio"   name="visit" id="visit" value="기타"/>기타1</label>
+										
 									</td>
 								</tr>
 								 <tr id="valu">
 									<th>관광우선순위</th>
 									<td>
-										<label for="travel1"><input type="radio" class="inputRadio"  name="travel" id="travel1" value="관광" />관광</label>
-										<label for="travel2"><input type="radio" class="inputRadio"  name="travel" id="travel2" value="업무"/>업무</label>
-										<label for="travel3"><input type="radio" class="inputRadio"  name="travel" id="travel3" value="기타"/>기타1</label>										
+										<label for="travel"><input type="radio" class="inputRadio"   name="travel" id="travel" value="관광" />관광</label>
+										<label for="travel"><input type="radio" class="inputRadio"   name="travel" id="travel" value="업무"/>업무</label>
+										<label for="travel"><input type="radio" class="inputRadio"   name="travel" id="travel" value="기타"/>기타1</label>
+										
 									</td>
 								</tr>								
 								</tbody>
 							</table>
 							<div class="agr mgb15">
-<!-- 								<span class="button" id="save"><a href="../pages/plogin.jsp">가입</a></span> -->
-								<button type="button" id="save">가입</button>
+								<span class="button" id="save"><a href="../project/mainPage.jsp">가입</a></span>
 							</div>
 						</div>
 					</div>
