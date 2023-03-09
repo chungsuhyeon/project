@@ -56,78 +56,68 @@ public class HelloSeoulController {
 	// 留덉씠�럹�씠吏� 硫붿씤�솕硫댁쑝濡�
 	@RequestMapping("myPageLoad")
 	public ModelAndView userInfoAll(HttpServletRequest request, Model model) {
-<<<<<<< HEAD
+
 		// 개인정보 넘기기		
 		HashMap<String, Object> userDBInfo = helloDao.getUserInfo((String)request.getSession().getAttribute("user_id"));
-=======
-		// 媛쒖씤�젙蹂� �꽆湲곌린		
-		HashMap<String, Object> userDBInfo = helloDao.getUserInfo(request.getSession().getAttribute("user_id"));
-//		System.out.println("HelloSeoulController userInfoAll ; " + userDBInfo);
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 		
-		// DB�쓽 �깮�뀈�썡�씪 �궇吏쒗삎�쑝濡� ���엯蹂�寃�
-		LocalDate birth = LocalDate.parse((String)userDBInfo.get("USER_BIRTH"), DateTimeFormatter.ofPattern("yy/MM/dd"));
+		// DB 생일
+		LocalDate birth = LocalDate.parse((String)userDBInfo.get("USER_BIRTH"), DateTimeFormatter.ofPattern("yyyy/MM/dd"));
 		
-		// �삤�뒛 �궇吏� 諛쏆븘�삤湲�
+		// 오늘 날짜
 		LocalDate today = LocalDate.now();
 		
 		
 		int user_pp = Integer.parseInt(String.valueOf(userDBInfo.get("USER_PP")));
 		int user_first = Integer.parseInt(String.valueOf(userDBInfo.get("USER_FIRST")));
 		
-		// page�뿉 �꽆湲� map
+		// 정보 넘길거
 		HashMap<String, Object> userInfo = new HashMap<String, Object>();	
-		userInfo.put("USER_NAME", userDBInfo.get("USER_NAME")); // �씠由�
-		userInfo.put("USER_NATION", userDBInfo.get("USER_NATION")); // 援��쟻
+		userInfo.put("USER_NAME", userDBInfo.get("USER_NAME")); // 이름
+		userInfo.put("USER_NATION", userDBInfo.get("USER_NATION")); // 국적
 		
-		// 留� �굹�씠 怨꾩궛
-		if( (today.getMonthValue() - birth.getMonthValue()) > 0) { // �깮�씪�씠 吏��궓
+		// 나이계산
+		if( (today.getMonthValue() - birth.getMonthValue()) > 0) { // 생일 지난 사람
 			userInfo.put("USER_AGE", today.getYear() - birth.getYear());	
 		} else { // �깮�씪 �븞吏��궓
-			if(birth.getDayOfMonth() > today.getDayOfMonth()) { // �깮�씪 �븞吏��궓
+			if(birth.getDayOfMonth() > today.getDayOfMonth()) { // 생일 안지난 사람
 				userInfo.put("USER_AGE", today.getYear() - birth.getYear() - 1);						
-<<<<<<< HEAD
 			} else { // 생일 지남
 				userInfo.put("USER_AGE", today.getYear() - birth.getYear());
-=======
-			} else { // �깮�씪 吏��궓
-				userInfo.put("USER_AGE", today.getYear() - birth.getYear());				
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
-			}
+			} 
 		}
 						
-		// 愿�愿묐ぉ�쟻
+		// 관광목적
 		switch (user_pp) {
 		case 1:
-			userInfo.put("USER_PP", "travel"); // �뿬�뻾
+			userInfo.put("USER_PP", "travel"); // 여행
 			break;
 		case 2:
-			userInfo.put("USER_PP", "business trip"); // 異쒖옣
+			userInfo.put("USER_PP", "business trip"); // 출장
 			break;
 		case 3:
-			userInfo.put("USER_PP", "study"); // �븰�뾽
+			userInfo.put("USER_PP", "study"); // 유학
 			break;
 		case 4:
-			userInfo.put("USER_PP", "experience"); // 泥댄뿕
+			userInfo.put("USER_PP", "experience"); // 경험
 			break;
 		default : 
 			userInfo.put("USER_PP", "Not selected");
 			break;
 		}
 		
-		// 愿�愿� �슦�꽑�닚�쐞
+		// 관광 1순위
 		switch (user_first) {
 		case 1:
-			userInfo.put("USER_FIRST", "food"); // �쓬�떇
+			userInfo.put("USER_FIRST", "food"); // 음식점
 			break;
 		case 2:
-			userInfo.put("USER_FIRST", "cultural experience"); // 臾명솕泥댄뿕
+			userInfo.put("USER_FIRST", "cultural experience");
 			break;
 		case 3:
-			userInfo.put("USER_FIRST", "shopping"); // �눥�븨
+			userInfo.put("USER_FIRST", "shopping");
 			break;
 		case 4:
-			userInfo.put("USER_FIRST", "history tour"); // �뿭�궗�깘諛�
+			userInfo.put("USER_FIRST", "history tour");
 			break;
 		default : 
 			userInfo.put("USER_PP", "Not selected");
@@ -138,18 +128,13 @@ public class HelloSeoulController {
 		return new ModelAndView("Final_Pro/myPageMain");
 	}
 	
-<<<<<<< HEAD
 	// 찜 보기 화면
 	@RequestMapping(value = "ajaxMypageJjim",method = {RequestMethod.GET, RequestMethod.POST} , produces = "application/text; charset=utf8")
-=======
-	// 李� 蹂닿린 �솕硫�
-	@PostMapping(value = "ajaxMypageJjim")
->>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 	@ResponseBody
 	public String mypageJjimListLoad(HttpServletRequest request, HttpServletResponse response){
 		String user_id = (String) request.getSession().getAttribute("user_id");
 		List<Object> userJjimList = helloDao.getUserJjimList(user_id);
-		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
+//		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
 		
 		String finalStr = "";
 		String tab1 = "";
