@@ -134,7 +134,7 @@ public class HelloSeoulController {
 	public String mypageJjimListLoad(HttpServletRequest request, HttpServletResponse response){
 		String user_id = (String) request.getSession().getAttribute("user_id");
 		List<Object> userJjimList = helloDao.getUserJjimList(user_id);
-		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
+//		System.out.println("HelloSeoulController mypageJjimListLoad userJjimList " + userJjimList);
 		
 		String finalStr = "";
 		String tab1 = "";
