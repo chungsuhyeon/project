@@ -74,7 +74,7 @@ $(function(){
 			</div>
 			
 			<div id='controlbutton'>
-				<div><a href="#">com</a></div>
+				<div><a href="/web/boardSelect">com</a></div>
 				<!-- <div><a href="plogin.jsp">login</a></div> -->
 				 <!-- <div><a href="#">logout</a></div> -->
 				<!-- <div><a href="#">join</a></div> -->

@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html PUBLIC >
 <html>
 
@@ -51,101 +54,48 @@
 		<div class="col-md-8" ">
 			<div class="board-toolbar" 	style="text-align: right; margin-bottom: 20px">
 
-				<a href="/web/proTravel/ComWrite.jsp" class="btn btn-primary btn-sm"><i
+				<a href="/web/pages/ComWrite.jsp" class="btn btn-primary btn-sm"><i
 					class="glyphicon glyphicon-pencil" style="margin-right: 15px"></i>쓰기</a>
 			</div>
+			
+			
 			<div class="list-group"  	>
-
-				<a href="ComInfo.jsp" class="list-group-item">
+			<c:forEach items="${board }" var="i">
+				
+				<a href="/web/infoSelect?no=${i.com_no }" class="list-group-item">
+				
 					<div class="board-title">
-						<span class="board-category">[ALGORITHM]</span>
-							버블정렬  <span class="badge">New</span>
+						<span class="board-category">[
+						<c:choose>
+						<c:when test="${i.com_ctg eq 1}">정보공유</c:when>
+						<c:when test="${i.com_ctg eq 2}">후기</c:when>
+						<c:otherwise>동행모집</c:otherwise>
+						
+						</c:choose>
+						
+						
+						
+						
+						
+						
+						]</span>
+						${i.com_title }  <span class="badge">New</span>
 					</div>
 					<div class="board-meta"
 						style="font-weight: 400; font-size: 1.2rem; color: #404040">
 						<p>
-							<i class="glyphicon glyphicon-user"></i> 미립 님 <i
-								class="glyphicon glyphicon-comment"></i> 0 <i
-								class="glyphicon glyphicon-ok"></i> 20 <i
-								class="glyphicon glyphicon-time"></i> 2016.03.31 21:55
+						<input type="hidden" value="${user_id }" name="user_id">
+							<i class="glyphicon glyphicon-user"></i> ${i.user_nick } 님 <i
+								class="glyphicon glyphicon-comment"></i> ${i.reply } <i
+								class="glyphicon glyphicon-ok"></i> ${i.com_hit } <i
+								class="glyphicon glyphicon-time"></i> ${i.com_regdate }
 						</p>
 					</div>
 				</a>
-				<a href="info.jsp" class="list-group-item">
-					<div class="board-title">
-						<span class="board-category">[JAVASCRIPT]</span>
-							스크립트 태그를 마지막에 쓰는 이유<span class="badge">New</span>
-					</div>
-					<div class="board-meta"
-						style="font-weight: 400; font-size: 1.2rem; color: #404040">
-						<p>
-							<i class="glyphicon glyphicon-user"></i> 미립 님 <i
-								class="glyphicon glyphicon-comment"></i> 0 <i
-								class="glyphicon glyphicon-ok"></i> 20 <i
-								class="glyphicon glyphicon-time"></i> 2016.03.31 21:55
-						</p>
-					</div>
-				</a>
-				<a href="info.jsp" class="list-group-item">
-					<div class="board-title">
-						<span class="board-category">[JAVA]</span> String
-							과 StringBuffer의 차이 <span class="badge">New</span>
-					</div>
-					<div class="board-meta"
-						style="font-weight: 400; font-size: 1.2rem; color: #404040">
-						<p>
-							<i class="glyphicon glyphicon-user"></i> 미립 님 <i
-								class="glyphicon glyphicon-comment"></i> 0 <i
-								class="glyphicon glyphicon-ok"></i> 38 <i
-								class="glyphicon glyphicon-time"></i> 2016.03.31 21:55
-						</p>
-					</div>
-				</a>
-				<a href="info.jsp" class="list-group-item">
-					<div class="board-title">
-						<span class="board-category">[JAVA]</span> Length
-							vs Length() 
-					</div>
-					<div class="board-meta"
-						style="font-weight: 400; font-size: 1.2rem; color: #404040">
-						<p>
-							<i class="glyphicon glyphicon-user"></i> 미립 님 <i
-								class="glyphicon glyphicon-comment"></i> 0 <i
-								class="glyphicon glyphicon-ok"></i> 11 <i
-								class="glyphicon glyphicon-time"></i> 2016.03.31 21:55
-						</p>
-					</div>
-				</a>
-				<a href="info.jsp" class="list-group-item">
-					<div class="board-title">
-						<span class="board-category">[JAVA]</span> JAVA
-							8.0 함수형 프로그래밍 과 람다식 
-					</div>
-					<div class="board-meta"
-						style="font-weight: 400; font-size: 1.2rem; color: #404040">
-						<p>
-							<i class="glyphicon glyphicon-user"></i> 미립 님 <i
-								class="glyphicon glyphicon-comment"></i> 0 <i
-								class="glyphicon glyphicon-ok"></i> 32 <i
-								class="glyphicon glyphicon-time"></i> 2016.03.31 21:55
-						</p>
-					</div>
-				</a>
-				<a href="info.jsp" class="list-group-item">
-					<div class="board-title">
-						<span class="board-category">[DATABASE]</span>
-							성능고도화의 원리 
-					</div>
-					<div class="board-ma href="#"eta"
-						style="font-weight: 400; font-size: 1.2rem; color: #404040">
-						<p>
-							<i class="glyphicon glyphicon-user"></i> 미립 님 
-							<i class="glyphicon glyphicon-comment"></i> 0 
-							<i class="glyphicon glyphicon-ok"></i> 17 
-							<i class="glyphicon glyphicon-time"></i> 2016.03.31 21:55
-						</p>
-					</div>
-				</a>
+				
+			
+			
+			</c:forEach>
 			</div>
 			<div class="col-md-2"></div>
 			<div class="col-md-8" align="center">
@@ -193,7 +143,6 @@
 						rights reserved | code by milib</p>
 						</footer> -->
 	<!-- jQuery -->
-	
 
 </body>
 

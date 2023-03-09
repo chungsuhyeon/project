@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.projectdao">
+	
+	
+	<insert id="boardInsert" parameterType="com.bit.web.vo.ComBoard">
+	insert into communityboard values
+	(#{com_no},#{com_ctg},#{com_title},#{com_cont},#{com_filename},0,sysdate,#{user_id},#{user_nick},0,0,0)
+	</insert>
+	<select id="selectBoradNo" resultType="Integer">
+	select communityboard_seq.nextval from dual
+	</select>
+	<select id="selectBoard" resultType="com.bit.web.vo.ComBoard" >
+	select * from communityboard
+	</select>
+	<select id="selectInfoBoard" resultType="com.bit.web.vo.ComBoard" parameterType="Integer">
+	select * from communityboard where com_no=#{value}
+	</select>
+	<update id="hitAction" >
+	update communityboard set com_hit=com_hit+1 where com_no=#{value}
+	</update>
+	<insert id="replyInsert" parameterType="com.bit.web.vo.ReplyBoard">
+	insert into replyboard values(#{rep_no},#{com_no},#{user_id},#{rep_cont},sysdate,#{user_nick})
+	</insert>
+	<select id="replyBoardNo" resultType="Integer">
+	select replyboard_seq.nextval from dual
+	</select>
+	<delete id="deleteBoard" parameterType="Integer">
+	delete communityboard where com_no=#{value}
+	</delete>
+	<update id="updateBoard" parameterType="com.bit.web.vo.ComBoard" >
+	update communityboard set com_no=#{com_no},com_ctg=#{com_ctg},com_title=#{com_title},com_cont=#{com_cont},com_filename=#{com_filename}
+	,com_hit=#{com_hit},com_regdate=sysdate,user_id=#{user_id},user_nick=#{user_nick}
+	 where com_no=#{com_no}
+	</update>
+	<select id="selectId" resultType="String" parameterType="String">
+	select user_id from userboard where user_id=#{id}
+	</select>
+	<select id="selectNick" resultType="String" parameterType="String">
+	select user_nick from userboard where user_id=#{id}
+	</select>
+	<select id="selectBoardId" resultType="String" parameterType="Integer">
+	select user_id from communityboard where com_no=#{no}
+	</select>
+	<select id="selectReply" parameterType="Integer" resultType="com.bit.web.vo.ReplyBoard">
+	select * from replyboard where com_no=#{no}
+	</select>
+	<delete id="deleteReply" parameterType="Integer">
+	delete replyboard where com_no=#{no}
+	</delete>
+	<update id="replyUpdate" parameterType="Integer">
+	update communityboard set reply=reply+1 where com_no=#{no}
+	</update>
+	<delete id="deleteReplymain" parameterType="Integer">
+	delete replyboard where rep_no=#{value}
+	</delete>
+	<update id="updateMinusReply">
+	update communityboard set reply=reply-1 where com_no=#{no}
+	</update>
+	<select id="selectReplyid" parameterType="Integer" resultType="String">
+	select user_id from replyboard where rep_no=#{no}
+	</select>
+	<insert id="goodAction" parameterType="com.bit.web.vo.goodbadBoard">
+	insert into goodbadboard values(#{com_no},#{user_id},#{good},0)
+	</insert>
+	<update id="goodBoard" parameterType="Integer">
+	update communityboard set good=good+1 where com_no=#{com_no}
+	</update>
+	<update id="goodBoardMi" parameterType="Integer">
+	update communityboard set good=good-1 where com_no=#{com_no}
+	</update>
+	<select id="selectGood" parameterType="Integer" resultType="Integer">
+	select good from communityboard where com_no=#{com_no}
+	</select>
+<!-- 	<select id="goodbadSelectId" resultType="String" parameterType="Integer"> -->
+<!-- 	select user_id from goodbadboard where com_no=${com_no} -->
+<!-- 	</select> -->
+	<select id="goodbadSelectGood" parameterType="HashMap" resultType="Integer">
+	select good from goodbadboard where com_no=#{com_no} and user_id=#{user_id}
+	</select>
+	<delete id="goodbadDelete" parameterType="HashMap" >
+	delete goodbadboard where com_no=#{com_no} and user_id=#{user_id}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
