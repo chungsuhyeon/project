@@ -25,7 +25,11 @@ div{
 
 /*헤더 전체*/
 #mainheading{
+<<<<<<< HEAD
+	width : 1900px;
+=======
 	width : 1950px;
+>>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 	height: 150px;
 	background-image: url("/web/resources/helloseoul/img/headerimg.jpg");
 }
