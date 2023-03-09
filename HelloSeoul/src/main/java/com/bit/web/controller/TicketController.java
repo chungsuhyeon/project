@@ -27,7 +27,7 @@ public class TicketController {
 //		System.out.println(imgsrc);
 		model.addAttribute("musicalinfo", dao.selectMusicalInfo(imgsrc));
 		System.out.println(model);
-		return "pages/TicketDetail";
+		return "Final_Pro/TicketDetail";
 	}
 	
 	@RequestMapping (value = "MusicalList")
@@ -43,7 +43,7 @@ public class TicketController {
 		model.addAttribute("musicallist4", dao.selectMusicalList4(map4));
 		HashMap<String, Object>map5 = new HashMap<String, Object>();
 		model.addAttribute("musicallist5", dao.selectMusicalList5(map5));
-		return "pages/Musicalmain";
+		return "Final_Pro/Musicalmain";
 	}
 	
 }

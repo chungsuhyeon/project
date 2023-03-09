@@ -3,7 +3,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<jsp:include page="Header.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
