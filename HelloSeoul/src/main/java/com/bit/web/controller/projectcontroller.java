@@ -35,14 +35,14 @@ public class projectcontroller {
 	@GetMapping(value="boardSelect")
 	public String boardSelect(ComBoard board,Model model) {
 		model.addAttribute("board",dao.selectBoard());
-		return "pages/ComList";
+		return "Final_Pro/ComList";
 	}
 	@RequestMapping(value="infoSelect")
 	public String infoSelect(int no,Model model) {
 		dao.hitAction(no);
 		model.addAttribute("info", dao.selectInfoBoard(no));
 		model.addAttribute("reply",dao.selectReply(no));
-		return "pages/ComInfo";
+		return "Final_Pro/ComInfo";
 	}
 	@RequestMapping(value="deleteCom")
 	public String deleteCom(int no,Model model,@RequestParam(value="user_id")String id) {
@@ -53,14 +53,14 @@ public class projectcontroller {
 			return "redirect:/infoSelect?no="+no;
 		}
 		model.addAttribute("board",dao.selectBoard());	
-		return "pages/ComList";
+		return "Final_Pro/ComList";
 	}
 	@RequestMapping(value="modifyAction")
 	public String modifyAction(int no,Model model,@RequestParam(value="user_id")String id) {
 		if(dao.selectBoardId(no).equals(dao.selectId(id))) {
 		
 		model.addAttribute("info",dao.selectInfoBoard(no));
-		return "pages/Commodify";
+		return "Final_Pro/Commodify";
 		}else{
 			return "redirect:/infoSelect?no="+no;
 		}
@@ -71,7 +71,7 @@ public class projectcontroller {
 		board.setCom_no(no);
 		dao.updateBoard(board);
 		model.addAttribute("board",dao.selectBoard());
-		return "pages/ComList";
+		return "Final_Pro/ComList";
 	}
 	@RequestMapping(value="replyInsert")
 	@ResponseBody
