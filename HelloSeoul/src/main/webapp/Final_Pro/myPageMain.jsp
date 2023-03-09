@@ -17,9 +17,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script type="text/javascript">
-$(function(){
-	
-});
+	$(function(){
+		
+	});
 </script>
 <!--JS Section End -->
 
@@ -31,49 +31,60 @@ $(function(){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js" integrity="sha512-L4qpL1ZotXZLLe8Oo0ZyHrj/SweV7CieswUODAAPN/tnqN3PA1P+4qPu5vIryNor6HQ5o22NujIcAZIfyVXwbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <style type="text/css">
-.contdivbox{
-	display: flex;
-}
-
-.contdivbox>div{
-	margin : 10px;
-	border:solid;
-	float:left;
-	display:flex;
-}
-
-table{
-	width: 450px !important;
-	height : 350px !important;
-}
-
-th,td{
-	font-size: 20px !important;
-}
+	.contdivbox{
+		display: flex;
+	}
+	
+	.contdivbox>div{
+		margin : 10px;
+		border:solid;
+		float:left;
+		display:flex;
+	}
+	
+	table{
+		width: 450px !important;
+		height : 350px !important;
+	}
+	
+	th,td{
+		font-size: 20px !important;
+	}
 </style>
 <!-- Style Section End -->
 
 </head>
 <body>
 	<header>
-	<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="header.jsp"></jsp:include>
 	</header>
+	
 	<section>
 		<div class='container-fluid'>
 			<!-- User Info -->
 			<div>
 				<div>
-					<h2>User ID or Nick</h2>
+					<h2>${user_nickName}</h2>
 				</div>
 				<div>
-					<h2>User Info</h2>
+					<h4>
+						Name : ${userInfo.USER_NAME}
+						&nbsp;&nbsp;&nbsp;
+						Nationality : ${userInfo.USER_NATION}
+						&nbsp;&nbsp;&nbsp;
+						Age : ${userInfo.USER_AGE}
+						&nbsp;&nbsp;&nbsp;
+						Purpose of visit : ${userInfo.USER_PP}
+						&nbsp;&nbsp;&nbsp;
+						1st place in tourism : ${userInfo.USER_FIRST}
+					</h4>
 				</div>
 			</div>
 			<!-- Nav Bar -->
 			<div>
 				<ol class="breadcrumb">
-  					<li class="breadcrumb-item"><a href="./index.jsp">Home</a></li>
-  					<li class="breadcrumb-item"><a href="./myPageCreate.jsp">Create</a></li>
+  					<li class="breadcrumb-item"><a href="./Final_Pro/myPageJjim.jsp">Wish</a></li>
+  					<li class="breadcrumb-item"><a href="./Final_Pro/myPageCreate.jsp">Planner Create</a></li>
 				</ol>
 			</div>
 			<!-- Contents Div Box -->

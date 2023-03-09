@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration><!-- DB설정(Connection) -->
+   <typeAliases>
+     <typeAlias type="com.bit.web.vo.ReplyBoard" alias="mvcBoard"/>
+     <typeAlias type="com.bit.web.vo.AjaxReplyBoardBean" alias="ajaxReplyBoardBean"/>
+   </typeAliases>
+   <mappers>
+     <mapper resource="com/bit/web/dao/app-mapper.xml"/> 
+     <mapper resource="com/bit/web/dao/ajax-mapper.xml"/> 
+     <mapper resource="com/bit/web/dao/join-mapper.xml"/> 
+     <mapper resource="com/bit/web/dao/board-mapper.xml"/> 
+  
+   </mappers>
+</configuration>
+
+
+
+
+
+

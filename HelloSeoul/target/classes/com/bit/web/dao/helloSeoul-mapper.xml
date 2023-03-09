@@ -21,6 +21,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from jjim 
 		where user_id = #{value}
 	</select>
+	
+	<delete id="userJjimListDelete" parameterType="java.util.HashMap">
+		delete from jjim
+		where user_id = #{user_id} and loc_pc in ${str}
+	</delete>
 
 </mapper>
 

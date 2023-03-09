@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.boardMemberDao">
+
+	<select id="ajaxGetBoardId" parameterType="String" resultType="String" >
+		SELECT ID FROM BOARDMEMBER
+		WHERE ID=#{value}
+	</select>
+	
+	<select id="getSequenceBoardMember" resultType="Integer">
+		select
+		BOARDMEMBER_SEQ.nextval from dual
+
+	</select>
+	
+	<insert id="insertBoardMember" parameterType="com.bit.web.vo.boardMemberBean" >
+		INSERT INTO BOARDMEMBER(no,id,name,password)
+		VALUES(#{no},#{id},#{name},#{password})
+	</insert>
+	
+	<insert id="insertEmojiBean" parameterType="com.bit.web.vo.EmojiBean">
+		INSERT INTO EMOJI VALUES(#{infono},#{id},0,0)
+	</insert>
+	
+	<select id="getInfoNo" parameterType="int" resultType="String">
+		SELECT INFONO FROM EMOJI
+		WHERE INFONO=#{VALUE}
+	</select>
+	
+	<select id="getEmojiId" parameterType="String" resultType="String">
+		SELECT ID FROM EMOJI
+		WHERE ID=${VALUE}
+	</select>
+	
+	<select id="getPassword" parameterType="String" resultType="String">
+	  SELECT PASSWORD FROM BOARDMEMBER
+	  WHERE ID=#{id}
+	</select>
+	 
+	<select id="getPostSequence" resultType="Integer">
+		select
+		BOARDMEMBER_SEQ.nextval from dual
+
+	</select>
+	
+	<insert id="insertPostBoard" parameterType="com.bit.web.vo.postBoardBean">
+		INSERT INTO
+		POSTBOARD(NO,TITLE,WRITER,PASSWORD,CONTENTS,HIT,REGDATE,REF,PNUM,STEP,LEV,REPLY,ID,FILENAME,GOOD,BAD)
+		VALUES(#{no},#{title},#{writer},#{password},#{contents},0,SYSDATE,
+		#{ref},#{pnum},#{step},#{lev},0,#{id},#{filename},0,0)
+	</insert>
+	
+	<select id="selectPostList" resultType="com.bit.web.vo.postBoardBean"
+		 parameterType="HashMap">
+		SELECT ID,NO,TITLE,WRITER,REPLY,HIT,REGDATE
+		FROM POSTBOARD
+	</select>
+	
+	<update id="updateHit" parameterType="int">
+		UPDATE POSTBOARD SET
+		HIT=HIT+1
+		WHERE NO=#{VALUE}
+	</update>
+	
+	<select id="selectPostInfo" parameterType="int" resultType="com.bit.web.vo.postBoardBean">
+		SELECT NO,TITLE,WRITER,HIT,PASSWORD,CONTENTS,TO_CHAR(REGDATE,'YYYY/MM/DD')regdate,REF,PNUM,
+		STEP,LEV,REPLY,FILENAME,ID
+		FROM POSTBOARD
+		WHERE NO=#{VALUE}
+	</select>
+	
+	<delete id="deletePost" parameterType="int">
+		DELETE POSTBOARD WHERE NO=#{VALUE}
+	</delete>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

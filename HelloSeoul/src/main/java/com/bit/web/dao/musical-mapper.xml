@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sist.spring.dao.boardMemberDao">
+
+	<select id="selectMusicalList" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST
+	</select>
+	
+	<select id="selectMusicalList2" resultType="MusicalBean">
+		SELECT TITLE,IMGSRC,PTITLE FROM MUSICALLIST2
+	</select>
+	
+	<select id="selectMusicalList3" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST3
+	</select>
+	
+	<select id="selectMusicalList4" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE,RANKING FROM MUSICALLIST4
+	</select>
+	
+	<select id="selectMusicalList5" resultType="MusicalBean">
+		SELECT NO,TITLE,IMGSRC,DETAIL,PTITLE FROM MUSICALLIST5
+	</select>
+	
+	<select id="selectMusicalInfo" parameterType="String" resultType="MusicalBean">
+		SELECT NO, TITLE, RUNDATE, THEATER, IMGSRC, REVIEWS, GRADE, RUNTIME, PERFORMER, PRICE FROM MUSICALINFO
+		WHERE IMGSRC=#{VALUE}
+	</select>
+	
+	
+<!-- 	<select id="selectSeqNumber" resultType="Integer"> -->
+<!-- 		SELECT MUSICALLIST_DWQ.NEXT -->
+<!-- 	</select> -->
+
+</mapper>
