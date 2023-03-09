@@ -1,4 +1,4 @@
-package com.bit.web.controller;
+package com.bit.web.vo;
 
 import lombok.Data;
 
