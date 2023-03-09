@@ -10,7 +10,7 @@
 <link type="text/css" rel="stylesheet" href="/web/resources/helloseoul/css/home/main.css">
 </head>
 <<<<<<< HEAD
-<jsp:include page='header1.jsp'></jsp:include>
+<%-- <jsp:include page='header1.jsp'></jsp:include> --%>
 =======
 >>>>>>> branch 'subMain' of https://github.com/chungsuhyeon/project.git
 <body>
